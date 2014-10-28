@@ -21,6 +21,11 @@
 		CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BA119FFEDA000907A7D /* EntityViewController.swift */; };
 		CD958BA519FFF11A00907A7D /* EntityViewControllerParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */; };
 		CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BA619FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift */; };
+		CD958BAA1A00046100907A7D /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BA91A00046100907A7D /* Entity.swift */; };
+		CD958BAC1A00118500907A7D /* CGFloat+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BAB1A00118500907A7D /* CGFloat+Additions.swift */; };
+		CD958BAE1A0012A800907A7D /* EntityInspectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BAD1A0012A800907A7D /* EntityInspectorTableViewController.swift */; };
+		CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */; };
+		CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BB31A00210500907A7D /* NSObject+Identifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		CD958BA119FFEDA000907A7D /* EntityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityViewController.swift; sourceTree = "<group>"; };
 		CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityViewControllerParent.swift; sourceTree = "<group>"; };
 		CD958BA619FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewControllers.swift"; sourceTree = "<group>"; };
+		CD958BA91A00046100907A7D /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		CD958BAB1A00118500907A7D /* CGFloat+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Additions.swift"; sourceTree = "<group>"; };
+		CD958BAD1A0012A800907A7D /* EntityInspectorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorTableViewController.swift; sourceTree = "<group>"; };
+		CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
+		CD958BB31A00210500907A7D /* NSObject+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifier.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 		CD958B7019FEB4B300907A7D /* Druthers One */ = {
 			isa = PBXGroup;
 			children = (
+				CD958BA81A00042A00907A7D /* Models */,
 				CD958BA319FFF10100907A7D /* Protocols */,
 				CD958B9E19FFD81500907A7D /* Controllers */,
 				CD958B9319FEC25500907A7D /* Extensions */,
@@ -101,7 +112,10 @@
 				CD958B9819FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift */,
 				CD958B9A19FF3DA000907A7D /* UIView+Appearance.swift */,
 				CD958B9C19FF431300907A7D /* CGPoint+Operators.swift */,
+				CD958BAB1A00118500907A7D /* CGFloat+Additions.swift */,
 				CD958BA619FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift */,
+				CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */,
+				CD958BB31A00210500907A7D /* NSObject+Identifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -111,6 +125,7 @@
 			children = (
 				CD958B9F19FFD86C00907A7D /* GestureController.swift */,
 				CD958BA119FFEDA000907A7D /* EntityViewController.swift */,
+				CD958BAD1A0012A800907A7D /* EntityInspectorTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,6 +136,14 @@
 				CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CD958BA81A00042A00907A7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CD958BA91A00046100907A7D /* Entity.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,10 +220,15 @@
 				CD958B9D19FF431300907A7D /* CGPoint+Operators.swift in Sources */,
 				CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */,
 				CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */,
+				CD958BAE1A0012A800907A7D /* EntityInspectorTableViewController.swift in Sources */,
 				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
+				CD958BAA1A00046100907A7D /* Entity.swift in Sources */,
+				CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */,
+				CD958BAC1A00118500907A7D /* CGFloat+Additions.swift in Sources */,
+				CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */,
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
 				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,

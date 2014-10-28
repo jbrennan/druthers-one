@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, EntityViewControllerParent {
 	
 	var entityViewControllers = [EntityViewController]()
+	var inspector: EntityInspectorTableViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -30,6 +31,17 @@ class ViewController: UIViewController, EntityViewControllerParent {
 			let view = controller.view
 			view.frameSize = controller.viewSize
 		}
+		
+		self.inspector?.view.origin = CGPoint(x: 30, y: 30)
+		self.inspector?.view.frameSize = CGSize(width: 300, height: 500)
+		self.inspector?.view.showDragShadow()
+	}
+	
+	
+	func openInspectorForEntity(entity: Entity) {
+		self.inspector = EntityInspectorTableViewController()
+		
+		self.beginShowingChildViewController(self.inspector!)
 	}
 	
 

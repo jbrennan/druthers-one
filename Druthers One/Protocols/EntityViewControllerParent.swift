@@ -13,4 +13,7 @@ protocol EntityViewControllerParent: class {
 	var view: UIView {
 		get
 	}
+	
+	/** Open the entity inspector for the given entity. */
+	func openInspectorForEntity(entity: Entity)
 }
