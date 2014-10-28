@@ -18,6 +18,9 @@
 		CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9A19FF3DA000907A7D /* UIView+Appearance.swift */; };
 		CD958B9D19FF431300907A7D /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9C19FF431300907A7D /* CGPoint+Operators.swift */; };
 		CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9F19FFD86C00907A7D /* GestureController.swift */; };
+		CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BA119FFEDA000907A7D /* EntityViewController.swift */; };
+		CD958BA519FFF11A00907A7D /* EntityViewControllerParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */; };
+		CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BA619FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		CD958B9A19FF3DA000907A7D /* UIView+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Appearance.swift"; sourceTree = "<group>"; };
 		CD958B9C19FF431300907A7D /* CGPoint+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
 		CD958B9F19FFD86C00907A7D /* GestureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureController.swift; sourceTree = "<group>"; };
+		CD958BA119FFEDA000907A7D /* EntityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityViewController.swift; sourceTree = "<group>"; };
+		CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityViewControllerParent.swift; sourceTree = "<group>"; };
+		CD958BA619FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+ChildViewControllers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 		CD958B7019FEB4B300907A7D /* Druthers One */ = {
 			isa = PBXGroup;
 			children = (
+				CD958BA319FFF10100907A7D /* Protocols */,
 				CD958B9E19FFD81500907A7D /* Controllers */,
 				CD958B9319FEC25500907A7D /* Extensions */,
 				CD958B7319FEB4B300907A7D /* AppDelegate.swift */,
@@ -94,6 +101,7 @@
 				CD958B9819FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift */,
 				CD958B9A19FF3DA000907A7D /* UIView+Appearance.swift */,
 				CD958B9C19FF431300907A7D /* CGPoint+Operators.swift */,
+				CD958BA619FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -102,8 +110,17 @@
 			isa = PBXGroup;
 			children = (
 				CD958B9F19FFD86C00907A7D /* GestureController.swift */,
+				CD958BA119FFEDA000907A7D /* EntityViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CD958BA319FFF10100907A7D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,14 +193,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD958BA519FFF11A00907A7D /* EntityViewControllerParent.swift in Sources */,
 				CD958B9D19FF431300907A7D /* CGPoint+Operators.swift in Sources */,
 				CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */,
 				CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */,
+				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
+				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
