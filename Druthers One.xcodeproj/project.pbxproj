@@ -12,6 +12,11 @@
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
 		CD958B7B19FEB4B300907A7D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7A19FEB4B300907A7D /* Images.xcassets */; };
 		CD958B7E19FEB4B300907A7D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7C19FEB4B300907A7D /* LaunchScreen.xib */; };
+		CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9419FEC27C00907A7D /* UIView+Layout.swift */; };
+		CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9619FEC40D00907A7D /* UIView+Geometry.swift */; };
+		CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9819FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift */; };
+		CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9A19FF3DA000907A7D /* UIView+Appearance.swift */; };
+		CD958B9D19FF431300907A7D /* CGPoint+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B9C19FF431300907A7D /* CGPoint+Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		CD958B7819FEB4B300907A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD958B7A19FEB4B300907A7D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CD958B7D19FEB4B300907A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		CD958B9419FEC27C00907A7D /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		CD958B9619FEC40D00907A7D /* UIView+Geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Geometry.swift"; sourceTree = "<group>"; };
+		CD958B9819FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Shortcuts.swift"; sourceTree = "<group>"; };
+		CD958B9A19FF3DA000907A7D /* UIView+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Appearance.swift"; sourceTree = "<group>"; };
+		CD958B9C19FF431300907A7D /* CGPoint+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Operators.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 		CD958B7019FEB4B300907A7D /* Druthers One */ = {
 			isa = PBXGroup;
 			children = (
+				CD958B9319FEC25500907A7D /* Extensions */,
 				CD958B7319FEB4B300907A7D /* AppDelegate.swift */,
 				CD958B7519FEB4B300907A7D /* ViewController.swift */,
 				CD958B7719FEB4B300907A7D /* Main.storyboard */,
@@ -70,6 +81,18 @@
 				CD958B7219FEB4B300907A7D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD958B9319FEC25500907A7D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CD958B9419FEC27C00907A7D /* UIView+Layout.swift */,
+				CD958B9619FEC40D00907A7D /* UIView+Geometry.swift */,
+				CD958B9819FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift */,
+				CD958B9A19FF3DA000907A7D /* UIView+Appearance.swift */,
+				CD958B9C19FF431300907A7D /* CGPoint+Operators.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +165,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD958B9D19FF431300907A7D /* CGPoint+Operators.swift in Sources */,
+				CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */,
+				CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
+				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
+				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
