@@ -33,6 +33,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		
 		self.panGestureRecognizer.addTarget(self, action: "panDidRecognize:")
 		self.panGestureRecognizer.delegate = self
+		self.panGestureRecognizer.maximumNumberOfTouches = 1 // Andy-proof it.
 		
 		
 		self.longPressGestureRecognizer.addTarget(self, action: "longPressDidRecognize:")
