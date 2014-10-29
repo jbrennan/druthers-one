@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CD11A3311A0139370053916B /* EntityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A3301A0139370053916B /* EntityController.swift */; };
+		CD11A3341A0149090053916B /* EntityInspectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A3331A0149090053916B /* EntityInspectorTableViewCell.swift */; };
+		CD11A3361A0170020053916B /* EntityInspectorCellDraggableTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A3351A0170020053916B /* EntityInspectorCellDraggableTitleView.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		CD11A3301A0139370053916B /* EntityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityController.swift; sourceTree = "<group>"; };
+		CD11A3331A0149090053916B /* EntityInspectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorTableViewCell.swift; sourceTree = "<group>"; };
+		CD11A3351A0170020053916B /* EntityInspectorCellDraggableTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellDraggableTitleView.swift; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD11A3321A0148D80053916B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CD11A3331A0149090053916B /* EntityInspectorTableViewCell.swift */,
+				CD11A3351A0170020053916B /* EntityInspectorCellDraggableTitleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CD958B6519FEB4B300907A7D = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 		CD958B7019FEB4B300907A7D /* Druthers One */ = {
 			isa = PBXGroup;
 			children = (
+				CD11A3321A0148D80053916B /* Views */,
 				CD958BA81A00042A00907A7D /* Models */,
 				CD958BA319FFF10100907A7D /* Protocols */,
 				CD958B9E19FFD81500907A7D /* Controllers */,
@@ -234,6 +248,8 @@
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
 				CD958BB61A00285300907A7D /* PopoverViewController.swift in Sources */,
+				CD11A3341A0149090053916B /* EntityInspectorTableViewCell.swift in Sources */,
+				CD11A3361A0170020053916B /* EntityInspectorCellDraggableTitleView.swift in Sources */,
 				CD958BAA1A00046100907A7D /* Entity.swift in Sources */,
 				CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */,
 				CD958BAC1A00118500907A7D /* CGFloat+Additions.swift in Sources */,

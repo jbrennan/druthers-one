@@ -47,7 +47,7 @@ extension UIView {
 	func sizeThatFitsByRunningLayoutBlock(commitLayout: Bool = true, layoutBlock: SizingLayoutBlock) -> CGSize {
 		
 		// if we're not committing the layout, preserve subview frames
-		let viewToFrameMap: NSMapTable? = commitLayout ? NSMapTable.weakToWeakObjectsMapTable() : nil
+		let viewToFrameMap: NSMapTable? = commitLayout ? nil : NSMapTable.weakToWeakObjectsMapTable()
 		
 		if let viewToFrameMap = viewToFrameMap {
 			
@@ -56,7 +56,7 @@ extension UIView {
 			}
 		}
 		
-		layoutBlock()
+		let size = layoutBlock()
 		
 		
 		// Restore subview frames if needed.
@@ -70,6 +70,6 @@ extension UIView {
 			}
 		}
 		
-		return CGSize()
+		return size
 	}
 }

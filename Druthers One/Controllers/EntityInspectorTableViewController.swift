@@ -19,7 +19,7 @@ class EntityInspectorTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		self.tableView.registerClass(UITableViewCell.self)
+		self.tableView.registerClass(EntityInspectorTableViewCell.self)
 	}
 
     // MARK: - Table view data source
@@ -37,7 +37,7 @@ class EntityInspectorTableViewController: UITableViewController {
 	
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(UITableViewCell.reuseIdentifier(), forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as UITableViewCell
 		
 		if let properties = self.entity?.properties {
 			let keys = Array(properties.keys)
@@ -45,7 +45,7 @@ class EntityInspectorTableViewController: UITableViewController {
 			let value = properties[propertyKey]
 			if let value = value {
 				
-				cell.textLabel.text = "\(propertyKey): \(value)"
+//				cell.textLabel.text = "\(propertyKey): \(value)"
 			}
 		}
         return cell
