@@ -37,6 +37,7 @@ extension UILabel {
 		
 		self.text = text ?? ""
 		self.font = fontWeight.fontForFontSize(fontSize)
+		self.textColor = UIColor.KhanTextColor()
 	}
 	
 	

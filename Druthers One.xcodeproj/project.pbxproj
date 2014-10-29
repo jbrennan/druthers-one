@@ -32,6 +32,7 @@
 		CD12E9501A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf */; };
 		CD12E9511A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf */; };
 		CD12E9521A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf */; };
+		CD12E9541A01A88100EE5569 /* UIColor+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9531A01A88100EE5569 /* UIColor+Styles.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		CD12E93B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Thin.otf"; sourceTree = "<group>"; };
 		CD12E93C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Semibold.otf"; sourceTree = "<group>"; };
 		CD12E93D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Thin.otf"; sourceTree = "<group>"; };
+		CD12E9531A01A88100EE5569 /* UIColor+Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Styles.swift"; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */,
 				CD958BB31A00210500907A7D /* NSObject+Identifier.swift */,
 				CD12E9241A019E7900EE5569 /* UILabel+Styles.swift */,
+				CD12E9531A01A88100EE5569 /* UIColor+Styles.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				CD12E9251A019E7900EE5569 /* UILabel+Styles.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
+				CD12E9541A01A88100EE5569 /* UIColor+Styles.swift in Sources */,
 				CD958BB61A00285300907A7D /* PopoverViewController.swift in Sources */,
 				CD11A3341A0149090053916B /* EntityInspectorTableViewCell.swift in Sources */,
 				CD11A3361A0170020053916B /* EntityInspectorCellDraggableTitleView.swift in Sources */,
