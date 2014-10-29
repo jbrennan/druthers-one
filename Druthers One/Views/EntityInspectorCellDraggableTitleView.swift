@@ -40,15 +40,17 @@ class EntityInspectorCellDraggableTitleView: UIView {
 	override func sizeThatFitsByLayingOutSubviews(size: CGSize, commitLayout: Bool = true) -> CGSize {
 		return self.sizeThatFitsByRunningLayoutBlock(commitLayout: commitLayout) {
 			() -> CGSize in
+			let margin = CGFloat(10)
 			
 			self.entityTitleLabel.sizeToFit()
 			self.entityTitleLabel.moveToVerticalCenterOfSuperview()
+			self.entityTitleLabel.x = margin
 			
 			self.entityPropertyTitleLabel.sizeToFit()
 			self.entityPropertyTitleLabel.moveToRightOfSiblingView(self.entityTitleLabel, margin: 5)
 			self.entityPropertyTitleLabel.moveToVerticalCenterOfSuperview()
 			
-			return CGSize(width: self.entityPropertyTitleLabel.maxX, height: 44.0)
+			return CGSize(width: self.entityPropertyTitleLabel.maxX + margin, height: 44.0)
 			
 		}
 	}
