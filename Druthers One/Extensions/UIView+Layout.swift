@@ -8,6 +8,7 @@
 
 import UIKit
 
+/** Positioning views. */
 extension UIView {
 	
 	
@@ -22,5 +23,53 @@ extension UIView {
 		if let superview = self.superview {
 			self.x = superview.bounds.width - self.width - margin
 		}
+	}
+	
+	
+	func moveToVerticalCenterOfSuperview() {
+		if let superview = self.superview {
+			self.y = superview.height / 2.0 - self.height / 2.0
+		}
+	}
+}
+
+
+/** Layout subviews helpers. */
+extension UIView {
+	
+	typealias SizingLayoutBlock = (() -> CGSize)
+	
+	func sizeThatFitsByLayingOutSubviews(size:CGSize, commitLayout: Bool = true) -> CGSize {
+		
+		return size
+	}
+	
+	func sizeThatFitsByRunningLayoutBlock(commitLayout: Bool = true, layoutBlock: SizingLayoutBlock) -> CGSize {
+		
+		// if we're not committing the layout, preserve subview frames
+		let viewToFrameMap: NSMapTable? = commitLayout ? NSMapTable.weakToWeakObjectsMapTable() : nil
+		
+		if let viewToFrameMap = viewToFrameMap {
+			
+			for subview in self.subviews as [UIView] {
+				viewToFrameMap.setObject(NSValue(CGRect: subview.frame), forKey: subview)
+			}
+		}
+		
+		layoutBlock()
+		
+		
+		// Restore subview frames if needed.
+		if let viewToFrameMap = viewToFrameMap {
+			
+			for subview in self.subviews as [UIView] {
+				let frameValue: NSValue? = viewToFrameMap.objectForKey(subview) as? NSValue
+				if let frameValue = frameValue {
+					subview.frame = frameValue.CGRectValue()
+				}
+			}
+		}
+		
+		return CGSize()
 	}
 }
