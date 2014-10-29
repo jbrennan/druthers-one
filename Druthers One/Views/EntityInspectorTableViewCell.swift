@@ -17,7 +17,7 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		
 		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
-		self.draggableTitleView.backgroundColor = UIColor.purpleColor()
+//		self.draggableTitleView.backgroundColor = UIColor.purpleColor()
 		self.draggableTitleView.entityTitleLabel.text = "block's"
 		self.draggableTitleView.entityPropertyTitleLabel.text = "x"
 		

@@ -11,9 +11,8 @@ import UIKit
 /** Doesn't that name just roll off the tongue? */
 class EntityInspectorCellDraggableTitleView: UIView {
 	
-	let entityTitleLabel = UILabel(frame: CGRect())
-	let entityPropertyTitleLabel = UILabel(frame: CGRect())
-	
+	let entityTitleLabel = UILabel(text: nil)
+	let entityPropertyTitleLabel = UILabel(text: nil, fontWeight: .Bold)
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
