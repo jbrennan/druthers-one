@@ -15,13 +15,17 @@ extension UILabel {
 		case Normal
 		case Bold
 		
-		func fontForFontSize(size: CGFloat) -> UIFont {
+		func fontForFontSize(size: CGFloat) -> UIFont? {
+			return UIFont(name: self.fontName(), size: size)?
+		}
+		
+		private func fontName() -> String {
 			switch self {
 			case .Normal:
-				return UIFont.systemFontOfSize(size)
+				return "ProximaNova-Regular"
 				
 			case .Bold:
-				return UIFont.boldSystemFontOfSize(size)
+				return "ProximaNova-Semibold"
 			}
 		}
 	}

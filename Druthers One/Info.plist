@@ -22,6 +22,30 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Mark Simonson - Proxima Nova Alt Black.otf</string>
+		<string>Mark Simonson - Proxima Nova Alt Bold.otf</string>
+		<string>Mark Simonson - Proxima Nova Alt Extrabold.otf</string>
+		<string>Mark Simonson - Proxima Nova Alt Light.otf</string>
+		<string>Mark Simonson - Proxima Nova Alt Regular.otf</string>
+		<string>Mark Simonson - Proxima Nova Alt Semibold.otf</string>
+		<string>Mark Simonson - Proxima Nova Alt Thin.otf</string>
+		<string>Mark Simonson - Proxima Nova Black.otf</string>
+		<string>Mark Simonson - Proxima Nova Bold.otf</string>
+		<string>Mark Simonson - Proxima Nova Extrabold.otf</string>
+		<string>Mark Simonson - Proxima Nova Light.otf</string>
+		<string>Mark Simonson - Proxima Nova Regular.otf</string>
+		<string>Mark Simonson - Proxima Nova ScOsf Black.otf</string>
+		<string>Mark Simonson - Proxima Nova ScOsf Bold.otf</string>
+		<string>Mark Simonson - Proxima Nova ScOsf Extrabold.otf</string>
+		<string>Mark Simonson - Proxima Nova ScOsf Light.otf</string>
+		<string>Mark Simonson - Proxima Nova ScOsf Regular.otf</string>
+		<string>Mark Simonson - Proxima Nova ScOsf Semibold.otf</string>
+		<string>Mark Simonson - Proxima Nova ScOsf Thin.otf</string>
+		<string>Mark Simonson - Proxima Nova Semibold.otf</string>
+		<string>Mark Simonson - Proxima Nova Thin.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

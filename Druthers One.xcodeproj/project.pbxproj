@@ -11,6 +11,27 @@
 		CD11A3341A0149090053916B /* EntityInspectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A3331A0149090053916B /* EntityInspectorTableViewCell.swift */; };
 		CD11A3361A0170020053916B /* EntityInspectorCellDraggableTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD11A3351A0170020053916B /* EntityInspectorCellDraggableTitleView.swift */; };
 		CD12E9251A019E7900EE5569 /* UILabel+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9241A019E7900EE5569 /* UILabel+Styles.swift */; };
+		CD12E93E1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9291A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Black.otf */; };
+		CD12E93F1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E92A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Bold.otf */; };
+		CD12E9401A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E92B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Extrabold.otf */; };
+		CD12E9411A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E92C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Light.otf */; };
+		CD12E9421A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E92D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Regular.otf */; };
+		CD12E9431A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E92E1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Semibold.otf */; };
+		CD12E9441A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E92F1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Thin.otf */; };
+		CD12E9451A01A39C00EE5569 /* Mark Simonson - Proxima Nova Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9301A01A39C00EE5569 /* Mark Simonson - Proxima Nova Black.otf */; };
+		CD12E9461A01A39C00EE5569 /* Mark Simonson - Proxima Nova Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9311A01A39C00EE5569 /* Mark Simonson - Proxima Nova Bold.otf */; };
+		CD12E9471A01A39C00EE5569 /* Mark Simonson - Proxima Nova Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9321A01A39C00EE5569 /* Mark Simonson - Proxima Nova Extrabold.otf */; };
+		CD12E9481A01A39C00EE5569 /* Mark Simonson - Proxima Nova Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9331A01A39C00EE5569 /* Mark Simonson - Proxima Nova Light.otf */; };
+		CD12E9491A01A39C00EE5569 /* Mark Simonson - Proxima Nova Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9341A01A39C00EE5569 /* Mark Simonson - Proxima Nova Regular.otf */; };
+		CD12E94A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9351A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Black.otf */; };
+		CD12E94B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9361A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Bold.otf */; };
+		CD12E94C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Extrabold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9371A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Extrabold.otf */; };
+		CD12E94D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9381A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Light.otf */; };
+		CD12E94E1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E9391A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Regular.otf */; };
+		CD12E94F1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Semibold.otf */; };
+		CD12E9501A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf */; };
+		CD12E9511A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf */; };
+		CD12E9521A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -38,6 +59,27 @@
 		CD11A3331A0149090053916B /* EntityInspectorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorTableViewCell.swift; sourceTree = "<group>"; };
 		CD11A3351A0170020053916B /* EntityInspectorCellDraggableTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellDraggableTitleView.swift; sourceTree = "<group>"; };
 		CD12E9241A019E7900EE5569 /* UILabel+Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Styles.swift"; sourceTree = "<group>"; };
+		CD12E9291A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Black.otf"; sourceTree = "<group>"; };
+		CD12E92A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Bold.otf"; sourceTree = "<group>"; };
+		CD12E92B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Extrabold.otf"; sourceTree = "<group>"; };
+		CD12E92C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Light.otf"; sourceTree = "<group>"; };
+		CD12E92D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Regular.otf"; sourceTree = "<group>"; };
+		CD12E92E1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Semibold.otf"; sourceTree = "<group>"; };
+		CD12E92F1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Alt Thin.otf"; sourceTree = "<group>"; };
+		CD12E9301A01A39C00EE5569 /* Mark Simonson - Proxima Nova Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Black.otf"; sourceTree = "<group>"; };
+		CD12E9311A01A39C00EE5569 /* Mark Simonson - Proxima Nova Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Bold.otf"; sourceTree = "<group>"; };
+		CD12E9321A01A39C00EE5569 /* Mark Simonson - Proxima Nova Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Extrabold.otf"; sourceTree = "<group>"; };
+		CD12E9331A01A39C00EE5569 /* Mark Simonson - Proxima Nova Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Light.otf"; sourceTree = "<group>"; };
+		CD12E9341A01A39C00EE5569 /* Mark Simonson - Proxima Nova Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Regular.otf"; sourceTree = "<group>"; };
+		CD12E9351A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Black.otf"; sourceTree = "<group>"; };
+		CD12E9361A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Bold.otf"; sourceTree = "<group>"; };
+		CD12E9371A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Extrabold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Extrabold.otf"; sourceTree = "<group>"; };
+		CD12E9381A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Light.otf"; sourceTree = "<group>"; };
+		CD12E9391A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Regular.otf"; sourceTree = "<group>"; };
+		CD12E93A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Semibold.otf"; sourceTree = "<group>"; };
+		CD12E93B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova ScOsf Thin.otf"; sourceTree = "<group>"; };
+		CD12E93C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Semibold.otf"; sourceTree = "<group>"; };
+		CD12E93D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Thin.otf"; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +124,50 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CD12E9261A01A35800EE5569 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD12E9271A01A36D00EE5569 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD12E9271A01A36D00EE5569 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD12E9281A01A37B00EE5569 /* Proxima */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CD12E9281A01A37B00EE5569 /* Proxima */ = {
+			isa = PBXGroup;
+			children = (
+				CD12E9291A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Black.otf */,
+				CD12E92A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Bold.otf */,
+				CD12E92B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Extrabold.otf */,
+				CD12E92C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Light.otf */,
+				CD12E92D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Regular.otf */,
+				CD12E92E1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Semibold.otf */,
+				CD12E92F1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Thin.otf */,
+				CD12E9301A01A39C00EE5569 /* Mark Simonson - Proxima Nova Black.otf */,
+				CD12E9311A01A39C00EE5569 /* Mark Simonson - Proxima Nova Bold.otf */,
+				CD12E9321A01A39C00EE5569 /* Mark Simonson - Proxima Nova Extrabold.otf */,
+				CD12E9331A01A39C00EE5569 /* Mark Simonson - Proxima Nova Light.otf */,
+				CD12E9341A01A39C00EE5569 /* Mark Simonson - Proxima Nova Regular.otf */,
+				CD12E9351A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Black.otf */,
+				CD12E9361A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Bold.otf */,
+				CD12E9371A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Extrabold.otf */,
+				CD12E9381A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Light.otf */,
+				CD12E9391A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Regular.otf */,
+				CD12E93A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Semibold.otf */,
+				CD12E93B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf */,
+				CD12E93C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf */,
+				CD12E93D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf */,
+			);
+			path = Proxima;
+			sourceTree = "<group>";
+		};
 		CD958B6519FEB4B300907A7D = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +187,7 @@
 		CD958B7019FEB4B300907A7D /* Druthers One */ = {
 			isa = PBXGroup;
 			children = (
+				CD12E9261A01A35800EE5569 /* Resources */,
 				CD11A3321A0148D80053916B /* Views */,
 				CD958BA81A00042A00907A7D /* Models */,
 				CD958BA319FFF10100907A7D /* Protocols */,
@@ -227,9 +314,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD12E94A1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Black.otf in Resources */,
+				CD12E9421A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Regular.otf in Resources */,
+				CD12E94B1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Bold.otf in Resources */,
+				CD12E93F1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Bold.otf in Resources */,
 				CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */,
+				CD12E9461A01A39C00EE5569 /* Mark Simonson - Proxima Nova Bold.otf in Resources */,
+				CD12E93E1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Black.otf in Resources */,
+				CD12E9471A01A39C00EE5569 /* Mark Simonson - Proxima Nova Extrabold.otf in Resources */,
+				CD12E94C1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Extrabold.otf in Resources */,
+				CD12E9521A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf in Resources */,
+				CD12E9441A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Thin.otf in Resources */,
+				CD12E9401A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Extrabold.otf in Resources */,
+				CD12E9501A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Thin.otf in Resources */,
 				CD958B7E19FEB4B300907A7D /* LaunchScreen.xib in Resources */,
+				CD12E9511A01A39C00EE5569 /* Mark Simonson - Proxima Nova Semibold.otf in Resources */,
+				CD12E9411A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Light.otf in Resources */,
+				CD12E94F1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Semibold.otf in Resources */,
+				CD12E9451A01A39C00EE5569 /* Mark Simonson - Proxima Nova Black.otf in Resources */,
+				CD12E9481A01A39C00EE5569 /* Mark Simonson - Proxima Nova Light.otf in Resources */,
 				CD958B7B19FEB4B300907A7D /* Images.xcassets in Resources */,
+				CD12E9431A01A39C00EE5569 /* Mark Simonson - Proxima Nova Alt Semibold.otf in Resources */,
+				CD12E94D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Light.otf in Resources */,
+				CD12E9491A01A39C00EE5569 /* Mark Simonson - Proxima Nova Regular.otf in Resources */,
+				CD12E94E1A01A39C00EE5569 /* Mark Simonson - Proxima Nova ScOsf Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
