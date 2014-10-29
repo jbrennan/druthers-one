@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, EntityViewControllerParent {
 	
 	var entityViewControllers = [EntityViewController]()
-	var inspector: PopoverViewController<EntityInspectorTableViewController>?
+	var inspector: PopoverViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,8 +39,11 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	
 	
 	func openInspectorForEntity(entity: Entity) {
-		self.inspector = PopoverViewController<EntityInspectorTableViewController>()
-//		self.inspector?.contentViewController = EntityInspectorTableViewController(style: .Plain)
+		let entityInspector = EntityInspectorTableViewController()
+		entityInspector.entity = entity
+		
+		self.inspector = PopoverViewController()
+		self.inspector?.contentViewController = entityInspector
 		self.beginShowingChildViewController(self.inspector!)
 	}
 	

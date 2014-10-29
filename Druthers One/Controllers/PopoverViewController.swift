@@ -8,16 +8,16 @@
 
 import UIKit
 
-class PopoverViewController<ContentViewControllerType: UIViewController>: UIViewController {
+class PopoverViewController: UIViewController {
 	
-//	var contentViewController: ContentViewControllerType? {
-//		didSet {
-//			if let contentViewController = contentViewController {
-//				self.beginShowingChildViewController(contentViewController)
-//				self.view.setNeedsLayout()
-//			}
-//		}
-//	}
+	var contentViewController: UIViewController? {
+		didSet {
+			if let contentViewController = contentViewController {
+				self.beginShowingChildViewController(contentViewController)
+				self.view.setNeedsLayout()
+			}
+		}
+	}
 	
 	// I'm not entirely sure why I need these initializers, considering I have one optional var property...
 	override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
@@ -41,7 +41,7 @@ class PopoverViewController<ContentViewControllerType: UIViewController>: UIView
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-//		self.contentViewController?.view.frame = CGRect(x: 0, y: 100, width: 300, height: 200)
+		self.contentViewController?.view.frame = self.view.bounds
 	}
 
 }
