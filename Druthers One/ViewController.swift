@@ -10,15 +10,21 @@ import UIKit
 
 class ViewController: UIViewController, EntityViewControllerParent {
 	
-	var entityViewControllers = [EntityViewController]()
+	var entityControllers = [EntityController]()
 	var inspector: PopoverViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let entity = Entity()
 
-		let entityViewController = EntityViewController()
+		let entityViewController = EntityViewController(entity: entity)
 		entityViewController.parentController = self
-		self.entityViewControllers.append(entityViewController)
+		
+		let entityController = EntityController(entity: entity, entityViewController: entityViewController)
+		entityViewController.entityController = entityController
+		
+		self.entityControllers.append(entityController)
 		
 		self.beginShowingChildViewController(entityViewController)
 	}
@@ -27,9 +33,9 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-		for controller in self.entityViewControllers {
-			let view = controller.view
-			view.frameSize = controller.viewSize
+		for controller in self.entityControllers {
+			let view = controller.entityViewController.view
+			view.frameSize = controller.entityViewController.viewSize
 		}
 		
 		self.inspector?.view.origin = CGPoint(x: 30, y: 30)
@@ -38,9 +44,10 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	}
 	
 	
-	func openInspectorForEntity(entity: Entity) {
+	func openInspectorForEntityController(entityController: EntityController) {
 		let entityInspector = EntityInspectorTableViewController()
-		entityInspector.entity = entity
+		entityInspector.entityController = entityController
+		entityController.entityInspector = entityInspector
 		
 		self.inspector = PopoverViewController()
 		self.inspector?.contentViewController = entityInspector

@@ -9,6 +9,15 @@
 import UIKit
 
 class EntityViewController: UIViewController, GestureControllerDelegate {
+
+	required init(coder aDecoder: NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
+	}
+	
+	init(entity: Entity) {
+		self.entity = entity
+		super.init(nibName: nil, bundle: nil)
+	}
 	
 	/** The gesture controller responsible for handling interaction. */
 	private var gestureController: GestureController?
@@ -16,7 +25,10 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	/** The parent controller responsible for screen-related activities. */
 	weak var parentController: EntityViewControllerParent?
 	
-	private let entity = Entity()
+	/** This is getting messy. */
+	weak var entityController: EntityController?
+	
+	private let entity: Entity
 	
 	/** The size this view should be rendered at. */
 	var viewSize: CGSize = {
@@ -34,13 +46,15 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	
 	
 	func viewWasTapped() {
-		self.parentController?.openInspectorForEntity(self.entity)
+		// This is messy too...
+		self.parentController?.openInspectorForEntityController(self.entityController!)
 	}
 	
 	
 	func viewWasPanned() {
 		self.entity.x = self.view.origin.x.toInt()
 		self.entity.y = self.view.origin.y.toInt()
+		self.entityController?.entityDidMove()
 	}
 
 }

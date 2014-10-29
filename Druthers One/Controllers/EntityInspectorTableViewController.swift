@@ -10,7 +10,11 @@ import UIKit
 
 class EntityInspectorTableViewController: UITableViewController {
 	
-	var entity: Entity? // I'm having a hard time getting this to work with initializers, so I'm just making it an optional and setting it directly...HACK WEEK!
+	weak var entityController: EntityController? // I'm having a hard time getting this to work with initializers, so I'm just making it an optional and setting it directly...HACK WEEK!
+	
+	private var entity: Entity? {
+		return self.entityController?.entity
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()

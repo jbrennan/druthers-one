@@ -14,6 +14,6 @@ protocol EntityViewControllerParent: class {
 		get
 	}
 	
-	/** Open the entity inspector for the given entity. */
-	func openInspectorForEntity(entity: Entity)
+	/** Open the entity inspector for the given entity controller. */
+	func openInspectorForEntityController(entityController: EntityController)
 }
