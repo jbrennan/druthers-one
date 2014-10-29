@@ -14,22 +14,28 @@ extension UIView {
 	
 	/** Moves the receiver to the right of the given sibling view. */
 	func moveToRightOfSiblingView(siblingView: UIView, margin: CGFloat = 0.0) {
-		self.x = siblingView.maxX + margin
+		self.x = floor(siblingView.maxX + margin)
 	}
 	
 	
 	/** Moves the receiver so that its right side is aligned with the right side of its superview. */
 	func moveToRightSideOfSuperview(margin: CGFloat = 0.0) {
 		if let superview = self.superview {
-			self.x = superview.bounds.width - self.width - margin
+			self.x = floor(superview.bounds.width - self.width - margin)
 		}
 	}
 	
 	
 	func moveToVerticalCenterOfSuperview() {
 		if let superview = self.superview {
-			self.y = superview.height / 2.0 - self.height / 2.0
+			self.y = floor(superview.height / 2.0 - self.height / 2.0)
 		}
+	}
+	
+	
+	/** Makes the receiver's frame be integral so there are no half-pixels. */
+	func makeFrameIntegral() {
+		self.frame = self.frame.integerRect
 	}
 }
 

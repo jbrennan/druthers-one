@@ -43,6 +43,7 @@ class EntityInspectorCellDraggableTitleView: UIView {
 			let margin = CGFloat(10)
 			
 			self.entityTitleLabel.sizeToFit()
+			self.entityTitleLabel.makeFrameIntegral()
 			self.entityTitleLabel.moveToVerticalCenterOfSuperview()
 			self.entityTitleLabel.x = margin
 			
