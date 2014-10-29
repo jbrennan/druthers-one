@@ -74,4 +74,18 @@ extension UIView {
 		}
 	}
 	
+	
+	/** @return The max X of the receiver's frame. */
+	var maxX: CGFloat {
+		return self.frame.maxX
+	}
+	
+	
+	/** @return The max Y of the receiver's frame. */
+	var maxY: CGFloat {
+		return self.frame.maxY
+	}
+	
+	
+	
 }

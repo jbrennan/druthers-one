@@ -10,4 +10,8 @@ import UIKit
 
 extension UIView {
 	
+	
+	func moveToRightOfSiblingView(siblingView: UIView, margin: CGFloat = 0.0) {
+		self.x = siblingView.maxX + margin
+	}
 }
