@@ -67,6 +67,34 @@ extension UIView {
 	}
 	
 	
+	/** The width of the receiver's bounds. */
+	var width: CGFloat {
+		get {
+			return self.bounds.width
+		}
+		
+		set {
+			var bounds = self.bounds
+			bounds.size.width = newValue
+			self.bounds = bounds
+		}
+	}
+	
+	
+	/** The height of the receiver's bounds. */
+	var height: CGFloat {
+		get {
+			return self.bounds.height
+		}
+		
+		set {
+			var bounds = self.bounds
+			bounds.size.height = newValue
+			self.bounds = bounds
+		}
+	}
+	
+	
 	/** @return The center point of the receiver's bounds. */
 	var centerOfBounds: CGPoint {
 		get {
