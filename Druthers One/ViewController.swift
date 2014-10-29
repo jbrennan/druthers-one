@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, EntityViewControllerParent {
 	
 	var entityViewControllers = [EntityViewController]()
-	var inspector: EntityInspectorTableViewController?
+	var inspector: PopoverViewController<EntityInspectorTableViewController>?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -34,13 +34,13 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		
 		self.inspector?.view.origin = CGPoint(x: 30, y: 30)
 		self.inspector?.view.frameSize = CGSize(width: 300, height: 500)
-		self.inspector?.view.showDragShadow()
+		self.inspector?.view.updateMarkerBorder()
 	}
 	
 	
 	func openInspectorForEntity(entity: Entity) {
-		self.inspector = EntityInspectorTableViewController()
-		
+		self.inspector = PopoverViewController<EntityInspectorTableViewController>()
+//		self.inspector?.contentViewController = EntityInspectorTableViewController(style: .Plain)
 		self.beginShowingChildViewController(self.inspector!)
 	}
 	

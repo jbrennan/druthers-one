@@ -23,4 +23,12 @@ extension UIView {
 		self.layer.shadowColor = UIColor.clearColor().CGColor
 	}
 	
+	
+	func updateMarkerBorder() {
+		self.layer.borderColor = UIColor.darkGrayColor().CGColor
+		self.layer.borderWidth = 4
+		self.layer.cornerRadius = 10
+		
+	}
+	
 }
