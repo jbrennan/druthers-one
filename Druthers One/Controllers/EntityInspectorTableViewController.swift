@@ -10,6 +10,32 @@ import UIKit
 
 class EntityInspectorTableViewController: UITableViewController, EntityInspectorTableViewCellDelegate {
 	
+	private enum EntityInspectorSection: Int {
+		case Data = 0
+		case Actions
+		
+		var sectionTitle: String {
+			switch self {
+			case .Data:
+				return "Data"
+				
+			case .Actions:
+				return "Actions"
+			}
+		}
+		
+		
+		var cellClass: AnyClass {
+			switch self {
+			case .Data:
+				return EntityInspectorTableViewCell.self
+				
+			case .Actions:
+				return UITableViewCell.self
+			}
+		}
+	}
+	
 	weak var entityController: EntityController? // I'm having a hard time getting this to work with initializers, so I'm just making it an optional and setting it directly...HACK WEEK!
 	
 	private var entity: Entity? {
@@ -19,7 +45,9 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		self.tableView.registerClass(EntityInspectorTableViewCell.self)
+		self.tableView.registerClass(EntityInspectorSection.Data.cellClass)
+		self.tableView.registerClass(EntityInspectorSection.Actions.cellClass)
+		
 		self.tableView.allowsSelection = false
 	}
 
@@ -31,10 +59,12 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if let entity = self.entity {
-			if section == 0 {
+			if section == EntityInspectorSection.Data.rawValue {
 				return entity.properties.count
 			} else {
-				return entity.actions.count
+				let count = entity.actions.count
+				return count
+
 			}
 		}
 		return 0
@@ -42,33 +72,40 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 	
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorTableViewCell
-
-		if let entity = self.entity {
-			cell.entityTitle = "\(entity.title)’s"
-			cell.property = entity.properties[indexPath.row]
+		
+		let section = EntityInspectorSection(rawValue: indexPath.section)!
+		
+		switch section {
+		case .Data:
+			let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorTableViewCell
 			
-		} else {
-			cell.entityTitle = "entity’s"
-			cell.property = nil
+			if let entity = self.entity {
+				cell.entityTitle = "\(entity.title)’s"
+				cell.property = entity.properties[indexPath.row]
+				
+			} else {
+				cell.entityTitle = "entity’s"
+				cell.property = nil
+			}
+			
+			cell.delegate = self
+			
+			return cell
+		case .Actions:
+			let cell = tableView.dequeueReusableCellWithIdentifier(UITableViewCell.reuseIdentifier(), forIndexPath: indexPath) as UITableViewCell
+			
+			if let entity = self.entity {
+				cell.textLabel.text = entity.actions[indexPath.row].title
+			}
+			
+			return cell
 		}
 		
-		cell.delegate = self
-        return cell
     }
 	
 	
 	override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		
-		switch section {
-		case 0:
-			return "Data"
-		case 1:
-			return "Actions"
-			
-		default:
-			return nil
-		}
+		return EntityInspectorSection(rawValue: section)?.sectionTitle
 	}
 	
 	

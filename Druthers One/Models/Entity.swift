@@ -18,26 +18,23 @@ class Entity {
 	var properties = [EntityProperty]()
 	
 	/** Actions (methods) the entity can do. */
-	var actions = [Any]()
+	var actions = [EntityAction]()
 	
 	
 	/** The x coordinate property of the entity's upper left corner. */
-	var x: EntityProperty
+	var x = EntityProperty(key: "x", value: 200)
 	
 	
 	/** The y coordinate property of the entity's upper left corner. */
-	var y: EntityProperty
+	var y = EntityProperty(key: "y", value: 255)
 	
 	
 	/** The direction in degrees the entity points in. */
-	var direction: EntityProperty
+	var direction = EntityProperty(key: "direction", value: 90)
 	
 	init() {
-		self.x = EntityProperty(key: "x", value: 200)
-		self.y = EntityProperty(key: "y", value: 255)
-		self.direction = EntityProperty(key: "direction", value: 90)
-		
 		self.properties += [self.x, self.y, self.direction]
+		self.actions.append(EntityAction(title: "move forward"))
 	}
 	
 	
