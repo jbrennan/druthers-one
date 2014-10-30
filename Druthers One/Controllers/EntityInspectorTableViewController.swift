@@ -20,6 +20,7 @@ class EntityInspectorTableViewController: UITableViewController {
         super.viewDidLoad()
 		
 		self.tableView.registerClass(EntityInspectorTableViewCell.self)
+		self.tableView.allowsSelection = false
 	}
 
     // MARK: - Table view data source
