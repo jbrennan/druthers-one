@@ -11,6 +11,7 @@ import UIKit
 /** Doesn't that name just roll off the tongue? */
 class EntityInspectorCellDraggableTitleView: UIView {
 	
+	private let grippyView = GrippyView(frame: CGRect())
 	let entityTitleLabel = UILabel(text: nil)
 	let entityPropertyTitleLabel = UILabel(text: nil, fontWeight: .Bold)
 
@@ -19,6 +20,7 @@ class EntityInspectorCellDraggableTitleView: UIView {
 		
 		self.addSubview(self.entityTitleLabel)
 		self.addSubview(self.entityPropertyTitleLabel)
+		self.addSubview(self.grippyView)
 		
 		self.backgroundColor = UIColor.KhanLightGreyColor()
 	}
@@ -44,10 +46,14 @@ class EntityInspectorCellDraggableTitleView: UIView {
 			() -> CGSize in
 			let margin = CGFloat(10)
 			
+			self.grippyView.sizeToFit()
+			self.grippyView.moveToVerticalCenterOfSuperview()
+			self.grippyView.x = margin
+			
 			self.entityTitleLabel.sizeToFit()
-			self.entityTitleLabel.makeFrameIntegral()
 			self.entityTitleLabel.moveToVerticalCenterOfSuperview()
-			self.entityTitleLabel.x = margin
+			self.entityTitleLabel.moveToRightOfSiblingView(self.grippyView, margin: 5)
+			self.entityTitleLabel.makeFrameIntegral()
 			
 			self.entityPropertyTitleLabel.sizeToFit()
 			self.entityPropertyTitleLabel.moveToRightOfSiblingView(self.entityTitleLabel, margin: 5)

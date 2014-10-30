@@ -39,6 +39,7 @@
 		CD12E95E1A02969C00EE5569 /* EntityActionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */; };
 		CD12E9601A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E95F1A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift */; };
 		CD12E9621A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9611A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift */; };
+		CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9631A02BBFE00EE5569 /* GrippyView.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -94,6 +95,7 @@
 		CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityActionInput.swift; sourceTree = "<group>"; };
 		CD12E95F1A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorDataTableViewCell.swift; sourceTree = "<group>"; };
 		CD12E9611A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorActionTableViewCell.swift; sourceTree = "<group>"; };
+		CD12E9631A02BBFE00EE5569 /* GrippyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrippyView.swift; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				CD12E9611A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift */,
 				CD11A3351A0170020053916B /* EntityInspectorCellDraggableTitleView.swift */,
 				CD12E9551A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift */,
+				CD12E9631A02BBFE00EE5569 /* GrippyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				CD12E9601A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift in Sources */,
 				CD958BAC1A00118500907A7D /* CGFloat+Additions.swift in Sources */,
 				CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */,
+				CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */,
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
 				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,

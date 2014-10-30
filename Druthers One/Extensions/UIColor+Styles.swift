@@ -30,4 +30,9 @@ extension UIColor {
 	class func KhanLightGreyColor() -> UIColor {
 		return UIColor(brightness: 93)
 	}
+	
+	
+	class func KhanMediumGreyColor() -> UIColor {
+		return UIColor(brightness: 59)
+	}
 }
