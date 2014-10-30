@@ -13,6 +13,8 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	var draggableTitleView: EntityInspectorCellDraggableTitleView
 	var scrubbableValueView: EntityInspectorCellScrubbableValueView
 	
+	weak var delegate: EntityInspectorTableViewCellDelegate?
+	
 	var entityTitle: String {
 		get {
 			return self.draggableTitleView.entityTitleLabel.text ?? ""
@@ -37,26 +39,28 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	}
 	
 	
-	var valueTitle: String {
-		get {
-			return self.scrubbableValueView.valueLabel.text ?? ""
-		}
-		
-		set {
-			self.scrubbableValueView.valueLabel.text = newValue
+	var value: Any {
+
+		didSet {
+			self.scrubbableValueView.valueLabel.text = "\(value)"
 			self.setNeedsLayout()
 		}
 	}
+	
+	var intValueWhenDragBegan: Int?
 	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		
 		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
 		self.scrubbableValueView = EntityInspectorCellScrubbableValueView(frame: CGRect())
+		self.value = 0
 		
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		
 		self.contentView.addSubview(self.draggableTitleView)
 		self.contentView.addSubview(self.scrubbableValueView)
+		
+		UIPanGestureRecognizer(target: self, action: "panDidRecognize:", view: self.scrubbableValueView)
 		
 	}
 
@@ -75,11 +79,45 @@ class EntityInspectorTableViewCell: UITableViewCell {
 		self.draggableTitleView.x = 0
 		self.scrubbableValueView.moveToRightSideOfSuperview()
 	}
+	
+	
+	func panDidRecognize(recognizer: UIPanGestureRecognizer) {
+		let view = recognizer.view
+		
+		switch recognizer.state {
+		case .Began:
+			self.intValueWhenDragBegan = self.valueAsInt()
+		case .Changed:
+			if let window = self.window {
+				let rootView = window.rootViewController?.view
+				let offsetX = recognizer.translationInView(rootView!).x
+				
+				self.value = self.intValueWhenDragBegan! + Int(offsetX)
+				if let delegate = self.delegate {
+					delegate.valueDidChange(self.value)
+				}
+			}
+		case .Cancelled:
+			fallthrough
+		case .Failed:
+			fallthrough
+		case .Ended:
+			self.intValueWhenDragBegan = nil
+		default:
+			break
+		}
+	}
+	
+	
+	private func valueAsInt() -> Int {
+		return self.value as Int
+	}
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+}
 
-        // Configure the view for the selected state
-    }
 
+protocol EntityInspectorTableViewCellDelegate: class {
+	
+	/** Called when the user updates the value in the inspector cell. */
+	func valueDidChange(newValue: Any)
 }

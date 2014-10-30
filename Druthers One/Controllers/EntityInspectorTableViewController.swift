@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntityInspectorTableViewController: UITableViewController {
+class EntityInspectorTableViewController: UITableViewController, EntityInspectorTableViewCellDelegate {
 	
 	weak var entityController: EntityController? // I'm having a hard time getting this to work with initializers, so I'm just making it an optional and setting it directly...HACK WEEK!
 	
@@ -46,7 +46,7 @@ class EntityInspectorTableViewController: UITableViewController {
 			let value = properties[propertyKey]
 			if let value = value {
 				
-				cell.valueTitle = "\(value)"
+				cell.value = value
 				if let entity = self.entity {
 					cell.entityTitle = "\(entity.title)’s"
 				} else {
@@ -55,6 +55,7 @@ class EntityInspectorTableViewController: UITableViewController {
 				cell.propertyTitle = propertyKey
 			}
 		}
+		cell.delegate = self
         return cell
     }
 	
@@ -63,6 +64,11 @@ class EntityInspectorTableViewController: UITableViewController {
 			return "Data"
 		}
 		return nil
+	}
+	
+	
+	func valueDidChange(newValue: Any) {
+		
 	}
 
 }
