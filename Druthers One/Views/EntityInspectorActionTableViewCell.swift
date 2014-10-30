@@ -8,25 +8,6 @@
 
 import UIKit
 
-class EntityInspectorActionTableViewCell: UITableViewCell {
-	
-	let draggableTitleView: EntityInspectorCellDraggableTitleView
-	
-	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
-		super.init(style: style, reuseIdentifier: reuseIdentifier)
-		
-		self.contentView.addSubview(self.draggableTitleView)
-	}
+class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 
-	required init(coder aDecoder: NSCoder) {
-	    fatalError("init(coder:) has not been implemented")
-	}
-	
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		
-		self.draggableTitleView.sizeToFit()
-		self.draggableTitleView.x = 0
-	}
 }

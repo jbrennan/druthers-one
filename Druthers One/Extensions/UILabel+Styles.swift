@@ -35,7 +35,7 @@ extension UILabel {
 	convenience init(text: String? = nil, fontSize: CGFloat = 16.0, fontWeight: FontWeight = .Normal) {
 		self.init(frame: CGRect())
 		
-		self.text = text ?? ""
+		self.text = text
 		self.font = fontWeight.fontForFontSize(fontSize)
 		self.textColor = UIColor.KhanTextColor()
 	}

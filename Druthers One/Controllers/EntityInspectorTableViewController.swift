@@ -28,7 +28,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 		var cellClass: AnyClass {
 			switch self {
 			case .Data:
-				return EntityInspectorTableViewCell.self
+				return EntityInspectorDataTableViewCell.self
 				
 			case .Actions:
 				return EntityInspectorActionTableViewCell.self
@@ -77,7 +77,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 		
 		switch section {
 		case .Data:
-			let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorTableViewCell
+			let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorDataTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorDataTableViewCell
 			
 			if let entity = self.entity {
 				cell.entityTitle = "\(entity.title)’s"

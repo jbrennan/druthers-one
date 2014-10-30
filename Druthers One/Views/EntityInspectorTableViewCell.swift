@@ -27,22 +27,14 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	}
 	
 	
-	private var propertyTitle: String {
+	/** The title of the thing being inspected. */
+	var inspectedTitle: String {
 		get {
 			return self.draggableTitleView.entityPropertyTitleLabel.text ?? ""
 		}
 		
 		set {
 			self.draggableTitleView.entityPropertyTitleLabel.text = newValue
-			self.setNeedsLayout()
-		}
-	}
-	
-	
-	var property: EntityProperty? {
-
-		didSet {
-			self.updateLabels()
 			self.setNeedsLayout()
 		}
 	}
@@ -81,46 +73,7 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	}
 	
 	
-	func panDidRecognize(recognizer: UIPanGestureRecognizer) {
-		let view = recognizer.view
-		
-		switch recognizer.state {
-		case .Began:
-			self.intValueWhenDragBegan = self.valueAsInt()
-		case .Changed:
-			if let window = self.window {
-				let rootView = window.rootViewController?.view
-				let offsetX = recognizer.translationInView(rootView!).x
-				
-				self.property?.value = self.intValueWhenDragBegan! + Int(offsetX)
-				if let delegate = self.delegate {
-					delegate.propertyDidChange(self.property!)
-				}
-				self.updateLabels()
-			}
-		case .Cancelled:
-			fallthrough
-		case .Failed:
-			fallthrough
-		case .Ended:
-			self.intValueWhenDragBegan = nil
-		default:
-			break
-		}
-	}
-	
-	
-	private func valueAsInt() -> Int {
-		return self.property?.value as Int
-	}
-	
-	
-	private func updateLabels() {
-		if let property = self.property {
-			self.propertyTitle = "\(property.key)"
-			self.scrubbableValueView.valueLabel.text = "\(property.value)"
-		}
-	}
+
 
 }
 

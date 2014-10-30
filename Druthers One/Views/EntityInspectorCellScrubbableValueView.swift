@@ -25,6 +25,10 @@ class EntityInspectorCellScrubbableValueView: UIView {
 	
 	
 	override func sizeThatFits(size: CGSize) -> CGSize {
+		let valueString = self.valueLabel.text
+		if valueString == nil || countElements(self.valueLabel.text!) < 1 {
+			return CGSize()
+		}
 		return self.sizeThatFitsByLayingOutSubviews(size, commitLayout: false)
 	}
 	
