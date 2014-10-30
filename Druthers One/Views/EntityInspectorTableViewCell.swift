@@ -13,11 +13,32 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	var draggableTitleView: EntityInspectorCellDraggableTitleView
 	var scrubbableValueView: UIView
 	
+	var entityTitle: String {
+		get {
+			return self.draggableTitleView.entityTitleLabel.text ?? ""
+		}
+		
+		set {
+			self.draggableTitleView.entityTitleLabel.text = newValue
+			self.setNeedsLayout()
+		}
+	}
+	
+	
+	var propertyTitle: String {
+		get {
+			return self.draggableTitleView.entityPropertyTitleLabel.text ?? ""
+		}
+		
+		set {
+			self.draggableTitleView.entityPropertyTitleLabel.text = newValue
+			self.setNeedsLayout()
+		}
+	}
 	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		
 		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
-//		self.draggableTitleView.backgroundColor = UIColor.purpleColor()
 		self.draggableTitleView.entityTitleLabel.text = "block's"
 		self.draggableTitleView.entityPropertyTitleLabel.text = "x"
 		

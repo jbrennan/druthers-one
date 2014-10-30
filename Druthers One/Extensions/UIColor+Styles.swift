@@ -18,11 +18,16 @@ extension UIColor {
 	@param brightness An integer between 0..100
 	
 	*/
-	convenience init(hue: Int, saturation: Int, brightness: Int) {
+	convenience init(hue: Int = 0, saturation: Int = 0, brightness: Int = 0) {
 		self.init(hue: CGFloat(hue) / 360.0, saturation: CGFloat(saturation) / 100.0, brightness: CGFloat(brightness) / 100.0, alpha: 1.0)
 	}
 	
 	class func KhanTextColor() -> UIColor {
 		return UIColor(hue: 285, saturation: 0, brightness: 29)
+	}
+	
+	
+	class func KhanLightGreyColor() -> UIColor {
+		return UIColor(brightness: 93)
 	}
 }

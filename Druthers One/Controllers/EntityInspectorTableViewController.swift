@@ -37,7 +37,7 @@ class EntityInspectorTableViewController: UITableViewController {
 	
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorTableViewCell
 		
 		if let properties = self.entity?.properties {
 			let keys = Array(properties.keys)
@@ -45,7 +45,8 @@ class EntityInspectorTableViewController: UITableViewController {
 			let value = properties[propertyKey]
 			if let value = value {
 				
-//				cell.textLabel.text = "\(propertyKey): \(value)"
+				cell.entityTitle = "block’s"
+				cell.propertyTitle = propertyKey
 			}
 		}
         return cell

@@ -19,6 +19,8 @@ class EntityInspectorCellDraggableTitleView: UIView {
 		
 		self.addSubview(self.entityTitleLabel)
 		self.addSubview(self.entityPropertyTitleLabel)
+		
+		self.backgroundColor = UIColor.KhanLightGreyColor()
 	}
 	
 	required init(coder aDecoder: NSCoder) {
