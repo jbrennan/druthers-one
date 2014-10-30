@@ -52,15 +52,16 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	
 	
 	func viewWasPanned() {
-		self.entity.x.value = self.view.origin.x.toInt()
-		self.entity.y.value = self.view.origin.y.toInt()
+		self.entity.x.value = self.view.centerX.toInt()
+		self.entity.y.value = self.view.centerY.toInt()
 		self.entityController?.entityDidMove()
 	}
 	
 	
 	func entityDidUpdate() {
-		self.view.x = CGFloat(self.entity.x.value as Int)
-		self.view.y = CGFloat(self.entity.y.value as Int)
+		self.view.centerX = CGFloat(self.entity.x.value as Int)
+		self.view.centerY = CGFloat(self.entity.y.value as Int)
+		self.view.transform = CGAffineTransformMakeRotation(CGFloat(self.entity.direction.value as Int).toRadians())
 	}
 
 }

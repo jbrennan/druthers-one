@@ -26,12 +26,16 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if let entity = self.entity {
-			return entity.properties.count
+			if section == 0 {
+				return entity.properties.count
+			} else {
+				return entity.actions.count
+			}
 		}
 		return 0
     }
@@ -53,11 +57,18 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
         return cell
     }
 	
+	
 	override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if section == 0 {
+		
+		switch section {
+		case 0:
 			return "Data"
+		case 1:
+			return "Actions"
+			
+		default:
+			return nil
 		}
-		return nil
 	}
 	
 	
