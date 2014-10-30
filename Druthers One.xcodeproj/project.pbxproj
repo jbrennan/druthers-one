@@ -34,6 +34,7 @@
 		CD12E9521A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD12E93D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf */; };
 		CD12E9541A01A88100EE5569 /* UIColor+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9531A01A88100EE5569 /* UIColor+Styles.swift */; };
 		CD12E9561A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9551A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift */; };
+		CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9571A01D6E700EE5569 /* EntityProperty.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -84,6 +85,7 @@
 		CD12E93D1A01A39C00EE5569 /* Mark Simonson - Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mark Simonson - Proxima Nova Thin.otf"; sourceTree = "<group>"; };
 		CD12E9531A01A88100EE5569 /* UIColor+Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Styles.swift"; sourceTree = "<group>"; };
 		CD12E9551A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellScrubbableValueView.swift; sourceTree = "<group>"; };
+		CD12E9571A01D6E700EE5569 /* EntityProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityProperty.swift; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				CD958BA91A00046100907A7D /* Entity.swift */,
+				CD12E9571A01D6E700EE5569 /* EntityProperty.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD12E9561A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift in Sources */,
+				CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */,
 				CD12E9251A019E7900EE5569 /* UILabel+Styles.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,

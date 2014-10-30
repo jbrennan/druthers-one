@@ -27,6 +27,13 @@ class EntityController {
 		self.entityInspector?.tableView.reloadData()
 	}
 	
+	/** Called when the inspector updates a property. */
+	func entityPropertyWasUpdated(property: EntityProperty) {
+		// TODO: In the future we might want to just have some kind of global heartbeat that arranges/configures Entity views based on their properties instead of manually adjusting the view when the property changes. This could probably also solve the reverse problem of "somebody moved the entity, now update the inspector bits.
+		
+		self.entityViewController.entityDidUpdate()
+	}
+	
 	
 	
 }

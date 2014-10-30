@@ -27,7 +27,7 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	}
 	
 	
-	var propertyTitle: String {
+	private var propertyTitle: String {
 		get {
 			return self.draggableTitleView.entityPropertyTitleLabel.text ?? ""
 		}
@@ -39,10 +39,10 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	}
 	
 	
-	var value: Any {
+	var property: EntityProperty? {
 
 		didSet {
-			self.scrubbableValueView.valueLabel.text = "\(value)"
+			self.updateLabels()
 			self.setNeedsLayout()
 		}
 	}
@@ -53,7 +53,7 @@ class EntityInspectorTableViewCell: UITableViewCell {
 		
 		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
 		self.scrubbableValueView = EntityInspectorCellScrubbableValueView(frame: CGRect())
-		self.value = 0
+
 		
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		
@@ -92,10 +92,11 @@ class EntityInspectorTableViewCell: UITableViewCell {
 				let rootView = window.rootViewController?.view
 				let offsetX = recognizer.translationInView(rootView!).x
 				
-				self.value = self.intValueWhenDragBegan! + Int(offsetX)
+				self.property?.value = self.intValueWhenDragBegan! + Int(offsetX)
 				if let delegate = self.delegate {
-					delegate.valueDidChange(self.value)
+					delegate.propertyDidChange(self.property!)
 				}
+				self.updateLabels()
 			}
 		case .Cancelled:
 			fallthrough
@@ -110,7 +111,15 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	
 	
 	private func valueAsInt() -> Int {
-		return self.value as Int
+		return self.property?.value as Int
+	}
+	
+	
+	private func updateLabels() {
+		if let property = self.property {
+			self.propertyTitle = "\(property.key)"
+			self.scrubbableValueView.valueLabel.text = "\(property.value)"
+		}
 	}
 
 }
@@ -119,5 +128,5 @@ class EntityInspectorTableViewCell: UITableViewCell {
 protocol EntityInspectorTableViewCellDelegate: class {
 	
 	/** Called when the user updates the value in the inspector cell. */
-	func valueDidChange(newValue: Any)
+	func propertyDidChange(updatedProperty: EntityProperty)
 }

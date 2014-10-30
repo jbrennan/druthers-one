@@ -15,30 +15,21 @@ class Entity {
 	var title = "Entity"
 	
 	/** Properties/data belonging to this entity. */
-	var properties: [String: Any] = ["x": 200, "y": 300]
+	var properties = [EntityProperty]()
 	
 	
-	/** The x coordinate of the entity's upper left corner. */
-	var x: Int {
-		get {
-			return self.properties["x"] as Int
-		}
+	/** The x coordinate property of the entity's upper left corner. */
+	var x: EntityProperty
+	
+	
+	/** The y coordinate property of the entity's upper left corner. */
+	var y: EntityProperty
+	
+	init() {
+		self.x = EntityProperty(key: "x", value: 200)
+		self.y = EntityProperty(key: "y", value: 255)
 		
-		set {
-			self.properties["x"] = newValue
-		}
-	}
-	
-	
-	/** The y coordinate of the entity's upper left corner. */
-	var y: Int {
-		get {
-			return self.properties["y"] as Int
-		}
-		
-		set {
-			self.properties["y"] = newValue
-		}
+		self.properties += [self.x, self.y]
 	}
 	
 	

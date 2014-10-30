@@ -39,22 +39,16 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 	
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorTableViewCell
-		
-		if let properties = self.entity?.properties {
-			let keys = Array(properties.keys)
-			let propertyKey = keys[indexPath.row]
-			let value = properties[propertyKey]
-			if let value = value {
-				
-				cell.value = value
-				if let entity = self.entity {
-					cell.entityTitle = "\(entity.title)’s"
-				} else {
-					cell.entityTitle = "entity’s"
-				}
-				cell.propertyTitle = propertyKey
-			}
+
+		if let entity = self.entity {
+			cell.entityTitle = "\(entity.title)’s"
+			cell.property = entity.properties[indexPath.row]
+			
+		} else {
+			cell.entityTitle = "entity’s"
+			cell.property = nil
 		}
+		
 		cell.delegate = self
         return cell
     }
@@ -67,8 +61,8 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 	}
 	
 	
-	func valueDidChange(newValue: Any) {
-		
+	func propertyDidChange(updatedProperty: EntityProperty) {
+		self.entityController?.entityPropertyWasUpdated(updatedProperty)
 	}
 
 }
