@@ -96,7 +96,7 @@ class EntityInspectorTableViewCell: UITableViewCell {
 		case .Changed:
 			if let window = self.window {
 				let rootView = window.rootViewController?.view
-				let offsetX = recognizer.translationInView(rootView!).x
+				let offsetX = recognizer.translationInView(rootView!).x / 2.0
 				
 				self.updateValueAsInt(self.intValueWhenDragBegan! + Int(offsetX))
 				self.notifyDelegateValueDidUpdate()
