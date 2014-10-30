@@ -36,6 +36,8 @@
 		CD12E9561A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9551A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift */; };
 		CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9571A01D6E700EE5569 /* EntityProperty.swift */; };
 		CD12E95A1A02882300EE5569 /* EntityAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9591A02882300EE5569 /* EntityAction.swift */; };
+		CD12E95C1A0293DA00EE5569 /* EntityInspectorActionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E95B1A0293DA00EE5569 /* EntityInspectorActionTableViewCell.swift */; };
+		CD12E95E1A02969C00EE5569 /* EntityActionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -88,6 +90,8 @@
 		CD12E9551A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellScrubbableValueView.swift; sourceTree = "<group>"; };
 		CD12E9571A01D6E700EE5569 /* EntityProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityProperty.swift; sourceTree = "<group>"; };
 		CD12E9591A02882300EE5569 /* EntityAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityAction.swift; sourceTree = "<group>"; };
+		CD12E95B1A0293DA00EE5569 /* EntityInspectorActionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorActionTableViewCell.swift; sourceTree = "<group>"; };
+		CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityActionInput.swift; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 				CD11A3331A0149090053916B /* EntityInspectorTableViewCell.swift */,
 				CD11A3351A0170020053916B /* EntityInspectorCellDraggableTitleView.swift */,
 				CD12E9551A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift */,
+				CD12E95B1A0293DA00EE5569 /* EntityInspectorActionTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				CD958BA91A00046100907A7D /* Entity.swift */,
 				CD12E9571A01D6E700EE5569 /* EntityProperty.swift */,
 				CD12E9591A02882300EE5569 /* EntityAction.swift */,
+				CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -364,11 +370,13 @@
 				CD958B9D19FF431300907A7D /* CGPoint+Operators.swift in Sources */,
 				CD11A3311A0139370053916B /* EntityController.swift in Sources */,
 				CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */,
+				CD12E95C1A0293DA00EE5569 /* EntityInspectorActionTableViewCell.swift in Sources */,
 				CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */,
 				CD958BAE1A0012A800907A7D /* EntityInspectorTableViewController.swift in Sources */,
 				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD12E9561A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift in Sources */,
+				CD12E95E1A02969C00EE5569 /* EntityActionInput.swift in Sources */,
 				CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */,
 				CD12E9251A019E7900EE5569 /* UILabel+Styles.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,

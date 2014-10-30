@@ -13,9 +13,10 @@ import Foundation
 class EntityAction {
 	
 	let title: String
+	let inputs: [EntityActionInput]?
 	
-	
-	init(title: String) {
+	init(title: String, inputs: [EntityActionInput]? = nil) {
 		self.title = title
+		self.inputs = inputs
 	}
 }

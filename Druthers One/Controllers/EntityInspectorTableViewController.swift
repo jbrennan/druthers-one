@@ -31,7 +31,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 				return EntityInspectorTableViewCell.self
 				
 			case .Actions:
-				return UITableViewCell.self
+				return EntityInspectorActionTableViewCell.self
 			}
 		}
 	}
@@ -92,10 +92,11 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 			
 			return cell
 		case .Actions:
-			let cell = tableView.dequeueReusableCellWithIdentifier(UITableViewCell.reuseIdentifier(), forIndexPath: indexPath) as UITableViewCell
+			let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorActionTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorActionTableViewCell
 			
 			if let entity = self.entity {
-				cell.textLabel.text = entity.actions[indexPath.row].title
+				cell.draggableTitleView.entityTitleLabel.text = "\(entity.title)"
+				cell.draggableTitleView.entityPropertyTitleLabel.text = entity.actions[indexPath.row].title
 			}
 			
 			return cell
