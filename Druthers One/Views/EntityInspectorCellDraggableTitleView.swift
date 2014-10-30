@@ -9,7 +9,7 @@
 import UIKit
 
 /** Doesn't that name just roll off the tongue? */
-class EntityInspectorCellDraggableTitleView: UIView {
+class EntityInspectorCellDraggableTitleView: UIView, NSCopying {
 	
 	private let grippyView = GrippyView(frame: CGRect())
 	let entityTitleLabel = UILabel(text: nil)
@@ -27,6 +27,17 @@ class EntityInspectorCellDraggableTitleView: UIView {
 	
 	required init(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
+	}
+	
+	
+	func copyWithZone(zone: NSZone) -> AnyObject {
+		let copy = EntityInspectorCellDraggableTitleView(frame: CGRect())
+		copy.bounds = self.bounds
+		copy.center = self.center
+		copy.entityTitleLabel.text = self.entityTitleLabel.text
+		copy.entityPropertyTitleLabel.text = self.entityPropertyTitleLabel.text
+		
+		return copy
 	}
 	
 	

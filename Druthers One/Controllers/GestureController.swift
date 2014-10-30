@@ -18,7 +18,10 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	private var offsetTouchDownPoint: CGPoint?
 	
 	/** The view affected by the gestures. */
-	let gestureView: UIView
+	var gestureView: UIView
+	
+	/** The view being moved by the gestures. This may be different than self.gestureView if eg we're dragging a clone. */
+	var viewBeingMoved: UIView?
 	
 	/** The view containing the gestureView. */
 	let canvasView: UIView
@@ -27,6 +30,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	
 	init(gestureView: UIView, canvasView: UIView) {
 		self.gestureView = gestureView
+		self.viewBeingMoved = self.gestureView
 		self.canvasView = canvasView
 		
 		self.panGestureRecognizer = UIPanGestureRecognizer()
@@ -57,19 +61,18 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		
 		switch recognizer.state {
 		case .Began:
-			view?.showDragShadow()
-			
+			self.panDidBegin()
 			self.offsetTouchDownPoint = view?.centerOfBounds - recognizer.locationInView(view)
 		case .Changed:
 			var location = recognizer.locationInView(view)
-			view?.center = self.canvasView.convertPoint(location + self.offsetTouchDownPoint, fromCoordinateSpace: view!)
+			self.viewBeingMoved?.center = self.canvasView.convertPoint(location + self.offsetTouchDownPoint, fromCoordinateSpace: view!)
 			self.gestureControllerDelegate?.viewWasPanned()
 		case .Cancelled:
 			fallthrough
 		case .Failed:
 			fallthrough
 		case .Ended:
-			view?.hideDragShadow()
+			self.gestureDidEnd()
 			
 		default:
 			break
@@ -82,19 +85,39 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		
 		switch recognizer.state {
 		case .Began:
-			recognizer.view?.showDragShadow()
+			self.gestureDidBegin()
 			
 		case .Cancelled:
 			fallthrough
 		case .Failed:
 			fallthrough
 		case .Ended:
-			recognizer.view?.hideDragShadow()
+			self.gestureDidEnd()
 			
 		default:
 			break
 		}
 		
+	}
+	
+	
+	func gestureDidBegin() {
+		self.viewBeingMoved?.showDragShadow()
+		if let delegate = self.gestureControllerDelegate {
+			delegate.viewDidStartDragging()
+		}
+	}
+	
+	func panDidBegin() {
+		self.viewBeingMoved?.showDragShadow()
+	}
+	
+	
+	func gestureDidEnd() {
+		self.viewBeingMoved?.hideDragShadow()
+		if let delegate = self.gestureControllerDelegate {
+			delegate.viewDidEndDragging()
+		}
 	}
 	
 	
@@ -104,7 +127,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	
 	
 	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-		return true
+		return contains([self.panGestureRecognizer, self.longPressGestureRecognizer, self.tapGestureRecognizer], otherGestureRecognizer)
 	}
 	
 }
@@ -115,6 +138,12 @@ protocol GestureControllerDelegate: NSObjectProtocol {
 	/** Called when the view is tapped. */
 	func viewWasTapped()
 	
+	/** Called when the view starts dragging. */
+	func viewDidStartDragging()
+	
 	/** Called continuously as the view is panned. */
 	func viewWasPanned()
+	
+	/** Called when the view ends dragging. */
+	func viewDidEndDragging()
 }

@@ -34,15 +34,24 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	var viewSize: CGSize = {
 		return CGSize(width: 100, height: 100)
 	}()
+	
+	var entityView: EntityView {
+		return self.view as EntityView
+	}
 
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		self.gestureController = GestureController(gestureView: self.view, canvasView: self.parentController!.view)
+		self.gestureController = GestureController(gestureView: self.entityView, canvasView: self.parentController!.view)
 		self.gestureController?.gestureControllerDelegate = self
 		self.view.backgroundColor = UIColor.purpleColor()
     }
+	
+	
+	override func loadView() {
+		self.view = EntityView(frame: CGRect())
+	}
 	
 	
 	func viewWasTapped() {
@@ -50,11 +59,19 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 		self.parentController?.openInspectorForEntityController(self.entityController!)
 	}
 	
+	func viewDidStartDragging() {
+		// intentionally left blank.
+	}
 	
 	func viewWasPanned() {
 		self.entity.x.value = self.view.centerX.toInt()
 		self.entity.y.value = self.view.centerY.toInt()
 		self.entityController?.entityDidMove()
+	}
+	
+	
+	func viewDidEndDragging() {
+		// intentionally left blank.
 	}
 	
 	

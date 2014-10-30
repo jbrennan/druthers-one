@@ -12,6 +12,7 @@ class EntityInspectorTableViewCell: UITableViewCell {
 
 	var draggableTitleView: EntityInspectorCellDraggableTitleView
 	var scrubbableValueView: EntityInspectorCellScrubbableValueView
+	let cloningGestureController: CloningGestureController
 	
 	weak var delegate: EntityInspectorTableViewCellDelegate?
 	
@@ -45,7 +46,9 @@ class EntityInspectorTableViewCell: UITableViewCell {
 		
 		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
 		self.scrubbableValueView = EntityInspectorCellScrubbableValueView(frame: CGRect())
-
+		
+		let canvasView = UIApplication.sharedApplication().rootViewController()?.view
+		self.cloningGestureController = CloningGestureController(gestureView: self.draggableTitleView, canvasView: canvasView!)
 		
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		
