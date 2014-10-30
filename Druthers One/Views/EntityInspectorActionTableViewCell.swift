@@ -39,4 +39,11 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 	override func updateValueAsInt(updatedIntValue: Int) {
 		self.action?.firstInput?.value = updatedIntValue
 	}
+	
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		self.scrubbableValueView.moveToRightOfSiblingView(self.draggableTitleView)
+	}
 }
