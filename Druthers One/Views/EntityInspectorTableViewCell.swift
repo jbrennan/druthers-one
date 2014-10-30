@@ -73,6 +73,57 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	}
 	
 	
+	// MARK: - Gesture recognizers
+	
+	/** Returns the current value as an int. Subclasses should implement. */
+	func valueAsInt() -> Int {
+		return 0
+	}
+	
+	
+	/** Updates the display labels. Subclasses should implement. */
+	func updateLabels() {
+		// no-op.
+	}
+	
+	
+	func panDidRecognize(recognizer: UIPanGestureRecognizer) {
+		let view = recognizer.view
+		
+		switch recognizer.state {
+		case .Began:
+			self.intValueWhenDragBegan = self.valueAsInt()
+		case .Changed:
+			if let window = self.window {
+				let rootView = window.rootViewController?.view
+				let offsetX = recognizer.translationInView(rootView!).x
+				
+				self.updateValueAsInt(self.intValueWhenDragBegan! + Int(offsetX))
+				self.notifyDelegateValueDidUpdate()
+				self.updateLabels()
+			}
+		case .Cancelled:
+			fallthrough
+		case .Failed:
+			fallthrough
+		case .Ended:
+			self.intValueWhenDragBegan = nil
+		default:
+			break
+		}
+	}
+	
+	
+	/** Called when the value has been updated by the pan gesture recognizer. */
+	func updateValueAsInt(updatedIntValue: Int) {
+		// no-op, subclasses should implement.
+	}
+	
+	/** Called after the value is updated to notify the delegate however you please. */
+	func notifyDelegateValueDidUpdate() {
+		// no-op, subclasses should implement.
+	}
+	
 
 
 }
