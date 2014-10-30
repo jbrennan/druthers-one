@@ -45,7 +45,12 @@ class EntityInspectorTableViewController: UITableViewController {
 			let value = properties[propertyKey]
 			if let value = value {
 				
-				cell.entityTitle = "block’s"
+				cell.valueTitle = "\(value)"
+				if let entity = self.entity {
+					cell.entityTitle = "\(entity.title)’s"
+				} else {
+					cell.entityTitle = "entity’s"
+				}
 				cell.propertyTitle = propertyKey
 			}
 		}

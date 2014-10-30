@@ -11,7 +11,7 @@ import UIKit
 class EntityInspectorTableViewCell: UITableViewCell {
 
 	var draggableTitleView: EntityInspectorCellDraggableTitleView
-	var scrubbableValueView: UIView
+	var scrubbableValueView: EntityInspectorCellScrubbableValueView
 	
 	var entityTitle: String {
 		get {
@@ -36,14 +36,22 @@ class EntityInspectorTableViewCell: UITableViewCell {
 		}
 	}
 	
+	
+	var valueTitle: String {
+		get {
+			return self.scrubbableValueView.valueLabel.text ?? ""
+		}
+		
+		set {
+			self.scrubbableValueView.valueLabel.text = newValue
+			self.setNeedsLayout()
+		}
+	}
+	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		
 		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
-		self.draggableTitleView.entityTitleLabel.text = "block's"
-		self.draggableTitleView.entityPropertyTitleLabel.text = "x"
-		
-		self.scrubbableValueView = UIView(frame: CGRect())
-		self.scrubbableValueView.backgroundColor = UIColor.orangeColor()
+		self.scrubbableValueView = EntityInspectorCellScrubbableValueView(frame: CGRect())
 		
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		
