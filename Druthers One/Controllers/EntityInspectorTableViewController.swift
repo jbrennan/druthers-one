@@ -96,7 +96,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 			
 			if let entity = self.entity {
 				cell.draggableTitleView.entityTitleLabel.text = "\(entity.title)"
-				cell.draggableTitleView.entityPropertyTitleLabel.text = entity.actions[indexPath.row].title
+				cell.action = entity.actions[indexPath.row]
 			}
 			
 			return cell

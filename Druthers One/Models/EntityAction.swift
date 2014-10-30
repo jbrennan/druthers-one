@@ -15,6 +15,10 @@ class EntityAction {
 	let title: String
 	let inputs: [EntityActionInput]?
 	
+	var firstInput: EntityActionInput? {
+		return self.inputs?.first
+	}
+	
 	init(title: String, inputs: [EntityActionInput]? = nil) {
 		self.title = title
 		self.inputs = inputs
