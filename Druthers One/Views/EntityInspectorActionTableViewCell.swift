@@ -29,6 +29,9 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 			self.inspectedTitle = "\(action.title)"
 			if let input = action.firstInput? {
 				self.scrubbableValueView.valueLabel.text = "\(input.value)"
+				if let plural = input.pluralUnit {
+					self.scrubbableValueView.unitLabel.text = "\(plural)"
+				}
 			}
 		}
 	}

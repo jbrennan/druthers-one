@@ -11,11 +11,13 @@ import UIKit
 class EntityInspectorCellScrubbableValueView: UIView {
 
     let valueLabel = UILabel(text: nil, fontWeight: .Bold)
+	let unitLabel = UILabel(fontWeight: .Normal)
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
 		self.addSubview(self.valueLabel)
+		self.addSubview(self.unitLabel)
 		self.backgroundColor = UIColor.KhanLightGreyColor()
 	}
 
@@ -48,7 +50,16 @@ class EntityInspectorCellScrubbableValueView: UIView {
 			let margin = CGFloat(10.0)
 			self.valueLabel.x = margin
 			
-			return CGSize(width: self.valueLabel.maxX + margin, height: 44.0)
+			self.unitLabel.sizeToFit()
+			self.unitLabel.moveToVerticalCenterOfSuperview()
+			self.unitLabel.moveToRightOfSiblingView(self.valueLabel, margin: 5.0)
+			
+			var width = self.valueLabel.maxX + margin
+			if self.unitLabel.text != nil && countElements(self.unitLabel.text!) > 1 {
+				width = width + self.unitLabel.width + 5.0
+			}
+			
+			return CGSize(width: width, height: 44.0)
 		}
 	}
 
