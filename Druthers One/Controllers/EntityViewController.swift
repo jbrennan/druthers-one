@@ -53,7 +53,6 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 		self.view = EntityView(frame: CGRect())
 	}
 	
-	
 	func viewWasTapped() {
 		// This is messy too...
 		self.parentController?.openInspectorForEntityController(self.entityController!)

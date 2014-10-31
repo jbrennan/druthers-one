@@ -28,6 +28,8 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	
 	weak var gestureControllerDelegate: GestureControllerDelegate?
 	
+	var excludedViews = [UIView]()
+	
 	init(gestureView: UIView, canvasView: UIView) {
 		self.gestureView = gestureView
 		self.viewBeingMoved = self.gestureView
@@ -130,10 +132,21 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		return contains([self.panGestureRecognizer, self.longPressGestureRecognizer, self.tapGestureRecognizer], otherGestureRecognizer)
 	}
 	
+	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+		for view in self.excludedViews {
+			if view.pointInside(touch.locationInView(view), withEvent: nil) {
+				return false
+			}
+		}
+		
+		return true
+	}
+	
 }
 
 
 protocol GestureControllerDelegate: NSObjectProtocol {
+	
 	
 	/** Called when the view is tapped. */
 	func viewWasTapped()
