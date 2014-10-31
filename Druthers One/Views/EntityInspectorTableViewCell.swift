@@ -134,4 +134,7 @@ protocol EntityInspectorTableViewCellDelegate: class {
 	
 	/** Called when the user updates the value in the inspector cell. */
 	func propertyDidChange(updatedProperty: EntityProperty)
+	
+	/** Called when the play button is pressed on an action. The delegate should play the action. */
+	func playButtonWasPressedForAction(action: EntityAction)
 }

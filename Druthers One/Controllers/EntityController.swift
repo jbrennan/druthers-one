@@ -20,6 +20,8 @@ class EntityController {
 	init(entity: Entity, entityViewController: EntityViewController) {
 		self.entity = entity
 		self.entityViewController = entityViewController
+		
+		self.entity.controller = self
 	}
 	
 	
@@ -32,6 +34,12 @@ class EntityController {
 		// TODO: In the future we might want to just have some kind of global heartbeat that arranges/configures Entity views based on their properties instead of manually adjusting the view when the property changes. This could probably also solve the reverse problem of "somebody moved the entity, now update the inspector bits.
 		
 		self.entityViewController.entityDidUpdate()
+	}
+	
+	
+	func enqueueScriptForAction(action: EntityAction) {
+		let script = EntityScript(entity: self.entity, actions: [action])
+		ScriptController.enqueueScript(script)
 	}
 	
 	

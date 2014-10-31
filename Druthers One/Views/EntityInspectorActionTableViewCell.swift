@@ -25,6 +25,16 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 		scrubber.removeFromSuperview()
 		self.draggableActionView.addInputView(scrubber)
 		self.setNeedsLayout()
+		
+		self.draggableActionView.playButton?.tapAction = { [weak self] in
+			if let strongSelf = self {
+				strongSelf.playButtonWasPressed()
+			}
+		}
+	}
+	
+	func playButtonWasPressed() {
+		self.delegate?.playButtonWasPressedForAction(self.action!)
 	}
 	
 	required init(coder aDecoder: NSCoder) {
@@ -54,10 +64,4 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 		self.action?.firstInput?.value = updatedIntValue
 	}
 	
-	
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		
-//		self.scrubbableValueView.moveToRightOfSiblingView(self.draggableActionView)
-	}
 }

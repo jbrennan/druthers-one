@@ -13,7 +13,7 @@ typealias ActionBlock = () -> ()
 /** Not a real button because UIButton is weird about subclassing in Swift? I'd love to figure that one out. */
 class Button: UIImageView {
 	
-	var actionBlock: ActionBlock?
+	var tapAction: ActionBlock?
 	
 	override init(image: UIImage!) {
 		super.init(image: image)
@@ -28,7 +28,7 @@ class Button: UIImageView {
 	
 	
 	func tap() {
-		if let actionBlock = self.actionBlock {
+		if let actionBlock = self.tapAction {
 			actionBlock()
 		}
 	}

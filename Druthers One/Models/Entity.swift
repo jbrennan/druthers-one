@@ -20,6 +20,9 @@ class Entity {
 	/** Actions (methods) the entity can do. */
 	var actions = [EntityAction]()
 	
+	/** Any scripts the Entity has (these are probably mostly made by the user). */
+	var scripts = [EntityScript]()
+	
 	
 	/** The x coordinate property of the entity's upper left corner. */
 	var x = EntityProperty(key: "x", value: 200)
@@ -32,10 +35,24 @@ class Entity {
 	/** The direction in degrees the entity points in. */
 	var direction = EntityProperty(key: "direction", value: 90)
 	
+	/** The controller owns the entity for now. */
+	weak var controller: EntityController?
+	
 	init() {
 		self.properties += [self.x, self.y, self.direction]
-		self.actions.append(EntityAction(title: "move forward", inputs: [EntityActionInput(title: "forward", unit: "step", defaultValue: 5)]))
-		self.actions.append(EntityAction(title: "turn", inputs: [EntityActionInput(title: "left", unit: "degree", defaultValue: 5)]))
+		self.actions.append(EntityAction(title: "move forward", inputs: [EntityActionInput(title: "forward", unit: "step", defaultValue: 5)], builtInType: .Move))
+		self.actions.append(EntityAction(title: "turn", inputs: [EntityActionInput(title: "left", unit: "degree", defaultValue: 5)], builtInType: .Turn))
+	}
+	
+	
+	/** This doesn't really belong here... */
+	func updateViewForProperties(properties: [EntityProperty]) {
+		
+		// Really, what should happen instead is whatever is in charge of placing the views should get a callback at the end of the frame and should go though all the entities and just update the appearance of all their views.
+		for property in properties {
+			self.controller?.entityPropertyWasUpdated(property)
+		}
+		self.controller?.entityDidMove() // to update the inspector
 	}
 	
 	

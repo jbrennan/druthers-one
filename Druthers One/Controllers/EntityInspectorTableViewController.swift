@@ -98,7 +98,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 				cell.draggableActionView.titleView.entityTitleLabel.text = "\(entity.title)"
 				cell.action = entity.actions[indexPath.row]
 			}
-			
+			cell.delegate = self
 			return cell
 		}
 		
@@ -112,6 +112,11 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 	
 	func propertyDidChange(updatedProperty: EntityProperty) {
 		self.entityController?.entityPropertyWasUpdated(updatedProperty)
+	}
+	
+	
+	func playButtonWasPressedForAction(action: EntityAction) {
+		self.entityController?.enqueueScriptForAction(action)
 	}
 
 }

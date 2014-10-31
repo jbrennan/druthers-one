@@ -65,6 +65,8 @@
 		CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */; };
 		CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BB31A00210500907A7D /* NSObject+Identifier.swift */; };
 		CD958BB61A00285300907A7D /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BB51A00285300907A7D /* PopoverViewController.swift */; };
+		CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D701A031FE20031E06B /* ScriptController.swift */; };
+		CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D721A0321A60031E06B /* EntityScript.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +130,8 @@
 		CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
 		CD958BB31A00210500907A7D /* NSObject+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifier.swift"; sourceTree = "<group>"; };
 		CD958BB51A00285300907A7D /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		CDD18D701A031FE20031E06B /* ScriptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptController.swift; sourceTree = "<group>"; };
+		CDD18D721A0321A60031E06B /* EntityScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityScript.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,7 @@
 				CD958BAD1A0012A800907A7D /* EntityInspectorTableViewController.swift */,
 				CD958BB51A00285300907A7D /* PopoverViewController.swift */,
 				CD11A3301A0139370053916B /* EntityController.swift */,
+				CDD18D701A031FE20031E06B /* ScriptController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				CD12E9571A01D6E700EE5569 /* EntityProperty.swift */,
 				CD12E9591A02882300EE5569 /* EntityAction.swift */,
 				CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */,
+				CDD18D721A0321A60031E06B /* EntityScript.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -414,9 +420,11 @@
 				CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */,
 				CD12E9601A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift in Sources */,
 				CD958BAC1A00118500907A7D /* CGFloat+Additions.swift in Sources */,
+				CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */,
 				CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */,
 				CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */,
 				CD12E9661A02C68B00EE5569 /* CloningGestureController.swift in Sources */,
+				CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */,
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
 				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,
