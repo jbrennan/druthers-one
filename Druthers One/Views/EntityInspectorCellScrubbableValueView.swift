@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EntityInspectorCellScrubbableValueView: UIView {
+class EntityInspectorCellScrubbableValueView: UIView, NSCopying {
 
     let valueLabel = UILabel(text: nil, fontWeight: .Bold)
 	let unitLabel = UILabel(fontWeight: .Normal)
@@ -23,6 +23,15 @@ class EntityInspectorCellScrubbableValueView: UIView {
 
 	required init(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
+	}
+	
+	
+	func copyWithZone(zone: NSZone) -> AnyObject {
+		let copy = EntityInspectorCellScrubbableValueView(frame: CGRect())
+		copy.valueLabel.text = self.valueLabel.text
+		copy.unitLabel.text = self.unitLabel.text
+		
+		return copy
 	}
 	
 	

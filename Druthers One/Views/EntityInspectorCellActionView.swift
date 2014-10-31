@@ -33,9 +33,9 @@ class EntityInspectorCellActionView: UIView, NSCopying {
 		copy.titleView.entityTitleLabel.text = self.titleView.entityTitleLabel.text
 		copy.titleView.entityPropertyTitleLabel.text = self.titleView.entityPropertyTitleLabel.text
 		
-		// TODO: Should really copy the views or something...
+		// TODO: we should just rebuild new ones via a controller.
 		for input in self.inputViews {
-			copy.addInputView(input)
+			copy.addInputView(input.copy() as EntityInspectorCellScrubbableValueView)
 		}
 		return copy
 	}
