@@ -32,7 +32,9 @@ class ScriptController: NSObject {
 		// Really basic for now: just one script at a time (yeah this will probably break once scripts have more than one action in them...
 		if let firstScript = self.enqueuedScripts.last {
 			// See note in -enqueueScript for why this is happening at the *end* of the array.
-			self.enqueuedScripts.removeLast()
+			if firstScript.repeats == false {
+				self.enqueuedScripts.removeLast()
+			}
 			
 			firstScript.play()
 		}
