@@ -89,7 +89,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 			}
 			
 			cell.delegate = self
-			
+			cell.entity = self.entity			
 			return cell
 		case .Actions:
 			let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorActionTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorActionTableViewCell
@@ -99,6 +99,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 				cell.action = entity.actions[indexPath.row]
 			}
 			cell.delegate = self
+			cell.entity = self.entity
 			return cell
 		}
 		

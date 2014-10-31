@@ -61,4 +61,13 @@ class EntityInspectorDataTableViewCell: EntityInspectorTableViewCell {
 		self.scrubbableValueView.sizeToFit()
 		self.scrubbableValueView.moveToRightSideOfSuperview()
 	}
+	
+	
+	override func viewDidEndDragging(droppedView: UIView?) {
+		// Announce that the view has been dropped.
+		if let view = droppedView {
+			let userInfo = ["property": self.property!, "view": view, "entity": self.entity!]
+			NSNotificationCenter.postNotificationNamed("PropertyBlockDropped", userInfo: userInfo)
+		}
+	}
 }

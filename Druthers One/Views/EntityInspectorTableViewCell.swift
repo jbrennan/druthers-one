@@ -8,13 +8,15 @@
 
 import UIKit
 
-class EntityInspectorTableViewCell: UITableViewCell {
+class EntityInspectorTableViewCell: UITableViewCell, GestureControllerDelegate {
 
 	var draggableActionView: EntityInspectorCellActionView
 	var scrubbableValueView: EntityInspectorCellScrubbableValueView
 	let cloningGestureController: CloningGestureController
 	
 	weak var delegate: EntityInspectorTableViewCellDelegate?
+	
+	var entity: Entity?
 	
 	var entityTitle: String {
 		get {
@@ -50,7 +52,9 @@ class EntityInspectorTableViewCell: UITableViewCell {
 		let canvasView = UIApplication.sharedApplication().rootViewController()?.view
 		self.cloningGestureController = CloningGestureController(gestureView: self.draggableActionView, canvasView: canvasView!)
 		self.cloningGestureController.excludedViews.append(self.scrubbableValueView)
+		
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.cloningGestureController.gestureControllerDelegate = self
 		
 		self.contentView.addSubview(self.draggableActionView)
 		self.contentView.addSubview(self.scrubbableValueView)
@@ -123,6 +127,29 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	/** Called after the value is updated to notify the delegate however you please. */
 	func notifyDelegateValueDidUpdate() {
 		// no-op, subclasses should implement.
+	}
+	
+	
+	// MARK: - GestureControllerDelegate
+	
+	/** Called when the view is tapped. */
+	func viewWasTapped() {
+		// ILB
+	}
+	
+	/** Called when the view starts dragging. */
+	func viewDidStartDragging() {
+		// ILB
+	}
+	
+	/** Called continuously as the view is panned. */
+	func viewWasPanned() {
+		// ILB
+	}
+	
+	/** Called when the view ends dragging. */
+	func viewDidEndDragging(droppedView: UIView?) {
+		// For subclasses to implement
 	}
 	
 

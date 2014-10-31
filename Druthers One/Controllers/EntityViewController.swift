@@ -69,7 +69,7 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	}
 	
 	
-	func viewDidEndDragging() {
+	func viewDidEndDragging(droppedView: UIView?) {
 		// intentionally left blank.
 	}
 	

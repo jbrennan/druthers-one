@@ -64,4 +64,14 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 		self.action?.firstInput?.value = updatedIntValue
 	}
 	
+	
+	override func viewDidEndDragging(droppedView: UIView?) {
+		// Announce that the view has been dropped.
+		if let view = droppedView {
+			let userInfo = ["action": self.action!, "view": view, "entity": self.entity!]
+			NSNotificationCenter.postNotificationNamed("ActionBlockDropped", userInfo: userInfo)
+			view.removeFromSuperview()
+		}
+	}
+	
 }

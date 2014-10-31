@@ -118,7 +118,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	func gestureDidEnd() {
 		self.viewBeingMoved?.hideDragShadow()
 		if let delegate = self.gestureControllerDelegate {
-			delegate.viewDidEndDragging()
+			delegate.viewDidEndDragging(self.viewBeingMoved)
 		}
 	}
 	
@@ -158,5 +158,5 @@ protocol GestureControllerDelegate: NSObjectProtocol {
 	func viewWasPanned()
 	
 	/** Called when the view ends dragging. */
-	func viewDidEndDragging()
+	func viewDidEndDragging(droppedView: UIView?)
 }

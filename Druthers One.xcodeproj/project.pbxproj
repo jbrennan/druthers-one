@@ -70,6 +70,9 @@
 		CDD18D751A034AE60031E06B /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D741A034AE60031E06B /* Double+Conversions.swift */; };
 		CDD18D771A03E3D30031E06B /* ScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D761A03E3D30031E06B /* ScriptViewController.swift */; };
 		CDD18D791A03E4210031E06B /* ScriptHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D781A03E4210031E06B /* ScriptHeaderView.swift */; };
+		CDD18D7B1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D7A1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift */; };
+		CDD18D7D1A03F0E30031E06B /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D7C1A03F0E30031E06B /* ScriptView.swift */; };
+		CDD18D7F1A03F2680031E06B /* ScriptListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D7E1A03F2680031E06B /* ScriptListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +141,9 @@
 		CDD18D741A034AE60031E06B /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
 		CDD18D761A03E3D30031E06B /* ScriptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptViewController.swift; sourceTree = "<group>"; };
 		CDD18D781A03E4210031E06B /* ScriptHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptHeaderView.swift; sourceTree = "<group>"; };
+		CDD18D7A1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+Convenience.swift"; sourceTree = "<group>"; };
+		CDD18D7C1A03F0E30031E06B /* ScriptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptView.swift; sourceTree = "<group>"; };
+		CDD18D7E1A03F2680031E06B /* ScriptListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +170,8 @@
 				CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */,
 				CD12E96D1A02EA3200EE5569 /* Button.swift */,
 				CDD18D781A03E4210031E06B /* ScriptHeaderView.swift */,
+				CDD18D7C1A03F0E30031E06B /* ScriptView.swift */,
+				CDD18D7E1A03F2680031E06B /* ScriptListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -271,6 +279,7 @@
 				CD12E9531A01A88100EE5569 /* UIColor+Styles.swift */,
 				CD12E9671A02CF1A00EE5569 /* UIApplication+RootViewController.swift */,
 				CDD18D741A034AE60031E06B /* Double+Conversions.swift */,
+				CDD18D7A1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +418,7 @@
 				CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */,
 				CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */,
 				CD958BAE1A0012A800907A7D /* EntityInspectorTableViewController.swift in Sources */,
+				CDD18D7F1A03F2680031E06B /* ScriptListView.swift in Sources */,
 				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD12E9621A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift in Sources */,
@@ -418,6 +428,7 @@
 				CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */,
 				CD12E9251A019E7900EE5569 /* UILabel+Styles.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
+				CDD18D7D1A03F0E30031E06B /* ScriptView.swift in Sources */,
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
 				CD12E9541A01A88100EE5569 /* UIColor+Styles.swift in Sources */,
 				CD958BB61A00285300907A7D /* PopoverViewController.swift in Sources */,
@@ -436,6 +447,7 @@
 				CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */,
 				CD12E9661A02C68B00EE5569 /* CloningGestureController.swift in Sources */,
 				CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */,
+				CDD18D7B1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift in Sources */,
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
 				CDD18D791A03E4210031E06B /* ScriptHeaderView.swift in Sources */,

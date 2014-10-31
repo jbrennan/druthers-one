@@ -24,6 +24,8 @@ class ScriptHeaderView: UIView {
 		self.addSubview(self.playButton)
 		self.addSubview(self.repeatButton)
 		self.addSubview(self.titleLabel)
+		
+		self.backgroundColor = UIColor.KhanLightGreyColor()
 	}
 	
 
@@ -50,8 +52,8 @@ class ScriptHeaderView: UIView {
 		self.titleLabel.moveToCenterOfSuperview()
 		
 		self.repeatButton.sizeToFit()
-		self.playButton.moveToVerticalCenterOfSuperview()
-		self.playButton.moveToRightSideOfSuperview(margin: margin)
+		self.repeatButton.moveToVerticalCenterOfSuperview()
+		self.repeatButton.moveToRightSideOfSuperview(margin: margin)
 	}
 
 }
