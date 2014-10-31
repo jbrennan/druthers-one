@@ -43,6 +43,8 @@
 		CD12E9661A02C68B00EE5569 /* CloningGestureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9651A02C68B00EE5569 /* CloningGestureController.swift */; };
 		CD12E9681A02CF1A00EE5569 /* UIApplication+RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9671A02CF1A00EE5569 /* UIApplication+RootViewController.swift */; };
 		CD12E96A1A02D9A400EE5569 /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9691A02D9A400EE5569 /* EntityView.swift */; };
+		CD12E96C1A02E81300EE5569 /* EntityInspectorCellActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */; };
+		CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96D1A02EA3200EE5569 /* Button.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -102,6 +104,8 @@
 		CD12E9651A02C68B00EE5569 /* CloningGestureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloningGestureController.swift; sourceTree = "<group>"; };
 		CD12E9671A02CF1A00EE5569 /* UIApplication+RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+RootViewController.swift"; sourceTree = "<group>"; };
 		CD12E9691A02D9A400EE5569 /* EntityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
+		CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellActionView.swift; sourceTree = "<group>"; };
+		CD12E96D1A02EA3200EE5569 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 				CD12E9551A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift */,
 				CD12E9631A02BBFE00EE5569 /* GrippyView.swift */,
 				CD12E9691A02D9A400EE5569 /* EntityView.swift */,
+				CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */,
+				CD12E96D1A02EA3200EE5569 /* Button.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD12E9621A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift in Sources */,
+				CD12E96C1A02E81300EE5569 /* EntityInspectorCellActionView.swift in Sources */,
 				CD12E9561A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift in Sources */,
 				CD12E95E1A02969C00EE5569 /* EntityActionInput.swift in Sources */,
 				CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */,
@@ -413,6 +420,7 @@
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
 				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,
+				CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,6 +19,20 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 	}
 	
 	
+	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		let scrubber = self.scrubbableValueView
+		scrubber.removeFromSuperview()
+		self.draggableActionView.addInputView(scrubber)
+		self.setNeedsLayout()
+	}
+	
+	required init(coder aDecoder: NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
+	}
+	
+	
+	
 	override func valueAsInt() -> Int {
 		return self.action?.firstInput?.value as Int
 	}
@@ -44,6 +58,6 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		self.scrubbableValueView.moveToRightOfSiblingView(self.draggableTitleView)
+//		self.scrubbableValueView.moveToRightOfSiblingView(self.draggableActionView)
 	}
 }

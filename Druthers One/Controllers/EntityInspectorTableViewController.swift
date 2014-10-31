@@ -95,7 +95,7 @@ class EntityInspectorTableViewController: UITableViewController, EntityInspector
 			let cell = tableView.dequeueReusableCellWithIdentifier(EntityInspectorActionTableViewCell.reuseIdentifier(), forIndexPath: indexPath) as EntityInspectorActionTableViewCell
 			
 			if let entity = self.entity {
-				cell.draggableTitleView.entityTitleLabel.text = "\(entity.title)"
+				cell.draggableActionView.titleView.entityTitleLabel.text = "\(entity.title)"
 				cell.action = entity.actions[indexPath.row]
 			}
 			

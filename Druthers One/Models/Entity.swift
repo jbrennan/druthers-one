@@ -34,7 +34,7 @@ class Entity {
 	
 	init() {
 		self.properties += [self.x, self.y, self.direction]
-		self.actions.append(EntityAction(title: "move forward", inputs: [EntityActionInput(title: "forward", unit: "step", defaultValue: 100)]))
+		self.actions.append(EntityAction(title: "move forward", inputs: [EntityActionInput(title: "forward", unit: "step", defaultValue: 5)]))
 		self.actions.append(EntityAction(title: "turn", inputs: [EntityActionInput(title: "left", unit: "degree", defaultValue: 5)]))
 	}
 	

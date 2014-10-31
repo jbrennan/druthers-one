@@ -10,7 +10,7 @@ import UIKit
 
 class EntityInspectorTableViewCell: UITableViewCell {
 
-	var draggableTitleView: EntityInspectorCellDraggableTitleView
+	var draggableActionView: EntityInspectorCellActionView
 	var scrubbableValueView: EntityInspectorCellScrubbableValueView
 	let cloningGestureController: CloningGestureController
 	
@@ -18,11 +18,11 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	
 	var entityTitle: String {
 		get {
-			return self.draggableTitleView.entityTitleLabel.text ?? ""
+			return self.draggableActionView.titleView.entityTitleLabel.text ?? ""
 		}
 		
 		set {
-			self.draggableTitleView.entityTitleLabel.text = newValue
+			self.draggableActionView.titleView.entityTitleLabel.text = newValue
 			self.setNeedsLayout()
 		}
 	}
@@ -31,11 +31,11 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	/** The title of the thing being inspected. */
 	var inspectedTitle: String {
 		get {
-			return self.draggableTitleView.entityPropertyTitleLabel.text ?? ""
+			return self.draggableActionView.titleView.entityPropertyTitleLabel.text ?? ""
 		}
 		
 		set {
-			self.draggableTitleView.entityPropertyTitleLabel.text = newValue
+			self.draggableActionView.titleView.entityPropertyTitleLabel.text = newValue
 			self.setNeedsLayout()
 		}
 	}
@@ -44,15 +44,15 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		
-		self.draggableTitleView = EntityInspectorCellDraggableTitleView(frame: CGRect())
+		self.draggableActionView = EntityInspectorCellActionView(frame: CGRect())
 		self.scrubbableValueView = EntityInspectorCellScrubbableValueView(frame: CGRect())
 		
 		let canvasView = UIApplication.sharedApplication().rootViewController()?.view
-		self.cloningGestureController = CloningGestureController(gestureView: self.draggableTitleView, canvasView: canvasView!)
+		self.cloningGestureController = CloningGestureController(gestureView: self.draggableActionView, canvasView: canvasView!)
 		
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 		
-		self.contentView.addSubview(self.draggableTitleView)
+		self.contentView.addSubview(self.draggableActionView)
 		self.contentView.addSubview(self.scrubbableValueView)
 		
 		UIPanGestureRecognizer(target: self, action: "panDidRecognize:", view: self.scrubbableValueView)
@@ -67,12 +67,10 @@ class EntityInspectorTableViewCell: UITableViewCell {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		self.draggableTitleView.sizeToFit()
-		self.scrubbableValueView.sizeToFit()
-
+		self.draggableActionView.sizeToFit()
+		self.draggableActionView.x = 0
 		
-		self.draggableTitleView.x = 0
-		self.scrubbableValueView.moveToRightSideOfSuperview()
+		// Subclasses may do as they please with the scrubber view.
 	}
 	
 	

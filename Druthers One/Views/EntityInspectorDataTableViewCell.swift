@@ -18,6 +18,18 @@ class EntityInspectorDataTableViewCell: EntityInspectorTableViewCell {
 		}
 	}
 	
+
+	
+	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+		self.draggableActionView.removePlayButton()
+	}
+
+	required init(coder aDecoder: NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
+	}
+	
+	
 	
 	override func valueAsInt() -> Int {
 		return self.property?.value as Int
@@ -40,5 +52,13 @@ class EntityInspectorDataTableViewCell: EntityInspectorTableViewCell {
 		if let delegate = self.delegate {
 			delegate.propertyDidChange(self.property!)
 		}
+	}
+	
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		self.scrubbableValueView.sizeToFit()
+		self.scrubbableValueView.moveToRightSideOfSuperview()
 	}
 }
