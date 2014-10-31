@@ -81,6 +81,12 @@ class ScriptViewController: UIViewController {
 		if let script = self.script {
 			script.actions.append(action)
 			let blockController = BlockViewController(action: action)
+			let view = blockController.blockView
+			view.removePlayButton()
+			
+			view.titleView.entityTitleLabel.text = script.entity.title
+			view.titleView.entityPropertyTitleLabel.text = action.title
+			
 			self.blockViewControllers.append(blockController)
 			
 			self.beginShowingChildViewController(blockController) {

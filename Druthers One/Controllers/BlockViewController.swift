@@ -13,6 +13,10 @@ class BlockViewController: UIViewController {
 	
 	let action: EntityAction
 	
+	var blockView: EntityInspectorCellActionView {
+		return self.view as EntityInspectorCellActionView
+	}
+	
 	init(action: EntityAction) {
 		self.action = action
 		super.init(nibName: nil, bundle: nil)
