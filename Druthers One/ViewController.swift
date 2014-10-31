@@ -43,6 +43,7 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		let action = userInfo["action"]! as EntityAction
 		if let scriptViewController = self.scriptViewControllerAcceptingView(view) {
 			scriptViewController.addBlockForAction(action)
+			scriptViewController.view.sizeToFit()
 		} else {
 			// Create the script controller and drop the block in it.
 			let scriptViewController = ScriptViewController()
@@ -55,12 +56,12 @@ class ViewController: UIViewController, EntityViewControllerParent {
 			scriptViewController.addBlockForAction(action)
 			scriptViewController.view.sizeToFit()
 			let canvasView = self.view
-			let convertedCenter = canvasView.convertPoint(view.centerOfBounds, fromCoordinateSpace: view)
-			scriptViewController.view.center = convertedCenter // assumes the view is in the same coordinate space!
+			let convertedCenter = view.origin
 			
 			self.scriptViewControllers.append(scriptViewController)
 			
 			self.beginShowingChildViewController(scriptViewController)
+			scriptViewController.view.origin = convertedCenter // assumes the view is in the same coordinate space!
 		}
 	}
 	

@@ -24,6 +24,7 @@ class ScriptViewController: UIViewController {
         super.viewDidLoad()
 		
 		self.view.addSubview(self.headerView)
+		self.view.layer.borderWidth = 2
 		self.scriptView().headerView = self.headerView
 		
 		self.headerView.playButton.tapAction = { [weak self] in

@@ -10,7 +10,7 @@ import UIKit
 
 class BlockViewController: UIViewController {
 	
-	let blockView = EntityInspectorCellActionView(frame: CGRect())
+	
 	let action: EntityAction
 	
 	init(action: EntityAction) {
@@ -21,18 +21,14 @@ class BlockViewController: UIViewController {
 	required init(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
 	}
+	
+	
+	override func loadView() {
+		self.view = EntityInspectorCellActionView(frame: CGRect())
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		self.view.addSubview(self.blockView)
-	}
-	
-	
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		
-		self.blockView.sizeToFit()
 	}
 
 }
