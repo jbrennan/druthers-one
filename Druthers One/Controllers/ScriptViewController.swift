@@ -73,7 +73,7 @@ class ScriptViewController: UIViewController {
 	/** Returns if the view can be dropped here. */
 	func acceptsView(view: UIView) -> Bool {
 		let convertedFrame = self.view.convertRect(view.frame, fromCoordinateSpace: view.superview!)
-		return self.view.bounds.contains(convertedFrame)
+		return self.view.bounds.intersects(convertedFrame)
 	}
 	
 	
