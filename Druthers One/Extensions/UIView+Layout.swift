@@ -33,6 +33,13 @@ extension UIView {
 	}
 	
 	
+	func moveToHorizontalCenterOfSuperview() {
+		if let superview = self.superview {
+			self.x = floor(superview.width / 2.0 - self.width / 2.0)
+		}
+	}
+	
+	
 	/** Makes the receiver's frame be integral so there are no half-pixels. */
 	func makeFrameIntegral() {
 		self.frame = self.frame.integerRect

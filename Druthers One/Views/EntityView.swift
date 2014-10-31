@@ -9,6 +9,21 @@
 import UIKit
 
 class EntityView: UIView, NSCopying {
+	
+	private let box: UIView
+	
+	override init(frame: CGRect) {
+		self.box = UIView(frame: CGRect())
+		self.box.backgroundColor = UIColor.KhanTextColor()
+		super.init(frame: frame)
+		
+		self.addSubview(self.box)
+	}
+	
+	
+	required init(coder aDecoder: NSCoder) {
+	    fatalError("init(coder:) has not been implemented")
+	}
 
 	func copyWithZone(zone: NSZone) -> AnyObject {
 		let copy = UIView(frame: CGRect())
@@ -18,6 +33,14 @@ class EntityView: UIView, NSCopying {
 		copy.backgroundColor = self.backgroundColor
 		
 		return copy
+	}
+	
+	
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		
+		self.box.frameSize = CGSize(width: 30, height: 30)
+		self.box.moveToHorizontalCenterOfSuperview()
 	}
 
 }

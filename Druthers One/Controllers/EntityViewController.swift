@@ -77,7 +77,9 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	func entityDidUpdate() {
 		self.view.centerX = CGFloat(self.entity.x.value as Int)
 		self.view.centerY = CGFloat(self.entity.y.value as Int)
-		self.view.transform = CGAffineTransformMakeRotation(CGFloat(self.entity.direction.value as Int).toRadians())
+		let degrees = -(self.entity.direction.value as Int) //- 90
+		let radians = CGFloat(degrees).toRadians()
+		self.view.transform = CGAffineTransformMakeRotation(radians)
 	}
 
 }

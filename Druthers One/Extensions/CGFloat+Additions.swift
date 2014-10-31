@@ -16,6 +16,6 @@ extension CGFloat {
 	}
 	
 	func toRadians() -> CGFloat {
-		return self * CGFloat(M_PI / 180.0)
+		return self / CGFloat(180.0) * CGFloat(M_PI)
 	}
 }
