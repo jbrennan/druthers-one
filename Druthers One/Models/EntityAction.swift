@@ -49,6 +49,17 @@ class EntityAction {
 		var updatedProperties = [EntityProperty]()
 		switch self.builtInType {
 		case .Move:
+			if let firstInput = self.firstInput {
+				let direction = Double(entity.direction.value as Int)
+				let length = Double(firstInput.value as Int)
+				let dX = length * cos(direction.toRadians())
+				let dY = length * sin(direction.toRadians())
+				
+				entity.x.value = (entity.x.value as Int) + Int(dX)
+				entity.y.value = (entity.y.value as Int) - Int(dY) // subtract because y starts at the top
+				
+				updatedProperties += [entity.x, entity.y]
+			}
 			break
 		case .Turn:
 			var direction = entity.direction.value as Int

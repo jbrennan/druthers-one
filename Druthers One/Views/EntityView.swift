@@ -40,7 +40,8 @@ class EntityView: UIView, NSCopying {
 		super.layoutSubviews()
 		
 		self.box.frameSize = CGSize(width: 30, height: 30)
-		self.box.moveToHorizontalCenterOfSuperview()
+		self.box.moveToVerticalCenterOfSuperview()
+		self.box.moveToRightSideOfSuperview(margin: 0)
 	}
 
 }

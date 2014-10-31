@@ -67,6 +67,7 @@
 		CD958BB61A00285300907A7D /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BB51A00285300907A7D /* PopoverViewController.swift */; };
 		CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D701A031FE20031E06B /* ScriptController.swift */; };
 		CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D721A0321A60031E06B /* EntityScript.swift */; };
+		CDD18D751A034AE60031E06B /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D741A034AE60031E06B /* Double+Conversions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		CD958BB51A00285300907A7D /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		CDD18D701A031FE20031E06B /* ScriptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptController.swift; sourceTree = "<group>"; };
 		CDD18D721A0321A60031E06B /* EntityScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityScript.swift; sourceTree = "<group>"; };
+		CDD18D741A034AE60031E06B /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 				CD12E9241A019E7900EE5569 /* UILabel+Styles.swift */,
 				CD12E9531A01A88100EE5569 /* UIColor+Styles.swift */,
 				CD12E9671A02CF1A00EE5569 /* UIApplication+RootViewController.swift */,
+				CDD18D741A034AE60031E06B /* Double+Conversions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				CD11A3341A0149090053916B /* EntityInspectorTableViewCell.swift in Sources */,
 				CD11A3361A0170020053916B /* EntityInspectorCellDraggableTitleView.swift in Sources */,
 				CD958BAA1A00046100907A7D /* Entity.swift in Sources */,
+				CDD18D751A034AE60031E06B /* Double+Conversions.swift in Sources */,
 				CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */,
 				CD12E9601A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift in Sources */,
 				CD958BAC1A00118500907A7D /* CGFloat+Additions.swift in Sources */,
