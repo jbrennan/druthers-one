@@ -46,9 +46,18 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		} else {
 			// Create the script controller and drop the block in it.
 			let scriptViewController = ScriptViewController()
+			
+			// TODO: Should probably just initialize the view controller with an Entity and have it make its own blank script...
+			let entity = userInfo["entity"]! as Entity
+			scriptViewController.script = EntityScript(entity: entity, actions: nil)
+			
+			
 			scriptViewController.addBlockForAction(action)
 			scriptViewController.view.sizeToFit()
-			scriptViewController.view.center = view.center // assumes the view is in the same coordinate space!
+			let canvasView = self.view
+			let convertedCenter = canvasView.convertPoint(view.centerOfBounds, fromCoordinateSpace: view)
+			scriptViewController.view.center = convertedCenter // assumes the view is in the same coordinate space!
+			
 			self.scriptViewControllers.append(scriptViewController)
 			
 			self.beginShowingChildViewController(scriptViewController)

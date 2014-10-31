@@ -94,7 +94,9 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		case .Failed:
 			fallthrough
 		case .Ended:
-			self.gestureDidEnd()
+			fallthrough
+			// TODO: We need a better way to handle the long press...seems to cause problems
+//			self.gestureDidEnd()
 			
 		default:
 			break
@@ -120,6 +122,9 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		if let delegate = self.gestureControllerDelegate {
 			delegate.viewDidEndDragging(self.viewBeingMoved)
 		}
+		
+		// We have to reset this for subsequen drags!
+		self.viewBeingMoved = self.gestureView
 	}
 	
 	

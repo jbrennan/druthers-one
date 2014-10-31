@@ -14,6 +14,8 @@ class ScriptViewController: UIViewController {
 	let headerView = ScriptHeaderView(frame: CGRect())
 	let scriptListView = ScriptListView(frame: CGRect())
 	
+	var blockViewControllers = [BlockViewController]()
+	
 	func scriptView() -> ScriptView {
 		return self.view as ScriptView
 	}
@@ -75,7 +77,17 @@ class ScriptViewController: UIViewController {
 	
 	
 	func addBlockForAction(action: EntityAction) {
-		
+		if let script = self.script {
+			script.actions.append(action)
+			let blockController = BlockViewController(action: action)
+			self.blockViewControllers.append(blockController)
+			
+			self.beginShowingChildViewController(blockController) {
+				self.scriptListView.blocks.append(blockController.view)
+				self.scriptListView.addSubview(blockController.view)
+			}
+			
+		}
 	}
 
 }

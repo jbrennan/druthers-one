@@ -18,6 +18,14 @@ extension UIViewController {
 	}
 	
 	
+	/** Adds the given controller as a child view controller. It is your responsibility to add the view as a subview in the setupBlock. */
+	func beginShowingChildViewController(childViewController: UIViewController, setupBlock: ActionBlock) {
+		self.addChildViewController(childViewController)
+		setupBlock()
+		childViewController.didMoveToParentViewController(self)
+	}
+	
+	
 	/** Ends showing the given child view controller. */
 	func endShowingChildViewController(childViewController: UIViewController) {
 		childViewController.willMoveToParentViewController(nil)
