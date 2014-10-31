@@ -68,6 +68,8 @@
 		CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D701A031FE20031E06B /* ScriptController.swift */; };
 		CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D721A0321A60031E06B /* EntityScript.swift */; };
 		CDD18D751A034AE60031E06B /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D741A034AE60031E06B /* Double+Conversions.swift */; };
+		CDD18D771A03E3D30031E06B /* ScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D761A03E3D30031E06B /* ScriptViewController.swift */; };
+		CDD18D791A03E4210031E06B /* ScriptHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D781A03E4210031E06B /* ScriptHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +136,8 @@
 		CDD18D701A031FE20031E06B /* ScriptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptController.swift; sourceTree = "<group>"; };
 		CDD18D721A0321A60031E06B /* EntityScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityScript.swift; sourceTree = "<group>"; };
 		CDD18D741A034AE60031E06B /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
+		CDD18D761A03E3D30031E06B /* ScriptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptViewController.swift; sourceTree = "<group>"; };
+		CDD18D781A03E4210031E06B /* ScriptHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,7 @@
 				CD12E9691A02D9A400EE5569 /* EntityView.swift */,
 				CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */,
 				CD12E96D1A02EA3200EE5569 /* Button.swift */,
+				CDD18D781A03E4210031E06B /* ScriptHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				CD958BB51A00285300907A7D /* PopoverViewController.swift */,
 				CD11A3301A0139370053916B /* EntityController.swift */,
 				CDD18D701A031FE20031E06B /* ScriptController.swift */,
+				CDD18D761A03E3D30031E06B /* ScriptViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -417,6 +423,7 @@
 				CD958BB61A00285300907A7D /* PopoverViewController.swift in Sources */,
 				CD12E95A1A02882300EE5569 /* EntityAction.swift in Sources */,
 				CD12E9681A02CF1A00EE5569 /* UIApplication+RootViewController.swift in Sources */,
+				CDD18D771A03E3D30031E06B /* ScriptViewController.swift in Sources */,
 				CD11A3341A0149090053916B /* EntityInspectorTableViewCell.swift in Sources */,
 				CD11A3361A0170020053916B /* EntityInspectorCellDraggableTitleView.swift in Sources */,
 				CD958BAA1A00046100907A7D /* Entity.swift in Sources */,
@@ -431,6 +438,7 @@
 				CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */,
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
+				CDD18D791A03E4210031E06B /* ScriptHeaderView.swift in Sources */,
 				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,
 				CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */,
 			);

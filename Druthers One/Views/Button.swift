@@ -21,6 +21,11 @@ class Button: UIImageView {
 		UITapGestureRecognizer(target: self, action: "tap", view: self)
 		self.userInteractionEnabled = true
 	}
+	
+	
+	convenience init(imageName: String) {
+		self.init(image: UIImage(named: imageName))
+	}
 
 	required init(coder aDecoder: NSCoder) {
 	    super.init(coder: aDecoder)
