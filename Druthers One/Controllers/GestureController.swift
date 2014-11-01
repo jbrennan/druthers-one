@@ -74,7 +74,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		case .Failed:
 			fallthrough
 		case .Ended:
-			self.gestureDidEnd()
+			self.gestureDidEndWithVelocity(recognizer.velocityInView(view))
 			
 		default:
 			break
@@ -117,10 +117,10 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	}
 	
 	
-	func gestureDidEnd() {
+	func gestureDidEndWithVelocity(velocity: CGPoint) {
 		self.viewBeingMoved?.hideDragShadow()
 		if let delegate = self.gestureControllerDelegate {
-			delegate.viewDidEndDragging(self.viewBeingMoved)
+			delegate.viewDidEndDragging(self.viewBeingMoved, velocity: velocity)
 		}
 	}
 	
@@ -160,5 +160,5 @@ protocol GestureControllerDelegate: NSObjectProtocol {
 	func viewWasPanned()
 	
 	/** Called when the view ends dragging. */
-	func viewDidEndDragging(droppedView: UIView?)
+	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint)
 }

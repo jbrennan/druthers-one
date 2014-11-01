@@ -45,6 +45,7 @@
 		CD12E96A1A02D9A400EE5569 /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9691A02D9A400EE5569 /* EntityView.swift */; };
 		CD12E96C1A02E81300EE5569 /* EntityInspectorCellActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */; };
 		CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96D1A02EA3200EE5569 /* Button.swift */; };
+		CD3950381A0576E100399BEE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3950371A0576E100399BEE /* Vector.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -115,6 +116,7 @@
 		CD12E9691A02D9A400EE5569 /* EntityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
 		CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellActionView.swift; sourceTree = "<group>"; };
 		CD12E96D1A02EA3200EE5569 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		CD3950371A0576E100399BEE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				CD12E9591A02882300EE5569 /* EntityAction.swift */,
 				CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */,
 				CDD18D721A0321A60031E06B /* EntityScript.swift */,
+				CD3950371A0576E100399BEE /* Vector.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				CD12E96A1A02D9A400EE5569 /* EntityView.swift in Sources */,
 				CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */,
 				CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */,
+				CD3950381A0576E100399BEE /* Vector.swift in Sources */,
 				CD958BAE1A0012A800907A7D /* EntityInspectorTableViewController.swift in Sources */,
 				CDD18D7F1A03F2680031E06B /* ScriptListView.swift in Sources */,
 				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,

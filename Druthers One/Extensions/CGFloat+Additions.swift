@@ -18,4 +18,17 @@ extension CGFloat {
 	func toRadians() -> CGFloat {
 		return self / CGFloat(180.0) * CGFloat(M_PI)
 	}
+	
+	/** Clamps the receiver between the lower and the upper bounds. */
+	func clamp(lower: CGFloat, upper: CGFloat) -> CGFloat {
+		if self < lower {
+			return lower
+		}
+		
+		if self > upper {
+			return upper
+		}
+		
+		return self
+	}
 }

@@ -65,7 +65,7 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 	}
 	
 	
-	override func viewDidEndDragging(droppedView: UIView?) {
+	override func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
 		// Announce that the view has been dropped.
 		if let view = droppedView {
 			let userInfo = ["action": self.action!, "view": view, "entity": self.entity!]

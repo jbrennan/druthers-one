@@ -148,7 +148,7 @@ class EntityInspectorTableViewCell: UITableViewCell, GestureControllerDelegate {
 	}
 	
 	/** Called when the view ends dragging. */
-	func viewDidEndDragging(droppedView: UIView?) {
+	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
 		// For subclasses to implement
 	}
 	

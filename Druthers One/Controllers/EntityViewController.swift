@@ -71,8 +71,22 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	}
 	
 	
-	func viewDidEndDragging(droppedView: UIView?) {
-		// intentionally left blank.
+	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
+		if let droppedView = droppedView {
+			let velocity = Vector(point: velocity)
+			if velocity.magnitude > 2500 {
+			let slideFactor = 0.01 * (velocity.magnitude / 200.0)
+				var restingCenter = CGPoint(x: droppedView.centerX + (velocity.x * slideFactor), y: droppedView.centerY + (velocity.y * slideFactor))
+				
+				
+				
+				UIView.animateWithDuration(NSTimeInterval(slideFactor * 2), delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
+					droppedView.center = restingCenter
+					}, completion: { (finished: Bool) -> Void in
+						droppedView.center = CGPoint(x: 300, y: 300)
+				})
+			}
+		}
 	}
 	
 	

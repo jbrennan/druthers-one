@@ -28,8 +28,8 @@ class CloningGestureController: GestureController {
 	}
 	
 	
-	override func gestureDidEnd() {
-		super.gestureDidEnd()
+	override func gestureDidEndWithVelocity(velocity: CGPoint) {
+		super.gestureDidEndWithVelocity(velocity)
 		// We have to reset this for subsequent drags!
 		self.viewBeingMoved = self.gestureView
 	}
