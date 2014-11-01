@@ -59,7 +59,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	
 	
 	func panDidRecognize(recognizer: UIPanGestureRecognizer) {
-		let view = recognizer.view
+		let view = self.viewBeingMoved
 		
 		switch recognizer.state {
 		case .Began:
