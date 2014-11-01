@@ -30,6 +30,8 @@ class CloningGestureController: GestureController {
 	
 	override func gestureDidEnd() {
 		super.gestureDidEnd()
+		// We have to reset this for subsequent drags!
+		self.viewBeingMoved = self.gestureView
 	}
    
 }

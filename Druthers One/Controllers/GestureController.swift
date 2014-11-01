@@ -122,9 +122,6 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		if let delegate = self.gestureControllerDelegate {
 			delegate.viewDidEndDragging(self.viewBeingMoved)
 		}
-		
-		// We have to reset this for subsequen drags!
-		self.viewBeingMoved = self.gestureView
 	}
 	
 	

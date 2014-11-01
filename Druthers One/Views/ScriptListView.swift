@@ -12,6 +12,16 @@ class ScriptListView: UIView {
 
 	var blocks = [UIView]()
 	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		
+		self.backgroundColor = UIColor.whiteColor()
+	}
+	
+	required init(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	override func sizeThatFits(size: CGSize) -> CGSize {
 		return self.sizeThatFitsByLayingOutSubviews(size, commitLayout: false)
 	}

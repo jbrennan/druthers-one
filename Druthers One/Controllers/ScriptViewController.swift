@@ -16,6 +16,8 @@ class ScriptViewController: UIViewController {
 	
 	var blockViewControllers = [BlockViewController]()
 	
+	var gestureController: GestureController?
+	
 	func scriptView() -> ScriptView {
 		return self.view as ScriptView
 	}
@@ -53,6 +55,9 @@ class ScriptViewController: UIViewController {
 		
 		self.view.addSubview(self.scriptListView)
 		self.scriptView().scriptListView = self.scriptListView
+		
+		self.gestureController = GestureController(gestureView: self.headerView, canvasView: UIApplication.rootViewController()!.view)
+		self.gestureController?.viewBeingMoved = self.view
 
 	}
 	

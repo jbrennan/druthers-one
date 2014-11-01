@@ -49,7 +49,7 @@ class EntityInspectorTableViewCell: UITableViewCell, GestureControllerDelegate {
 		self.draggableActionView = EntityInspectorCellActionView(frame: CGRect())
 		self.scrubbableValueView = EntityInspectorCellScrubbableValueView(frame: CGRect())
 		
-		let canvasView = UIApplication.sharedApplication().rootViewController()?.view
+		let canvasView = UIApplication.rootViewController()?.view
 		self.cloningGestureController = CloningGestureController(gestureView: self.draggableActionView, canvasView: canvasView!)
 		self.cloningGestureController.excludedViews.append(self.scrubbableValueView)
 		

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIApplication {
 	
-	func rootViewController() -> UIViewController? {
-		return self.windows.first?.rootViewController
+	class func rootViewController() -> UIViewController? {
+		return self.sharedApplication().windows.first?.rootViewController
 	}
 }
