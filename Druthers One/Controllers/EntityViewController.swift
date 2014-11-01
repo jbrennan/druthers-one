@@ -72,10 +72,15 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	
 	
 	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
+		self.tossView(droppedView, withVelocity: velocity)
+	}
+	
+	
+	func tossView(droppedView: UIView?, withVelocity velocity: CGPoint) {
 		if let droppedView = droppedView {
 			let velocity = Vector(point: velocity)
 			if velocity.magnitude > 2500 {
-			let slideFactor = 0.01 * (velocity.magnitude / 200.0)
+				let slideFactor = 0.01 * (velocity.magnitude / 200.0)
 				var restingCenter = CGPoint(x: droppedView.centerX + (velocity.x * slideFactor), y: droppedView.centerY + (velocity.y * slideFactor))
 				
 				
@@ -87,6 +92,7 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 				})
 			}
 		}
+		
 	}
 	
 	
