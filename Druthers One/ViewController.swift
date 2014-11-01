@@ -85,11 +85,6 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-		for controller in self.entityControllers {
-			let view = controller.entityViewController.view
-			view.frameSize = controller.entityViewController.viewSize
-		}
-		
 		self.inspector?.view.origin = CGPoint(x: 30, y: 30)
 		self.inspector?.view.frameSize = CGSize(width: 300, height: 500)
 		self.inspector?.view.updateMarkerBorder()

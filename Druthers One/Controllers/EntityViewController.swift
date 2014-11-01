@@ -46,6 +46,8 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 		self.gestureController = GestureController(gestureView: self.entityView, canvasView: self.parentController!.view)
 		self.gestureController?.gestureControllerDelegate = self
 		self.view.backgroundColor = UIColor.purpleColor()
+		
+		self.view.frameSize = self.viewSize
     }
 	
 	
