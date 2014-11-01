@@ -46,6 +46,7 @@
 		CD12E96C1A02E81300EE5569 /* EntityInspectorCellActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */; };
 		CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96D1A02EA3200EE5569 /* Button.swift */; };
 		CD3950381A0576E100399BEE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3950371A0576E100399BEE /* Vector.swift */; };
+		CD39503A1A05914F00399BEE /* UIView+Tossing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3950391A05914F00399BEE /* UIView+Tossing.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
 		CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7519FEB4B300907A7D /* ViewController.swift */; };
 		CD958B7919FEB4B300907A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD958B7719FEB4B300907A7D /* Main.storyboard */; };
@@ -117,6 +118,7 @@
 		CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellActionView.swift; sourceTree = "<group>"; };
 		CD12E96D1A02EA3200EE5569 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		CD3950371A0576E100399BEE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		CD3950391A05914F00399BEE /* UIView+Tossing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Tossing.swift"; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B7219FEB4B300907A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD958B7319FEB4B300907A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				CD12E9671A02CF1A00EE5569 /* UIApplication+RootViewController.swift */,
 				CDD18D741A034AE60031E06B /* Double+Conversions.swift */,
 				CDD18D7A1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift */,
+				CD3950391A05914F00399BEE /* UIView+Tossing.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				CD958BAC1A00118500907A7D /* CGFloat+Additions.swift in Sources */,
 				CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */,
 				CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */,
+				CD39503A1A05914F00399BEE /* UIView+Tossing.swift in Sources */,
 				CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */,
 				CD12E9661A02C68B00EE5569 /* CloningGestureController.swift in Sources */,
 				CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */,
