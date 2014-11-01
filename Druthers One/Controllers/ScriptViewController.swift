@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScriptViewController: UIViewController {
+class ScriptViewController: UIViewController, GestureControllerDelegate {
 	
 	var script: EntityScript?
 	let headerView = ScriptHeaderView(frame: CGRect())
@@ -58,6 +58,7 @@ class ScriptViewController: UIViewController {
 		
 		self.gestureController = GestureController(gestureView: self.headerView, canvasView: UIApplication.rootViewController()!.view)
 		self.gestureController?.viewBeingMoved = self.view
+		self.gestureController?.gestureControllerDelegate = self
 
 	}
 	
@@ -98,6 +99,23 @@ class ScriptViewController: UIViewController {
 				self.scriptListView.blocks.append(blockController.view)
 				self.scriptListView.addSubview(blockController.view)
 			}
+			
+		}
+	}
+	
+	
+	/** Called when the view is tapped. */
+	func viewWasTapped() {}
+	
+	/** Called when the view starts dragging. */
+	func viewDidStartDragging() {}
+	
+	/** Called continuously as the view is panned. */
+	func viewWasPanned() {}
+	
+	/** Called when the view ends dragging. */
+	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
+		droppedView?.tossWithVelocity(velocity) {
 			
 		}
 	}

@@ -12,7 +12,7 @@ import UIKit
 extension UIView {
 	
 	/** Toss the receiver off screen. */
-	func tossWithVelocity(velocity: CGPoint, resetViewAfterCompletion: Bool = false) {
+	func tossWithVelocity(velocity: CGPoint, completion: ActionBlock? = nil) {
 		
 		// This could be so much better. I'm not sure how to do it, though. Help?
 		let velocity = Vector(point: velocity)
@@ -25,8 +25,8 @@ extension UIView {
 			UIView.animateWithDuration(NSTimeInterval(slideFactor * 2), delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: { () -> Void in
 				self.center = restingCenter
 				}, completion: { (finished: Bool) -> Void in
-					if resetViewAfterCompletion {
-						self.center = CGPoint(x: 300, y: 300)
+					if let completion = completion {
+						completion()
 					}
 			})
 		}

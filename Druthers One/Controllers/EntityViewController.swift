@@ -72,7 +72,7 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	
 	
 	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
-		droppedView?.tossWithVelocity(velocity, resetViewAfterCompletion: true)
+		droppedView?.tossWithVelocity(velocity)
 	}
 	
 	
