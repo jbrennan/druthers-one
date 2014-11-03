@@ -55,8 +55,8 @@ class EntityAction {
 				let dX = length * cos(direction.toRadians())
 				let dY = length * sin(direction.toRadians())
 				
-				entity.x.value = (entity.x.value as Int) + Int(dX)
-				entity.y.value = (entity.y.value as Int) - Int(dY) // subtract because y starts at the top
+				entity.x.updateValueTo((entity.x.value as Int) + Int(dX))
+				entity.y.updateValueTo((entity.y.value as Int) - Int(dY)) // subtract because y starts at the top
 				
 				updatedProperties += [entity.x, entity.y]
 			}
@@ -66,7 +66,7 @@ class EntityAction {
 			if let firstInput = self.firstInput {
 				direction += firstInput.value as Int
 			}
-			entity.direction.value = direction
+			entity.direction.updateValueTo(direction)
 			updatedProperties.append(entity.direction)
 		}
 		

@@ -44,7 +44,7 @@ class EntityInspectorDataTableViewCell: EntityInspectorTableViewCell {
 	}
 	
 	override func updateValueAsInt(updatedIntValue: Int) {
-		self.property?.value = updatedIntValue
+		self.property?.updateValueTo(updatedIntValue)
 	}
 	
 	

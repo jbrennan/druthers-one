@@ -15,12 +15,29 @@ class EntityProperty {
 	/** The key (name) of the property. */
 	let key: String
 	
-	/** The value of the property. (I might eventually want to make this an optional..nil-messaging r00lz) */
-	var value: Any
+	/** The value of the property. Generally you should use the -evaluate() method to get a value, but this property is useful if you care what the property value was explicitly set to. */
+	var value: Any {
+		return internalValue
+	}
 	
+	/** The range the value is clamped to. */
+	var range: Range<Int>?
 	
-	init(key: String, value: Any) {
+	private var internalValue: Any
+	
+	init(key: String, value: Any, range: Range<Int>? = nil) {
 		self.key = key
-		self.value = value
+		self.internalValue = value
+		self.range = range
+	}
+	
+	func updateValueTo(newValue: Any) {
+		// TODO: Clamp if needed
+		self.internalValue = newValue
+	}
+	
+	/** Evaluates the property and returns a value. */
+	func evaluate() -> Any {
+		return self.value
 	}
 }

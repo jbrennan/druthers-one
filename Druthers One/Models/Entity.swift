@@ -33,7 +33,7 @@ class Entity {
 	
 	
 	/** The direction in degrees the entity points in. */
-	var direction = EntityProperty(key: "direction", value: 0)
+	var direction = EntityProperty(key: "direction", value: 0, range: 0..<360)
 	
 	/** The controller owns the entity for now. */
 	weak var controller: EntityController?
