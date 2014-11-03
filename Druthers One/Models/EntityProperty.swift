@@ -21,18 +21,22 @@ class EntityProperty {
 	}
 	
 	/** The range the value is clamped to. */
-	var range: Range<Int>?
+	let range: EntityValueRange?
 	
 	private var internalValue: Any
 	
-	init(key: String, value: Any, range: Range<Int>? = nil) {
+	init(key: String, value: Any, range: EntityValueRange? = nil) {
 		self.key = key
 		self.internalValue = value
 		self.range = range
 	}
 	
 	func updateValueTo(newValue: Any) {
-		// TODO: Clamp if needed
+		var newValue = newValue
+		if let range = self.range {
+			newValue = range.rangedValueForIntValue(newValue)
+		}
+		
 		self.internalValue = newValue
 	}
 	

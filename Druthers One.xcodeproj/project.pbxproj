@@ -76,6 +76,7 @@
 		CDD18D7D1A03F0E30031E06B /* ScriptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D7C1A03F0E30031E06B /* ScriptView.swift */; };
 		CDD18D7F1A03F2680031E06B /* ScriptListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D7E1A03F2680031E06B /* ScriptListView.swift */; };
 		CDD18D811A0418310031E06B /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D801A0418310031E06B /* BlockViewController.swift */; };
+		CDDD965A1A07D4F400401931 /* EntityValueRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD96591A07D4F400401931 /* EntityValueRange.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +151,7 @@
 		CDD18D7C1A03F0E30031E06B /* ScriptView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptView.swift; sourceTree = "<group>"; };
 		CDD18D7E1A03F2680031E06B /* ScriptListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptListView.swift; sourceTree = "<group>"; };
 		CDD18D801A0418310031E06B /* BlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
+		CDDD96591A07D4F400401931 /* EntityValueRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityValueRange.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +326,7 @@
 				CD12E95D1A02969C00EE5569 /* EntityActionInput.swift */,
 				CDD18D721A0321A60031E06B /* EntityScript.swift */,
 				CD3950371A0576E100399BEE /* Vector.swift */,
+				CDDD96591A07D4F400401931 /* EntityValueRange.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				CD12E95E1A02969C00EE5569 /* EntityActionInput.swift in Sources */,
 				CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */,
 				CD12E9251A019E7900EE5569 /* UILabel+Styles.swift in Sources */,
+				CDDD965A1A07D4F400401931 /* EntityValueRange.swift in Sources */,
 				CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */,
 				CDD18D7D1A03F0E30031E06B /* ScriptView.swift in Sources */,
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
