@@ -18,6 +18,7 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		
 		let entity = Entity()
 
 		let entityViewController = EntityViewController(entity: entity)
@@ -29,6 +30,22 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		self.entityControllers.append(entityController)
 		
 		self.beginShowingChildViewController(entityViewController)
+		
+		
+		// entity 2
+		let entity2 = Entity()
+		
+		let entityViewController2 = EntityViewController(entity: entity2)
+		entityViewController2.parentController = self
+		
+		let entityController2 = EntityController(entity: entity2, entityViewController: entityViewController2)
+		entityViewController2.entityController = entityController2
+		entityViewController2.view.backgroundColor = UIColor.orangeColor()
+		
+		self.entityControllers.append(entityController2)
+		
+		self.beginShowingChildViewController(entityViewController2)
+		
 		
 		NSNotificationCenter.addObserver(self, notificationName: "ActionBlockDropped", selector: "actionBlockWasDropped:")
 		NSNotificationCenter.addObserver(self, notificationName: "PropertyBlockDropped", selector: "propertyBlockWasDropped:")
