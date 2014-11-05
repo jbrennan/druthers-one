@@ -77,6 +77,9 @@
 		CDD18D7F1A03F2680031E06B /* ScriptListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D7E1A03F2680031E06B /* ScriptListView.swift */; };
 		CDD18D811A0418310031E06B /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D801A0418310031E06B /* BlockViewController.swift */; };
 		CDDD965A1A07D4F400401931 /* EntityValueRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD96591A07D4F400401931 /* EntityValueRange.swift */; };
+		CDDD965C1A07EADF00401931 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD965B1A07EADF00401931 /* InputViewController.swift */; };
+		CDDD965E1A07F2F900401931 /* ScrubbingGestureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD965D1A07F2F900401931 /* ScrubbingGestureController.swift */; };
+		CDDD96601A0835EB00401931 /* Copyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDD965F1A0835EB00401931 /* Copyable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -152,6 +155,9 @@
 		CDD18D7E1A03F2680031E06B /* ScriptListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptListView.swift; sourceTree = "<group>"; };
 		CDD18D801A0418310031E06B /* BlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
 		CDDD96591A07D4F400401931 /* EntityValueRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityValueRange.swift; sourceTree = "<group>"; };
+		CDDD965B1A07EADF00401931 /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		CDDD965D1A07F2F900401931 /* ScrubbingGestureController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrubbingGestureController.swift; sourceTree = "<group>"; };
+		CDDD965F1A0835EB00401931 /* Copyable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Copyable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +311,8 @@
 				CDD18D701A031FE20031E06B /* ScriptController.swift */,
 				CDD18D761A03E3D30031E06B /* ScriptViewController.swift */,
 				CDD18D801A0418310031E06B /* BlockViewController.swift */,
+				CDDD965B1A07EADF00401931 /* InputViewController.swift */,
+				CDDD965D1A07F2F900401931 /* ScrubbingGestureController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -313,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */,
+				CDDD965F1A0835EB00401931 /* Copyable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -433,6 +442,7 @@
 				CD3950381A0576E100399BEE /* Vector.swift in Sources */,
 				CD958BAE1A0012A800907A7D /* EntityInspectorTableViewController.swift in Sources */,
 				CDD18D7F1A03F2680031E06B /* ScriptListView.swift in Sources */,
+				CDDD965E1A07F2F900401931 /* ScrubbingGestureController.swift in Sources */,
 				CD958BA719FFF8DC00907A7D /* UIViewController+ChildViewControllers.swift in Sources */,
 				CD958B7619FEB4B300907A7D /* ViewController.swift in Sources */,
 				CD12E9621A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift in Sources */,
@@ -447,6 +457,7 @@
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
 				CD12E9541A01A88100EE5569 /* UIColor+Styles.swift in Sources */,
 				CD958BB61A00285300907A7D /* PopoverViewController.swift in Sources */,
+				CDDD965C1A07EADF00401931 /* InputViewController.swift in Sources */,
 				CD12E95A1A02882300EE5569 /* EntityAction.swift in Sources */,
 				CD12E9681A02CF1A00EE5569 /* UIApplication+RootViewController.swift in Sources */,
 				CDD18D771A03E3D30031E06B /* ScriptViewController.swift in Sources */,
@@ -460,6 +471,7 @@
 				CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */,
 				CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */,
 				CD39503A1A05914F00399BEE /* UIView+Tossing.swift in Sources */,
+				CDDD96601A0835EB00401931 /* Copyable.swift in Sources */,
 				CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */,
 				CD12E9661A02C68B00EE5569 /* CloningGestureController.swift in Sources */,
 				CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */,

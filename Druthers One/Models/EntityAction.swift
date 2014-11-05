@@ -10,7 +10,7 @@ import Foundation
 
 
 /** Represents a method an Entity can do. */
-class EntityAction {
+class EntityAction: Copyable {
 	
 	enum BuiltInAction {
 		case Move
@@ -41,6 +41,18 @@ class EntityAction {
 		self.title = title
 		self.inputs = inputs
 		self.builtInType = builtInType
+	}
+	
+	
+	func copy() -> Any {
+		let inputs = self.inputs?.map {
+			(input: EntityActionInput) -> EntityActionInput in
+			return input.copy() as EntityActionInput
+		}
+		let copy = EntityAction(title: self.title, inputs: inputs, builtInType: self.builtInType)
+		
+	
+		return copy
 	}
 	
 	

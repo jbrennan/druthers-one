@@ -68,14 +68,6 @@ class ScriptViewController: UIViewController, GestureControllerDelegate {
 	}
 	
 	
-//	override func viewDidLayoutSubviews() {
-//		super.viewDidLayoutSubviews()
-//		
-//		self.headerView.sizeToFit()
-//		self.headerView.origin = CGPoint()
-//	}
-	
-	
 	/** Returns if the view can be dropped here. */
 	func acceptsView(view: UIView) -> Bool {
 		let convertedFrame = self.view.convertRect(view.frame, fromCoordinateSpace: view.superview!)
@@ -83,9 +75,13 @@ class ScriptViewController: UIViewController, GestureControllerDelegate {
 	}
 	
 	
+	/** Copies the action and makes a block for it. */
 	func addBlockForAction(action: EntityAction) {
 		if let script = self.script {
+			let action = action.copy() as EntityAction
+			
 			script.actions.append(action)
+			
 			let blockController = BlockViewController(action: action)
 			let view = blockController.blockView
 			view.removePlayButton()

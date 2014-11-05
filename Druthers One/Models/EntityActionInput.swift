@@ -10,7 +10,7 @@ import Foundation
 
 
 /** An input is a parameter to an action (method). */
-class EntityActionInput {
+class EntityActionInput: Copyable {
 	
 	/** The title of this input. */
 	let title: String
@@ -42,9 +42,14 @@ class EntityActionInput {
 		return nil
 	}
 	
-	init(title: String, unit: String, defaultValue: Any) {
+	init(title: String, unit: String?, defaultValue: Any) {
 		self.title = title
 		self.unit = unit
 		self.value = defaultValue
+	}
+	
+	
+	func copy() -> Any {
+		return EntityActionInput(title: self.title, unit: self.unit, defaultValue: self.value)
 	}
 }

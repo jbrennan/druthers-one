@@ -8,10 +8,11 @@
 
 import UIKit
 
-class BlockViewController: UIViewController {
+class BlockViewController: UIViewController, InputViewControllerDelegate {
 	
 	
 	let action: EntityAction
+	let inputViewControllers: [InputViewController]?
 	
 	var blockView: EntityInspectorCellActionView {
 		return self.view as EntityInspectorCellActionView
@@ -20,6 +21,18 @@ class BlockViewController: UIViewController {
 	init(action: EntityAction) {
 		self.action = action
 		super.init(nibName: nil, bundle: nil)
+		
+		// Trying out .map....I kind of like just using a loop better.
+		self.inputViewControllers = self.action.inputs?.map {
+			(input: EntityActionInput) -> InputViewController in
+			
+			let controller = InputViewController(entityActionInput: input)
+			self.beginShowingChildViewController(controller) {
+				self.blockView.addInputView(controller.valueView)
+			}
+			controller.delegate = self
+			return controller
+		}
 	}
 
 	required init(coder aDecoder: NSCoder) {
@@ -33,6 +46,11 @@ class BlockViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+	}
+	
+	
+	func viewDidUpdate() {
+		self.view.setNeedsLayout()
 	}
 
 }
