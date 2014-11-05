@@ -37,6 +37,10 @@ class EntityInspectorCellActionView: UIView, NSCopying {
 		for input in self.inputViews {
 			copy.addInputView(input.copy() as EntityInspectorCellScrubbableValueView)
 		}
+		
+		if self.playButton == nil {
+			copy.removePlayButton()
+		}
 		return copy
 	}
 	
