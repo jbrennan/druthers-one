@@ -13,6 +13,21 @@ class EntityInspectorCellScrubbableValueView: UIView, NSCopying {
     let valueLabel = UILabel(text: nil, fontWeight: .Bold)
 	let unitLabel = UILabel(fontWeight: .Normal)
 	
+	/** The view for a dropped property. In the future, this can really be any kind of "evaluatable" view. */
+	var propertyView: UIView? {
+		willSet {
+			if let propertyView = self.propertyView {
+				propertyView.removeFromSuperview()
+			}
+		}
+		
+		didSet {
+			if let propertyView = self.propertyView {
+				self.addSubview(propertyView)
+			}
+		}
+	}
+	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
@@ -53,15 +68,27 @@ class EntityInspectorCellScrubbableValueView: UIView, NSCopying {
 	
 	override func sizeThatFitsByLayingOutSubviews(size: CGSize, commitLayout: Bool = true) -> CGSize {
 		return self.sizeThatFitsByRunningLayoutBlock(commitLayout: commitLayout) { () -> CGSize in
-			self.valueLabel.sizeToFit()
-			self.valueLabel.moveToVerticalCenterOfSuperview()
 			
 			let margin = CGFloat(10.0)
-			self.valueLabel.x = margin
+			var siblingView: UIView = self.valueLabel
+			
+			if let propertyView = self.propertyView {
+				propertyView.sizeToFit()
+				propertyView.moveToVerticalCenterOfSuperview()
+				propertyView.x = margin
+				self.bringSubviewToFront(propertyView)
+				siblingView = propertyView
+			} else {
+				
+				self.valueLabel.sizeToFit()
+				self.valueLabel.moveToVerticalCenterOfSuperview()
+				
+				self.valueLabel.x = margin
+			}
 			
 			self.unitLabel.sizeToFit()
 			self.unitLabel.moveToVerticalCenterOfSuperview()
-			self.unitLabel.moveToRightOfSiblingView(self.valueLabel, margin: 5.0)
+			self.unitLabel.moveToRightOfSiblingView(siblingView, margin: 5.0)
 			
 			var width = self.valueLabel.maxX + margin
 			if self.unitLabel.text != nil && countElements(self.unitLabel.text!) > 1 {

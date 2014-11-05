@@ -12,6 +12,8 @@ import UIKit
 class InputViewController: UIViewController, ScrubbingGestureControllerDelegate {
 	
 	let entityActionInput: EntityActionInput
+	var propertyView: UIView?
+	
 	weak var delegate: InputViewControllerDelegate?
 	
 	private var scrubbingGestureController: ScrubbingGestureController?
@@ -58,6 +60,13 @@ class InputViewController: UIViewController, ScrubbingGestureControllerDelegate 
 	func scrubberDidScrubToNumber(newValue: Int) {
 		self.entityActionInput.value = newValue
 		self.updateViews()
+	}
+	
+	
+	func addProperty(property: EntityProperty, forDroppedView droppedView: UIView) {
+		self.entityActionInput.childEvaluatable = property
+		self.propertyView = droppedView
+		self.valueView.propertyView = droppedView
 	}
 
 }

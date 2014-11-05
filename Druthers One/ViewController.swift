@@ -41,7 +41,7 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		let view: UIView = userInfo["view"]! as UIView
 		
 		let action = userInfo["action"]! as EntityAction
-		if let scriptViewController = self.scriptViewControllerAcceptingView(view) {
+		if let scriptViewController = self.scriptViewControllerAcceptingActionView(view) {
 			scriptViewController.addBlockForAction(action)
 			scriptViewController.view.sizeToFit()
 		} else {
@@ -67,13 +67,32 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	
 	
 	func propertyBlockWasDropped(notification: NSNotification) {
+		let userInfo = notification.userInfo!
+		let view = userInfo["view"]! as UIView
 		
+		let property = userInfo["property"]! as EntityProperty
+		if let scriptViewController = self.scriptViewControllerAcceptingPropertyView(view) {
+			scriptViewController.addProperty(property, forDroppedView: view)
+		} else {
+			// poof!
+		}
 	}
 	
 	
-	func scriptViewControllerAcceptingView(view: UIView) -> ScriptViewController? {
+	func scriptViewControllerAcceptingActionView(view: UIView) -> ScriptViewController? {
 		for scriptViewController in self.scriptViewControllers {
-			if scriptViewController.acceptsView(view) {
+			if scriptViewController.acceptsActionView(view) {
+				return scriptViewController
+			}
+		}
+		
+		return nil
+	}
+	
+	
+	func scriptViewControllerAcceptingPropertyView(propertyView: UIView) -> ScriptViewController? {
+		for scriptViewController in self.scriptViewControllers {
+			if scriptViewController.acceptsPropertyView(view) {
 				return scriptViewController
 			}
 		}

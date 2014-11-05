@@ -8,6 +8,7 @@
 
 import Foundation
 
+/** Types conforming to this protocol can be copied. */
 protocol Copyable {
 	
 	/** Returns a copy of the receiver. */

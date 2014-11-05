@@ -52,5 +52,19 @@ class BlockViewController: UIViewController, InputViewControllerDelegate {
 	func viewDidUpdate() {
 		self.view.setNeedsLayout()
 	}
+	
+	
+	func acceptsPropertyView(view: UIView) -> Bool {
+		let convertedFrame = self.view.convertRect(view.frame, fromCoordinateSpace: view.superview!)
+		return self.view.bounds.intersects(convertedFrame)
+	}
+	
+	
+	func addProperty(property: EntityProperty, forDroppedView droppedView: UIView) {
+		if let firstInput = self.inputViewControllers?.first {
+			firstInput.addProperty(property, forDroppedView: droppedView)
+			self.viewDidUpdate()
+		}
+	}
 
 }

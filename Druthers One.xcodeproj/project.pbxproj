@@ -45,6 +45,7 @@
 		CD12E96A1A02D9A400EE5569 /* EntityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E9691A02D9A400EE5569 /* EntityView.swift */; };
 		CD12E96C1A02E81300EE5569 /* EntityInspectorCellActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */; };
 		CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD12E96D1A02EA3200EE5569 /* Button.swift */; };
+		CD2096411A0AA8EC001789E6 /* Evaluatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2096401A0AA8EC001789E6 /* Evaluatable.swift */; };
 		CD3950381A0576E100399BEE /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3950371A0576E100399BEE /* Vector.swift */; };
 		CD39503A1A05914F00399BEE /* UIView+Tossing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3950391A05914F00399BEE /* UIView+Tossing.swift */; };
 		CD958B7419FEB4B300907A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B7319FEB4B300907A7D /* AppDelegate.swift */; };
@@ -121,6 +122,7 @@
 		CD12E9691A02D9A400EE5569 /* EntityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityView.swift; sourceTree = "<group>"; };
 		CD12E96B1A02E81300EE5569 /* EntityInspectorCellActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityInspectorCellActionView.swift; sourceTree = "<group>"; };
 		CD12E96D1A02EA3200EE5569 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		CD2096401A0AA8EC001789E6 /* Evaluatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Evaluatable.swift; sourceTree = "<group>"; };
 		CD3950371A0576E100399BEE /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		CD3950391A05914F00399BEE /* UIView+Tossing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Tossing.swift"; sourceTree = "<group>"; };
 		CD958B6E19FEB4B300907A7D /* Druthers One.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Druthers One.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -322,6 +324,7 @@
 			children = (
 				CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */,
 				CDDD965F1A0835EB00401931 /* Copyable.swift */,
+				CD2096401A0AA8EC001789E6 /* Evaluatable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				CDDD96601A0835EB00401931 /* Copyable.swift in Sources */,
 				CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */,
 				CD12E9661A02C68B00EE5569 /* CloningGestureController.swift in Sources */,
+				CD2096411A0AA8EC001789E6 /* Evaluatable.swift in Sources */,
 				CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */,
 				CDD18D7B1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift in Sources */,
 				CD958B9B19FF3DA000907A7D /* UIView+Appearance.swift in Sources */,

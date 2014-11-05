@@ -62,21 +62,21 @@ class EntityAction: Copyable {
 		switch self.builtInType {
 		case .Move:
 			if let firstInput = self.firstInput {
-				let direction = Double(entity.direction.value as Int)
-				let length = Double(firstInput.value as Int)
+				let direction = Double(entity.direction.evaluate() as Int)
+				let length = Double(firstInput.evaluate() as Int)
 				let dX = length * cos(direction.toRadians())
 				let dY = length * sin(direction.toRadians())
 				
-				entity.x.updateValueTo((entity.x.value as Int) + Int(dX))
-				entity.y.updateValueTo((entity.y.value as Int) - Int(dY)) // subtract because y starts at the top
+				entity.x.updateValueTo((entity.x.evaluate() as Int) + Int(dX))
+				entity.y.updateValueTo((entity.y.evaluate() as Int) - Int(dY)) // subtract because y starts at the top
 				
 				updatedProperties += [entity.x, entity.y]
 			}
 			break
 		case .Turn:
-			var direction = entity.direction.value as Int
+			var direction = entity.direction.evaluate() as Int
 			if let firstInput = self.firstInput {
-				direction += firstInput.value as Int
+				direction += firstInput.evaluate() as Int
 			}
 			entity.direction.updateValueTo(direction)
 			updatedProperties.append(entity.direction)

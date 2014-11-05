@@ -10,7 +10,7 @@ import Foundation
 
 
 /** An input is a parameter to an action (method). */
-class EntityActionInput: Copyable {
+class EntityActionInput: Copyable, Evaluatable {
 	
 	/** The title of this input. */
 	let title: String
@@ -30,8 +30,12 @@ class EntityActionInput: Copyable {
 	}
 	
 	
-	/** The value of the input. */
+	/** The value of the input. You should typically refer to the value returned from `-evaluate()` instead when executing. */
 	var value: Any
+	
+	
+	/** If the child exists, it will be evaluated in this object's implementation of `-evaluate()` over this object's value. If it is nil, then the value will be used. */
+	var childEvaluatable: Evaluatable?
 	
 	
 	private var valueAsInt: Int? {
@@ -51,5 +55,13 @@ class EntityActionInput: Copyable {
 	
 	func copy() -> Any {
 		return EntityActionInput(title: self.title, unit: self.unit, defaultValue: self.value)
+	}
+	
+	
+	func evaluate() -> Any {
+		if let childEvaluatable = self.childEvaluatable {
+			return childEvaluatable.evaluate()
+		}
+		return self.value
 	}
 }

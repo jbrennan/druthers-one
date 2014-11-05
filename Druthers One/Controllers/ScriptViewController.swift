@@ -69,7 +69,32 @@ class ScriptViewController: UIViewController, GestureControllerDelegate {
 	
 	
 	/** Returns if the view can be dropped here. */
-	func acceptsView(view: UIView) -> Bool {
+	func acceptsActionView(view: UIView) -> Bool {
+		return self.acceptsView(view)
+	}
+	
+	
+	func acceptsPropertyView(view: UIView) -> Bool {
+		if !self.acceptsView(view) {
+			return false
+		}
+		
+		return self.blockViewControllerForPropertyView(view) != nil
+	}
+	
+	
+	private func blockViewControllerForPropertyView(view: UIView) -> BlockViewController? {
+		for controller in self.blockViewControllers {
+			if controller.acceptsPropertyView(view) {
+				return controller
+			}
+		}
+		
+		return nil
+	}
+	
+	
+	private func acceptsView(view: UIView) -> Bool {
 		let convertedFrame = self.view.convertRect(view.frame, fromCoordinateSpace: view.superview!)
 		return self.view.bounds.intersects(convertedFrame)
 	}
@@ -96,6 +121,13 @@ class ScriptViewController: UIViewController, GestureControllerDelegate {
 				self.scriptListView.addSubview(blockController.view)
 			}
 			
+		}
+	}
+	
+	
+	func addProperty(property: EntityProperty, forDroppedView droppedView: UIView) {
+		if let controller = self.blockViewControllerForPropertyView(droppedView) {
+			controller.addProperty(property, forDroppedView: droppedView)
 		}
 	}
 	

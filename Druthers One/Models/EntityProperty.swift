@@ -10,7 +10,7 @@ import Foundation
 
 
 /** A property for an Entity. */
-class EntityProperty {
+class EntityProperty: Evaluatable {
 	
 	/** The key (name) of the property. */
 	let key: String

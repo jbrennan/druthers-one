@@ -16,6 +16,8 @@ class ScrubbingGestureController {
 	/** Gesture controller's delegate. */
 	weak var delegate: ScrubbingGestureControllerDelegate?
 	
+	var enabled = true
+	
 	private var intValueWhenDragBegan: Int?
 	
 	
@@ -27,6 +29,10 @@ class ScrubbingGestureController {
 	
 	
 	@objc func panDidRecognize(recognizer: UIPanGestureRecognizer) {
+		if !self.enabled {
+			return
+		}
+		
 		let view = recognizer.view
 		
 		switch recognizer.state {
