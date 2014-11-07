@@ -20,7 +20,8 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		
 		
 		let entity = Entity()
-
+		entity.title = "Purple"
+		
 		let entityViewController = EntityViewController(entity: entity)
 		entityViewController.parentController = self
 		
@@ -34,6 +35,7 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		
 		// entity 2
 		let entity2 = Entity()
+		entity2.title = "Orange"
 		
 		let entityViewController2 = EntityViewController(entity: entity2)
 		entityViewController2.parentController = self
