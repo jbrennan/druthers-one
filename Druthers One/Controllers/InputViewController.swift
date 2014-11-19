@@ -58,7 +58,7 @@ class InputViewController: UIViewController, ScrubbingGestureControllerDelegate 
 	
 	
 	func scrubberDidScrubToNumber(newValue: Int) {
-		self.entityActionInput.value = newValue
+		self.entityActionInput.value = CGFloat(newValue)
 		self.updateViews()
 	}
 	

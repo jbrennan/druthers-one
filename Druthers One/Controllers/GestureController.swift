@@ -118,7 +118,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		case .Began:
 			self.initialViewRotation = self.gestureControllerDelegate?.initialViewRotationInRadians?()
 		case .Changed:
-			self.gestureControllerDelegate?.viewWasRotatedByRadians?(recognizer.rotation)
+			self.gestureControllerDelegate?.viewWasRotatedToAngleRadians?(recognizer.rotation + self.initialViewRotation!)
 
 		default:
 			break
@@ -185,7 +185,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	optional func initialViewRotationInRadians() -> CGFloat
 	
 	/** Called continuously as the view is rotated. */
-	optional func viewWasRotatedByRadians(rotationInRadians: CGFloat)
+	optional func viewWasRotatedToAngleRadians(angleInRadians: CGFloat)
 	
 	/** Called when the view ends dragging. */
 	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint)

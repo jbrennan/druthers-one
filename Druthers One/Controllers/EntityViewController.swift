@@ -74,8 +74,10 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 		return (self.entity.direction.evaluate() as CGFloat).toRadians()
 	}
 	
-	func viewWasRotatedByRadians(rotationInRadians: CGFloat) {
-		println(rotationInRadians)
+	func viewWasRotatedToAngleRadians(angleInRadians: CGFloat) {
+		self.entity.direction.updateValueTo(-angleInRadians.toDegrees())
+		self.updateViewRotation()
+		self.entityController?.entityDidMove()
 	}
 	
 	
@@ -87,9 +89,15 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	func entityDidUpdate() {
 		self.view.centerX = CGFloat(self.entity.x.evaluate() as CGFloat)
 		self.view.centerY = CGFloat(self.entity.y.evaluate() as CGFloat)
+		self.updateViewRotation()
+	}
+	
+	
+	private func updateViewRotation() {
 		let degrees = -(self.entity.direction.evaluate() as CGFloat) //- 90
 		let radians = degrees.toRadians()
 		self.view.transform = CGAffineTransformMakeRotation(radians)
+		
 	}
 
 }
