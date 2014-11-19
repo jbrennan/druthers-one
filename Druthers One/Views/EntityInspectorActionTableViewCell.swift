@@ -44,7 +44,7 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 	
 	
 	override func valueAsInt() -> Int {
-		return self.action?.firstInput?.value as Int
+		return (self.action?.firstInput?.value as CGFloat).toInt()
 	}
 	
 	
@@ -52,7 +52,7 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 		if let action = self.action {
 			self.inspectedTitle = "\(action.title)"
 			if let input = action.firstInput? {
-				self.scrubbableValueView.valueLabel.text = "\(input.value)"
+				self.scrubbableValueView.valueLabel.text = "\((input.value as CGFloat).toInt())"
 				if let plural = input.pluralUnit {
 					self.scrubbableValueView.unitLabel.text = "\(plural)"
 				}
@@ -61,7 +61,7 @@ class EntityInspectorActionTableViewCell: EntityInspectorTableViewCell {
 	}
 	
 	override func updateValueAsInt(updatedIntValue: Int) {
-		self.action?.firstInput?.value = updatedIntValue
+		self.action?.firstInput?.value = CGFloat(updatedIntValue)
 	}
 	
 	

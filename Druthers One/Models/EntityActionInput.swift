@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 
 /** An input is a parameter to an action (method). */
@@ -39,8 +40,8 @@ class EntityActionInput: Copyable, Evaluatable {
 	
 	
 	private var valueAsInt: Int? {
-		if self.value is Int {
-			return Int(self.value as Int)
+		if self.value is CGFloat {
+			return Int(self.value as CGFloat)
 		}
 		
 		return nil

@@ -39,7 +39,7 @@ class EntityInspectorDataTableViewCell: EntityInspectorTableViewCell {
 	override func updateLabels() {
 		if let property = self.property {
 			self.inspectedTitle = "\(property.key)"
-			self.scrubbableValueView.valueLabel.text = "\(property.value)"
+			self.scrubbableValueView.valueLabel.text = "\((property.value as CGFloat).toInt())"
 		}
 	}
 	
