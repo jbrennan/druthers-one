@@ -70,6 +70,14 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 		self.entityController?.entityDidMove()
 	}
 	
+	func initialViewRotationInRadians() -> CGFloat {
+		return (self.entity.direction.evaluate() as CGFloat).toRadians()
+	}
+	
+	func viewWasRotatedByRadians(rotationInRadians: CGFloat) {
+		println(rotationInRadians)
+	}
+	
 	
 	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
 		droppedView?.tossWithVelocity(velocity)
@@ -79,8 +87,8 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	func entityDidUpdate() {
 		self.view.centerX = CGFloat(self.entity.x.evaluate() as Int)
 		self.view.centerY = CGFloat(self.entity.y.evaluate() as Int)
-		let degrees = -(self.entity.direction.evaluate() as Int) //- 90
-		let radians = CGFloat(degrees).toRadians()
+		let degrees = -(self.entity.direction.evaluate() as CGFloat) //- 90
+		let radians = degrees.toRadians()
 		self.view.transform = CGAffineTransformMakeRotation(radians)
 	}
 

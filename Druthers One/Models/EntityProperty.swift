@@ -34,7 +34,7 @@ class EntityProperty: Evaluatable {
 	func updateValueTo(newValue: Any) {
 		var newValue = newValue
 		if let range = self.range {
-			newValue = range.rangedValueForIntValue(newValue)
+			newValue = range.rangedValueForFloatValue(newValue)
 		}
 		
 		self.internalValue = newValue

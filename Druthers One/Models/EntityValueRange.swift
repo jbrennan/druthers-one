@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /** Represents a range limiting for an entity value. */
 struct EntityValueRange {
@@ -19,43 +20,44 @@ struct EntityValueRange {
 	
 	
 	/** Returns a value in range, either wrapped or clamped to the range. */
-	func rangedValueForIntValue(value: Any) -> Any {
-		if value is Int {
+	func rangedValueForFloatValue(value: Any) -> Any {
+		if value is CGFloat {
 			if self.wraps {
-				return self.wrappedRangedValueForIntValue(value as Int)
+				return self.wrappedRangedValueForFloatValue(value as CGFloat)
 			}
 			
-			return self.clampedRangedValueForIntValue(value as Int)
+			return self.clampedRangedValueForFloatValue(value as CGFloat)
 		}
 		
 		return value
 	}
 	
 	
-	private func wrappedRangedValueForIntValue(intValue: Int) -> Int {
-		var value = intValue
+	// The following methods will potentially lose precision when wrapping. It's probably OK but ideally these could be made more precise. I'm just too lazy to do it right now.
+	private func wrappedRangedValueForFloatValue(floatValue: CGFloat) -> CGFloat {
+		var value = Int(floatValue)
 		if value < self.range.startIndex {
-			value = self.range.endIndex - (self.range.startIndex - value)
+			return CGFloat(self.range.endIndex - (self.range.startIndex - value))
 		}
 		
 		if value > self.range.endIndex {
-			value = self.range.startIndex + (value - self.range.endIndex)
+			return CGFloat(self.range.startIndex + (value - self.range.endIndex))
 		}
 		
-		return value
+		return floatValue
 	}
 	
 	
-	private func clampedRangedValueForIntValue(intValue: Int) -> Int {
-		var value = intValue
+	private func clampedRangedValueForFloatValue(floatValue: CGFloat) -> CGFloat {
+		var value = Int(floatValue)
 		if value < self.range.startIndex {
-			value = self.range.startIndex
+			return CGFloat(self.range.startIndex)
 		}
 		
 		if value > self.range.endIndex {
-			value = self.range.endIndex
+			return CGFloat(self.range.endIndex)
 		}
 		
-		return value
+		return floatValue
 	}
 }

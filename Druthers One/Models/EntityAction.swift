@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import CoreGraphics
 
 /** Represents a method an Entity can do. */
 class EntityAction: Copyable {
@@ -62,7 +62,7 @@ class EntityAction: Copyable {
 		switch self.builtInType {
 		case .Move:
 			if let firstInput = self.firstInput {
-				let direction = Double(entity.direction.evaluate() as Int)
+				let direction = Double(entity.direction.evaluate() as CGFloat)
 				let length = Double(firstInput.evaluate() as Int)
 				let dX = length * cos(direction.toRadians())
 				let dY = length * sin(direction.toRadians())
@@ -74,9 +74,9 @@ class EntityAction: Copyable {
 			}
 			break
 		case .Turn:
-			var direction = entity.direction.evaluate() as Int
+			var direction = entity.direction.evaluate() as CGFloat
 			if let firstInput = self.firstInput {
-				direction += firstInput.evaluate() as Int
+				direction += firstInput.evaluate() as CGFloat
 			}
 			entity.direction.updateValueTo(direction)
 			updatedProperties.append(entity.direction)

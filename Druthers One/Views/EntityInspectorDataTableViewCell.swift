@@ -32,7 +32,7 @@ class EntityInspectorDataTableViewCell: EntityInspectorTableViewCell {
 	
 	
 	override func valueAsInt() -> Int {
-		return self.property?.value as Int
+		return Int(self.property?.value as CGFloat)
 	}
 	
 	
@@ -44,7 +44,7 @@ class EntityInspectorDataTableViewCell: EntityInspectorTableViewCell {
 	}
 	
 	override func updateValueAsInt(updatedIntValue: Int) {
-		self.property?.updateValueTo(updatedIntValue)
+		self.property?.updateValueTo(CGFloat(updatedIntValue))
 	}
 	
 	

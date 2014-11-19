@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 /** Represents an "Object" in this pseudo-OOP environment-o-mine (but "Object" is a terrible name..learned that the hard way at Hopscotch). */
 class Entity {
@@ -33,7 +34,7 @@ class Entity {
 	
 	
 	/** The direction in degrees the entity points in. */
-	var direction = EntityProperty(key: "direction", value: 0, range: EntityValueRange(range: -179...180, wraps: true))
+	var direction = EntityProperty(key: "direction", value: CGFloat(0), range: EntityValueRange(range: -179...180, wraps: true))
 	
 	/** The controller owns the entity for now. */
 	weak var controller: EntityController?
@@ -41,7 +42,7 @@ class Entity {
 	init() {
 		self.properties += [self.x, self.y, self.direction]
 		self.actions.append(EntityAction(title: "move forward", inputs: [EntityActionInput(title: "forward", unit: "step", defaultValue: 5)], builtInType: .Move))
-		self.actions.append(EntityAction(title: "turn", inputs: [EntityActionInput(title: "left", unit: "degree", defaultValue: 5)], builtInType: .Turn))
+		self.actions.append(EntityAction(title: "turn", inputs: [EntityActionInput(title: "left", unit: "degree", defaultValue: CGFloat(5))], builtInType: .Turn))
 	}
 	
 	

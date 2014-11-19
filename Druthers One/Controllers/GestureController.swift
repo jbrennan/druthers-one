@@ -14,8 +14,10 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	private let panGestureRecognizer: UIPanGestureRecognizer
 	private let longPressGestureRecognizer: UILongPressGestureRecognizer
 	private let tapGestureRecognizer: UITapGestureRecognizer
+	private let rotateGesureRecognizer: UIRotationGestureRecognizer
 	
 	private var offsetTouchDownPoint: CGPoint?
+	private var initialViewRotation: CGFloat?
 	
 	/** The view affected by the gestures. */
 	var gestureView: UIView
@@ -38,6 +40,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		self.panGestureRecognizer = UIPanGestureRecognizer()
 		self.longPressGestureRecognizer = UILongPressGestureRecognizer()
 		self.tapGestureRecognizer = UITapGestureRecognizer()
+		self.rotateGesureRecognizer = UIRotationGestureRecognizer()
 		
 		super.init()
 		
@@ -52,9 +55,13 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 		
 		self.tapGestureRecognizer.addTarget(self, action: "tapDidRecognize")
 		
+		self.rotateGesureRecognizer.addTarget(self, action: "rotateDidRecognize:")
+		self.rotateGesureRecognizer.delegate = self
+		
 		self.gestureView.addGestureRecognizer(self.panGestureRecognizer)
 		self.gestureView.addGestureRecognizer(self.longPressGestureRecognizer)
 		self.gestureView.addGestureRecognizer(self.tapGestureRecognizer)
+		self.gestureView.addGestureRecognizer(self.rotateGesureRecognizer)
 	}
 	
 	
@@ -105,6 +112,20 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	}
 	
 	
+	func rotateDidRecognize(recognizer: UIRotationGestureRecognizer) {
+		switch recognizer.state {
+			
+		case .Began:
+			self.initialViewRotation = self.gestureControllerDelegate?.initialViewRotationInRadians?()
+		case .Changed:
+			self.gestureControllerDelegate?.viewWasRotatedByRadians?(recognizer.rotation)
+
+		default:
+			break
+		}
+	}
+	
+	
 	func gestureDidBegin() {
 		self.viewBeingMoved?.showDragShadow()
 		if let delegate = self.gestureControllerDelegate {
@@ -131,7 +152,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 	
 	
 	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-		return contains([self.panGestureRecognizer, self.longPressGestureRecognizer, self.tapGestureRecognizer], otherGestureRecognizer)
+		return contains([self.panGestureRecognizer, self.longPressGestureRecognizer, self.tapGestureRecognizer, self.rotateGesureRecognizer], otherGestureRecognizer)
 	}
 	
 	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
@@ -147,7 +168,7 @@ class GestureController: NSObject, UIGestureRecognizerDelegate {
 }
 
 
-protocol GestureControllerDelegate: NSObjectProtocol {
+@objc protocol GestureControllerDelegate: NSObjectProtocol {
 	
 	
 	/** Called when the view is tapped. */
@@ -159,6 +180,15 @@ protocol GestureControllerDelegate: NSObjectProtocol {
 	/** Called continuously as the view is panned. */
 	func viewWasPanned()
 	
+	
+	/** Called when a rotation gesture starts. */
+	optional func initialViewRotationInRadians() -> CGFloat
+	
+	/** Called continuously as the view is rotated. */
+	optional func viewWasRotatedByRadians(rotationInRadians: CGFloat)
+	
 	/** Called when the view ends dragging. */
 	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint)
 }
+
+
