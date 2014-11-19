@@ -19,6 +19,11 @@ extension CGFloat {
 		return self / CGFloat(180.0) * CGFloat(M_PI)
 	}
 	
+	
+	func toDegrees() -> CGFloat {
+		return self * CGFloat(180.0) / CGFloat(M_PI)
+	}
+	
 	/** Clamps the receiver between the lower and the upper bounds. */
 	func clamp(lower: CGFloat, upper: CGFloat) -> CGFloat {
 		if self < lower {

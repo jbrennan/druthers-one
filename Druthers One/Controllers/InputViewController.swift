@@ -24,7 +24,7 @@ class InputViewController: UIViewController, ScrubbingGestureControllerDelegate 
 	
 	
 	var initialScrubbingNumber: Int {
-		return self.entityActionInput.value as Int
+		return Int(self.entityActionInput.value as CGFloat)
 	}
 	
 	init(entityActionInput: EntityActionInput) {
