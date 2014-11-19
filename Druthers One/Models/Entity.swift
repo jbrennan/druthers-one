@@ -26,11 +26,11 @@ class Entity {
 	
 	
 	/** The x coordinate property of the entity's upper left corner. */
-	var x = EntityProperty(key: "x", value: 200)
+	var x = EntityProperty(key: "x", value: CGFloat(200))
 	
 	
 	/** The y coordinate property of the entity's upper left corner. */
-	var y = EntityProperty(key: "y", value: 255)
+	var y = EntityProperty(key: "y", value: CGFloat(255))
 	
 	
 	/** The direction in degrees the entity points in. */
@@ -41,7 +41,7 @@ class Entity {
 	
 	init() {
 		self.properties += [self.x, self.y, self.direction]
-		self.actions.append(EntityAction(title: "move forward", inputs: [EntityActionInput(title: "forward", unit: "step", defaultValue: 5)], builtInType: .Move))
+		self.actions.append(EntityAction(title: "move forward", inputs: [EntityActionInput(title: "forward", unit: "step", defaultValue: CGFloat(5))], builtInType: .Move))
 		self.actions.append(EntityAction(title: "turn", inputs: [EntityActionInput(title: "left", unit: "degree", defaultValue: CGFloat(5))], builtInType: .Turn))
 	}
 	

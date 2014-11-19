@@ -63,12 +63,12 @@ class EntityAction: Copyable {
 		case .Move:
 			if let firstInput = self.firstInput {
 				let direction = Double(entity.direction.evaluate() as CGFloat)
-				let length = Double(firstInput.evaluate() as Int)
+				let length = Double(firstInput.evaluate() as CGFloat)
 				let dX = length * cos(direction.toRadians())
 				let dY = length * sin(direction.toRadians())
 				
-				entity.x.updateValueTo((entity.x.evaluate() as Int) + Int(dX))
-				entity.y.updateValueTo((entity.y.evaluate() as Int) - Int(dY)) // subtract because y starts at the top
+				entity.x.updateValueTo((entity.x.evaluate() as CGFloat) + CGFloat(dX))
+				entity.y.updateValueTo((entity.y.evaluate() as CGFloat) - CGFloat(dY)) // subtract because y starts at the top
 				
 				updatedProperties += [entity.x, entity.y]
 			}
