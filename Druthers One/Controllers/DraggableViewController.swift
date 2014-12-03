@@ -26,7 +26,9 @@ class DraggableViewController: UIViewController, GestureControllerDelegate {
         super.viewDidLoad()
 		
 		self.view.addSubview(self.headerView)
-		self.view.layer.borderWidth = 2
+		self.view.layer.borderWidth = 1
+		self.view.layer.cornerRadius = 4 // TODO(jason): corners spill out...will need another container view in the mix.
+	
 		self.scriptView().headerView = self.headerView
 		
 		self.gestureController = GestureController(gestureView: self.headerView, canvasView: UIApplication.rootViewController()!.view)

@@ -55,5 +55,11 @@ class ScriptHeaderView: UIView {
 		self.repeatButton.moveToVerticalCenterOfSuperview()
 		self.repeatButton.moveToRightSideOfSuperview(margin: margin)
 	}
+	
+	
+	func hideButtons() {
+		self.playButton.hidden = true
+		self.repeatButton.hidden = true
+	}
 
 }

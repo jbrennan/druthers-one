@@ -15,9 +15,17 @@ class DraggableInspectorViewController: DraggableViewController {
 			if let inspectorViewController = inspectorViewController {
 				self.beginShowingChildViewController(inspectorViewController)
 				self.scriptView().contentView = inspectorViewController.view
+				self.scriptView().headerView?.titleLabel.text = inspectorViewController.entityController?.entity.title
 				self.view.setNeedsLayout()
 			}
 		}
+	}
+	
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		self.scriptView().headerView?.hideButtons()
 	}
 
 }

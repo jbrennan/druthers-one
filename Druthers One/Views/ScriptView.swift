@@ -10,7 +10,7 @@ import UIKit
 
 class ScriptView: UIView {
 
-	var headerView: UIView?
+	var headerView: ScriptHeaderView?
 	var contentView: UIView?
 	
 	override func sizeThatFits(size: CGSize) -> CGSize {
