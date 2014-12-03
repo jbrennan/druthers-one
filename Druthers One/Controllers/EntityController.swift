@@ -42,6 +42,11 @@ class EntityController {
 		ScriptController.enqueueScript(script)
 	}
 	
-	
-	
+}
+
+
+extension EntityController: Equatable {}
+
+func ==(lhs: EntityController, rhs: EntityController) -> Bool {
+	return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
 }

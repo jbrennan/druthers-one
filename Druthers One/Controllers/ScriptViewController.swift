@@ -8,26 +8,18 @@
 
 import UIKit
 
-class ScriptViewController: UIViewController, GestureControllerDelegate {
+class ScriptViewController: DraggableViewController, GestureControllerDelegate {
 	
 	var script: EntityScript?
-	let headerView = ScriptHeaderView(frame: CGRect())
+
 	let scriptListView = ScriptListView(frame: CGRect())
 	
 	var blockViewControllers = [BlockViewController]()
 	
-	var gestureController: GestureController?
-	
-	func scriptView() -> ScriptView {
-		return self.view as ScriptView
-	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		self.view.addSubview(self.headerView)
-		self.view.layer.borderWidth = 2
-		self.scriptView().headerView = self.headerView
 		
 		self.headerView.playButton.tapAction = { [weak self] in
 			if let strongSelf = self {
@@ -54,17 +46,8 @@ class ScriptViewController: UIViewController, GestureControllerDelegate {
 		}
 		
 		self.view.addSubview(self.scriptListView)
-		self.scriptView().scriptListView = self.scriptListView
-		
-		self.gestureController = GestureController(gestureView: self.headerView, canvasView: UIApplication.rootViewController()!.view)
-		self.gestureController?.viewBeingMoved = self.view
-		self.gestureController?.gestureControllerDelegate = self
+		self.scriptView().contentView = self.scriptListView
 
-	}
-	
-	
-	override func loadView() {
-		self.view = ScriptView(frame: CGRect())
 	}
 	
 	
@@ -128,23 +111,6 @@ class ScriptViewController: UIViewController, GestureControllerDelegate {
 	func addProperty(property: EntityProperty, forDroppedView droppedView: UIView) {
 		if let controller = self.blockViewControllerForPropertyView(droppedView) {
 			controller.addProperty(property, forDroppedView: droppedView)
-		}
-	}
-	
-	
-	/** Called when the view is tapped. */
-	func viewWasTapped() {}
-	
-	/** Called when the view starts dragging. */
-	func viewDidStartDragging() {}
-	
-	/** Called continuously as the view is panned. */
-	func viewWasPanned() {}
-	
-	/** Called when the view ends dragging. */
-	func viewDidEndDragging(droppedView: UIView?, velocity: CGPoint) {
-		droppedView?.tossWithVelocity(velocity) {
-			
 		}
 	}
 

@@ -11,7 +11,7 @@ import UIKit
 class ScriptView: UIView {
 
 	var headerView: UIView?
-	var scriptListView: UIView?
+	var contentView: UIView?
 	
 	override func sizeThatFits(size: CGSize) -> CGSize {
 		return self.sizeThatFitsByLayingOutSubviews(size, commitLayout: false)
@@ -27,12 +27,14 @@ class ScriptView: UIView {
 	override func sizeThatFitsByLayingOutSubviews(size: CGSize, commitLayout: Bool = true) -> CGSize {
 		return self.sizeThatFitsByRunningLayoutBlock(commitLayout: commitLayout) {
 			() -> CGSize in
-			let margin = CGFloat(10)
 			
 			self.headerView?.sizeToFit()
 			
-			self.scriptListView?.sizeToFit()
-			if let scriptView = self.scriptListView {
+			self.contentView?.sizeToFit()
+
+			if let scriptView = self.contentView {
+				let contentSize = scriptView.sizeThatFits(CGSize(width: CGFloat(300), height: CGFloat.max))
+				scriptView.frameSize = contentSize
 				if let headerView = self.headerView {
 					scriptView.y = headerView.maxY
 				}
@@ -40,7 +42,7 @@ class ScriptView: UIView {
 			
 
 			let maxX = self.headerView?.maxX ?? 300
-			let maxY = self.scriptListView?.maxY ?? 100
+			let maxY = self.contentView?.maxY ?? 100
 			return CGSize(width: maxX, height: maxY)
 			
 		}

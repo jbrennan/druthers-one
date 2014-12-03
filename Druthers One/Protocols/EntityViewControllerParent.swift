@@ -10,7 +10,7 @@ import UIKit
 
 /** Classes conforming to this protocol act as a parent to the entity view controller. */
 protocol EntityViewControllerParent: class {
-	var view: UIView {
+	var view: UIView! {
 		get
 	}
 	

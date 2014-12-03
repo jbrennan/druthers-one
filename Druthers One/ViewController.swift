@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, EntityViewControllerParent {
 	
 	var entityControllers = [EntityController]()
-	var inspector: PopoverViewController?
+	var currentInspector: DraggableInspectorViewController?
 	
 	var scriptViewControllers = [ScriptViewController]()
 	
@@ -123,10 +123,6 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 		
-		self.inspector?.view.origin = CGPoint(x: 30, y: 30)
-		self.inspector?.view.frameSize = CGSize(width: 300, height: 500)
-		self.inspector?.view.updateMarkerBorder()
-		
 		for controller in self.scriptViewControllers {
 			let view = controller.view
 			view.sizeToFit()
@@ -135,13 +131,22 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	
 	
 	func openInspectorForEntityController(entityController: EntityController) {
+
+		if let currentInspectorTableView = self.currentInspector?.inspectorViewController {
+			if entityController == currentInspectorTableView.entityController {
+				return
+			}
+		}
+		
 		let entityInspector = EntityInspectorTableViewController()
 		entityInspector.entityController = entityController
 		entityController.entityInspector = entityInspector
 		
-		self.inspector = PopoverViewController()
-		self.inspector?.contentViewController = entityInspector
-		self.beginShowingChildViewController(self.inspector!)
+		self.currentInspector = DraggableInspectorViewController()
+		self.currentInspector?.inspectorViewController = entityInspector
+		self.beginShowingChildViewController(self.currentInspector!)
+		self.currentInspector?.view.sizeToFit()
+		self.currentInspector?.view.origin = CGPoint(x: 40, y: 40)
 	}
 	
 
