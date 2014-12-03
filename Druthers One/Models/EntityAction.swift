@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Khan Academy. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreGraphics
 
 /** Represents a method an Entity can do. */
@@ -67,8 +67,15 @@ class EntityAction: Copyable {
 				let dX = length * cos(direction.toRadians())
 				let dY = length * sin(direction.toRadians())
 				
-				entity.x.updateValueTo((entity.x.evaluate() as CGFloat) + CGFloat(dX))
-				entity.y.updateValueTo((entity.y.evaluate() as CGFloat) - CGFloat(dY)) // subtract because y starts at the top
+				var newX = (entity.x.evaluate() as CGFloat) + CGFloat(dX)
+				var newY = (entity.y.evaluate() as CGFloat) - CGFloat(dY) // subtract because y starts at the top
+				
+				let screenBounds = UIScreen.mainScreen().bounds
+				newX = newX.clamp(0.0, upper: screenBounds.width)
+				newY = newY.clamp(0.0, upper: screenBounds.height)
+				
+				entity.x.updateValueTo(newX)
+				entity.y.updateValueTo(newY)
 				
 				updatedProperties += [entity.x, entity.y]
 			}
