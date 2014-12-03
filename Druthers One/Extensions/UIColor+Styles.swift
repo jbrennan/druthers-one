@@ -35,4 +35,13 @@ extension UIColor {
 	class func KhanMediumGreyColor() -> UIColor {
 		return UIColor(brightness: 59)
 	}
+	
+	
+	class func KhanCanvasBackgroundColor() -> UIColor {
+//		return UIColor(hue:0.087, saturation:0.091, brightness:0.996, alpha:1.0)
+//		return UIColor(hue:0.111, saturation:0.457, brightness:0.953, alpha:1.0)
+		return UIColor(hue:0.123, saturation:0.153, brightness:0.973, alpha:1.0) // I think I like this the best
+//		return UIColor(hue:0.124, saturation:0.313, brightness:0.988, alpha:1.0)
+//		return UIColor(hue: 0.067, saturation: 0.021, brightness: 0.937, alpha: 1.0)
+	}
 }

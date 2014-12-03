@@ -18,6 +18,7 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.view.backgroundColor = UIColor.KhanCanvasBackgroundColor()
 		
 		let entity = Entity()
 		entity.title = "Purple"
