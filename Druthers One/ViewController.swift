@@ -93,6 +93,7 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		let property = userInfo["property"]! as EntityProperty
 		if let scriptViewController = self.scriptViewControllerAcceptingPropertyView(view) {
 			scriptViewController.addProperty(property, forDroppedView: view)
+			scriptViewController.view.sizeToFit()
 		} else {
 			// poof!
 		}

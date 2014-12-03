@@ -40,8 +40,9 @@ class ScriptView: UIView {
 				}
 			}
 			
-
-			let maxX = self.headerView?.maxX ?? 300
+			
+			let minWidth = CGFloat(300)
+			let maxX = max(self.headerView?.width ?? minWidth, self.contentView?.width ?? minWidth)
 			let maxY = self.contentView?.maxY ?? 100
 			return CGSize(width: maxX, height: maxY)
 			

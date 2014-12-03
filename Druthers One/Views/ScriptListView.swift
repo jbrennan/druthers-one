@@ -37,16 +37,19 @@ class ScriptListView: UIView {
 		return self.sizeThatFitsByRunningLayoutBlock(commitLayout: commitLayout) {
 			() -> CGSize in
 			
+			var maxWidth = CGFloat(300)
 			var y = CGFloat(0)
 			for view in self.blocks {
 				view.sizeToFit()
 				view.y = y
 				y = view.maxY
+				
+				maxWidth = max(maxWidth, view.width)
 			}
 			
 			
 			
-			return CGSize(width: 300, height: y)
+			return CGSize(width: maxWidth, height: y)
 			
 		}
 	}
