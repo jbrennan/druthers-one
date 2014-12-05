@@ -15,6 +15,8 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	
 	var scriptViewControllers = [ScriptViewController]()
 	
+	var speechBubble: SpeechBubbleView?
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -52,6 +54,11 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		
 		NSNotificationCenter.addObserver(self, notificationName: "ActionBlockDropped", selector: "actionBlockWasDropped:")
 		NSNotificationCenter.addObserver(self, notificationName: "PropertyBlockDropped", selector: "propertyBlockWasDropped:")
+		
+		UITapGestureRecognizer(target: self, action: "tapDidRecognize", view: self.view) // TODO: Definitely ought to have a better interaction for this :)
+		
+		self.speechBubble = SpeechBubbleView(frame: CGRect())
+		self.view.addSubview(self.speechBubble!)
 	}
 	
 	
@@ -129,6 +136,9 @@ class ViewController: UIViewController, EntityViewControllerParent {
 			let view = controller.view
 			view.sizeToFit()
 		}
+		
+		self.speechBubble?.sizeToFit()
+		self.speechBubble?.center = self.view.centerOfBounds
 	}
 	
 	
@@ -149,6 +159,12 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		self.beginShowingChildViewController(self.currentInspector!)
 		self.currentInspector?.view.sizeToFit()
 		self.currentInspector?.view.origin = CGPoint(x: 40, y: 40)
+	}
+	
+	
+	func tapDidRecognize() {
+		println("tap!")
+		self.speechBubble?.animateIn()
 	}
 	
 

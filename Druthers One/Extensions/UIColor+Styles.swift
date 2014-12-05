@@ -44,4 +44,9 @@ extension UIColor {
 //		return UIColor(hue:0.124, saturation:0.313, brightness:0.988, alpha:1.0)
 //		return UIColor(hue: 0.067, saturation: 0.021, brightness: 0.937, alpha: 1.0)
 	}
+	
+	
+	class func KhanSpeechBubbleColor() -> UIColor {
+		return UIColor(hue: 44, saturation: 11, brightness: 90)
+	}
 }
