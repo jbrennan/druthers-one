@@ -74,17 +74,13 @@ class SpeechBubbleView: UIView {
 	
 	
 	func animateIn() {
-		UIView.animateWithDuration(0.45, animations: { () -> Void in
+		UIView.animateWithDuration(0.2) {
+			() -> Void in
 			self.transform = CGAffineTransformIdentity
 			self.alpha = 1.0
-			}) { (finished: Bool) -> Void in
-				UIView.animateWithDuration(0.25, animations: { () -> Void in
-					self.showsTail = true
-					self.setNeedsLayout()
-					self.layoutIfNeeded()
-				})
-			
+			self.moveToCenterOfSuperview()
 		}
+		
 	}
 
 }
