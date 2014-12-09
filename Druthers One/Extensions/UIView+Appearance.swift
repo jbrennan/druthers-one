@@ -10,6 +10,24 @@ import UIKit
 
 extension UIView {
 	
+	
+	/** The corner radius of the view's layer. */
+	var cornerRadius: CGFloat {
+		get {
+			return self.layer.cornerRadius
+		}
+		
+		set {
+			self.layer.cornerRadius = newValue
+		}
+	}
+	
+	
+	/** Rounds the view's corners. */
+	func roundCorners() {
+		self.cornerRadius = self.height / 2.0
+	}
+	
 	func showDragShadow() {
 		self.layer.shadowColor = UIColor.blackColor().CGColor
 		self.layer.shadowPath = UIBezierPath(rect: self.bounds).CGPath

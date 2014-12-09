@@ -29,7 +29,6 @@ class SpeechBubbleView: UIView {
 		self.addSubview(self.bubbleView)
 		self.bubbleView.addSubview(self.textLabel)
 		
-		self.transform = CGAffineTransformMakeScale(0.01, 0.01)
 		self.alpha = 0;
 	}
 
@@ -63,7 +62,6 @@ class SpeechBubbleView: UIView {
 			self.textLabel.moveToCenterOfSuperview()
 			
 			self.tailView.sizeToFit()
-			self.tailView.y = self.showsTail ? self.bubbleView.maxY : self.bubbleView.maxY - self.tailView.height
 			self.tailView.y = self.bubbleView.maxY
 			self.tailView.moveToRightSideOfSuperview(margin: 18)
 			
@@ -73,14 +71,30 @@ class SpeechBubbleView: UIView {
 	}
 	
 	
-	func animateIn() {
-		UIView.animateWithDuration(0.2) {
+	func animateIn(completion: ActionBlock? = nil) {
+		self.transform = CGAffineTransformMakeScale(0.01, 0.01)
+		
+		UIView.animateWithDuration(0.2, animations: {
 			() -> Void in
 			self.transform = CGAffineTransformIdentity
 			self.alpha = 1.0
-			self.moveToCenterOfSuperview()
+			
+			}) {
+				(finished: Bool) -> Void in
+				if let completion = completion {
+					completion()
+				}
 		}
 		
+		
+		
 	}
+	
+	
+	func showText(text: String) {
+		self.textLabel.text = text
+		self.sizeToFit()
+	}
+	
 
 }

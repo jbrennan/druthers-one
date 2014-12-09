@@ -8,14 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, EntityViewControllerParent {
+/** Main view controller for the app. Desperately needs to be broken up. */
+class ViewController: UIViewController, EntityViewControllerParent, UIGestureRecognizerDelegate, PsstViewControllerDelegate {
 	
 	var entityControllers = [EntityController]()
 	var currentInspector: DraggableInspectorViewController?
 	
 	var scriptViewControllers = [ScriptViewController]()
 	
-	var speechBubble: SpeechBubbleView?
+	var psstViewController: PsstViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -55,10 +56,10 @@ class ViewController: UIViewController, EntityViewControllerParent {
 		NSNotificationCenter.addObserver(self, notificationName: "ActionBlockDropped", selector: "actionBlockWasDropped:")
 		NSNotificationCenter.addObserver(self, notificationName: "PropertyBlockDropped", selector: "propertyBlockWasDropped:")
 		
-		UITapGestureRecognizer(target: self, action: "tapDidRecognize", view: self.view) // TODO: Definitely ought to have a better interaction for this :)
+		UITapGestureRecognizer(target: self, action: "tapDidRecognize", view: self.view).delegate = self // TODO: Definitely ought to have a better interaction for this :)
 		
-		self.speechBubble = SpeechBubbleView(frame: CGRect())
-		self.view.addSubview(self.speechBubble!)
+		self.psstViewController = PsstViewController()
+		self.beginShowingChildViewController(self.psstViewController!)
 	}
 	
 	
@@ -137,8 +138,8 @@ class ViewController: UIViewController, EntityViewControllerParent {
 			view.sizeToFit()
 		}
 		
-		self.speechBubble?.sizeToFit()
-		self.speechBubble?.center = self.view.centerOfBounds
+		self.psstViewController?.view.sizeToFit()
+		self.psstViewController?.view.moveToCenterOfSuperview()
 	}
 	
 	
@@ -163,8 +164,22 @@ class ViewController: UIViewController, EntityViewControllerParent {
 	
 	
 	func tapDidRecognize() {
-		println("tap!")
-		self.speechBubble?.animateIn()
+		self.psstViewController?.screenWasTapped()
+		self.view.setNeedsLayout()
+	}
+	
+	
+	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+		if self.psstViewController!.shouldReceiveTouch(touch) {
+			return false
+		}
+		
+		return true
+	}
+	
+	
+	func showDrawingCanvas() {
+		// TODO:
 	}
 	
 

@@ -70,6 +70,10 @@
 		CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */; };
 		CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958BB31A00210500907A7D /* NSObject+Identifier.swift */; };
 		CDC3BDC41A315EEF0029D830 /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDC31A315EEF0029D830 /* SpeechBubbleView.swift */; };
+		CDC3BDC61A32441E0029D830 /* PsstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDC51A32441E0029D830 /* PsstViewController.swift */; };
+		CDC3BDC81A324D0D0029D830 /* GCD+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDC71A324D0D0029D830 /* GCD+Shortcuts.swift */; };
+		CDC3BDCA1A3254770029D830 /* TouchInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDC91A3254770029D830 /* TouchInterceptor.swift */; };
+		CDC3BDCC1A3254FA0029D830 /* PsstContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDCB1A3254FA0029D830 /* PsstContainerView.swift */; };
 		CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D701A031FE20031E06B /* ScriptController.swift */; };
 		CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D721A0321A60031E06B /* EntityScript.swift */; };
 		CDD18D751A034AE60031E06B /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D741A034AE60031E06B /* Double+Conversions.swift */; };
@@ -151,6 +155,10 @@
 		CD958BAF1A00132A00907A7D /* UITableView+Cells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Cells.swift"; sourceTree = "<group>"; };
 		CD958BB31A00210500907A7D /* NSObject+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Identifier.swift"; sourceTree = "<group>"; };
 		CDC3BDC31A315EEF0029D830 /* SpeechBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
+		CDC3BDC51A32441E0029D830 /* PsstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsstViewController.swift; sourceTree = "<group>"; };
+		CDC3BDC71A324D0D0029D830 /* GCD+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GCD+Shortcuts.swift"; sourceTree = "<group>"; };
+		CDC3BDC91A3254770029D830 /* TouchInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchInterceptor.swift; sourceTree = "<group>"; };
+		CDC3BDCB1A3254FA0029D830 /* PsstContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsstContainerView.swift; sourceTree = "<group>"; };
 		CDD18D701A031FE20031E06B /* ScriptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptController.swift; sourceTree = "<group>"; };
 		CDD18D721A0321A60031E06B /* EntityScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityScript.swift; sourceTree = "<group>"; };
 		CDD18D741A034AE60031E06B /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 				CDD18D7C1A03F0E30031E06B /* ScriptView.swift */,
 				CDD18D7E1A03F2680031E06B /* ScriptListView.swift */,
 				CDC3BDC31A315EEF0029D830 /* SpeechBubbleView.swift */,
+				CDC3BDCB1A3254FA0029D830 /* PsstContainerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +311,7 @@
 				CDD18D741A034AE60031E06B /* Double+Conversions.swift */,
 				CDD18D7A1A03EAF00031E06B /* NSNotificationCenter+Convenience.swift */,
 				CD3950391A05914F00399BEE /* UIView+Tossing.swift */,
+				CDC3BDC71A324D0D0029D830 /* GCD+Shortcuts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,6 +331,7 @@
 				CDDD965D1A07F2F900401931 /* ScrubbingGestureController.swift */,
 				CD25DE681A238B6F002A3BEE /* DraggableViewController.swift */,
 				CD25DE6A1A238F1A002A3BEE /* DraggableInspectorViewController.swift */,
+				CDC3BDC51A32441E0029D830 /* PsstViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 				CD958BA419FFF11A00907A7D /* EntityViewControllerParent.swift */,
 				CDDD965F1A0835EB00401931 /* Copyable.swift */,
 				CD2096401A0AA8EC001789E6 /* Evaluatable.swift */,
+				CDC3BDC91A3254770029D830 /* TouchInterceptor.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -467,6 +479,7 @@
 				CD958BA019FFD86C00907A7D /* GestureController.swift in Sources */,
 				CD12E9541A01A88100EE5569 /* UIColor+Styles.swift in Sources */,
 				CDDD965C1A07EADF00401931 /* InputViewController.swift in Sources */,
+				CDC3BDC81A324D0D0029D830 /* GCD+Shortcuts.swift in Sources */,
 				CD12E95A1A02882300EE5569 /* EntityAction.swift in Sources */,
 				CD12E9681A02CF1A00EE5569 /* UIApplication+RootViewController.swift in Sources */,
 				CDD18D771A03E3D30031E06B /* ScriptViewController.swift in Sources */,
@@ -482,8 +495,10 @@
 				CD958BB01A00132A00907A7D /* UITableView+Cells.swift in Sources */,
 				CD39503A1A05914F00399BEE /* UIView+Tossing.swift in Sources */,
 				CD25DE6B1A238F1A002A3BEE /* DraggableInspectorViewController.swift in Sources */,
+				CDC3BDCC1A3254FA0029D830 /* PsstContainerView.swift in Sources */,
 				CDDD96601A0835EB00401931 /* Copyable.swift in Sources */,
 				CD12E9641A02BBFE00EE5569 /* GrippyView.swift in Sources */,
+				CDC3BDCA1A3254770029D830 /* TouchInterceptor.swift in Sources */,
 				CD12E9661A02C68B00EE5569 /* CloningGestureController.swift in Sources */,
 				CD2096411A0AA8EC001789E6 /* Evaluatable.swift in Sources */,
 				CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */,
@@ -493,6 +508,7 @@
 				CDD18D791A03E4210031E06B /* ScriptHeaderView.swift in Sources */,
 				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,
 				CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */,
+				CDC3BDC61A32441E0029D830 /* PsstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
