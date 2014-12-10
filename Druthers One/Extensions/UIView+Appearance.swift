@@ -10,6 +10,16 @@ import UIKit
 
 extension UIView {
 	
+	var borderWidth: CGFloat {
+		get {
+			return self.layer.borderWidth
+		}
+		
+		set {
+			self.layer.borderWidth = newValue
+		}
+	}
+	
 	
 	/** The corner radius of the view's layer. */
 	var cornerRadius: CGFloat {

@@ -74,6 +74,12 @@
 		CDC3BDC81A324D0D0029D830 /* GCD+Shortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDC71A324D0D0029D830 /* GCD+Shortcuts.swift */; };
 		CDC3BDCA1A3254770029D830 /* TouchInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDC91A3254770029D830 /* TouchInterceptor.swift */; };
 		CDC3BDCC1A3254FA0029D830 /* PsstContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BDCB1A3254FA0029D830 /* PsstContainerView.swift */; };
+		CDC3BE021A377E060029D830 /* DrawingCanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BE011A377E060029D830 /* DrawingCanvasViewController.swift */; };
+		CDC3BE051A37B1A30029D830 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BE041A37B1A30029D830 /* Drawing.swift */; };
+		CDC3BE071A37B51F0029D830 /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BE061A37B51F0029D830 /* DrawingCanvasView.swift */; };
+		CDC3BE091A37B5E00029D830 /* Drawing+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BE081A37B5E00029D830 /* Drawing+Paths.swift */; };
+		CDC3BE0B1A37C38A0029D830 /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BE0A1A37C38A0029D830 /* CanvasViewController.swift */; };
+		CDC3BE0D1A37F3160029D830 /* DrawingGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC3BE0C1A37F3160029D830 /* DrawingGestureRecognizer.swift */; };
 		CDD18D711A031FE20031E06B /* ScriptController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D701A031FE20031E06B /* ScriptController.swift */; };
 		CDD18D731A0321A60031E06B /* EntityScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D721A0321A60031E06B /* EntityScript.swift */; };
 		CDD18D751A034AE60031E06B /* Double+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD18D741A034AE60031E06B /* Double+Conversions.swift */; };
@@ -159,6 +165,12 @@
 		CDC3BDC71A324D0D0029D830 /* GCD+Shortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GCD+Shortcuts.swift"; sourceTree = "<group>"; };
 		CDC3BDC91A3254770029D830 /* TouchInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchInterceptor.swift; sourceTree = "<group>"; };
 		CDC3BDCB1A3254FA0029D830 /* PsstContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PsstContainerView.swift; sourceTree = "<group>"; };
+		CDC3BE011A377E060029D830 /* DrawingCanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingCanvasViewController.swift; sourceTree = "<group>"; };
+		CDC3BE041A37B1A30029D830 /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		CDC3BE061A37B51F0029D830 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
+		CDC3BE081A37B5E00029D830 /* Drawing+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Drawing+Paths.swift"; sourceTree = "<group>"; };
+		CDC3BE0A1A37C38A0029D830 /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		CDC3BE0C1A37F3160029D830 /* DrawingGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingGestureRecognizer.swift; sourceTree = "<group>"; };
 		CDD18D701A031FE20031E06B /* ScriptController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScriptController.swift; sourceTree = "<group>"; };
 		CDD18D721A0321A60031E06B /* EntityScript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntityScript.swift; sourceTree = "<group>"; };
 		CDD18D741A034AE60031E06B /* Double+Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Conversions.swift"; sourceTree = "<group>"; };
@@ -188,6 +200,7 @@
 		CD11A3321A0148D80053916B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CDC3BE031A37B1730029D830 /* Drawing */,
 				CD11A3331A0149090053916B /* EntityInspectorTableViewCell.swift */,
 				CD12E95F1A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift */,
 				CD12E9611A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift */,
@@ -332,6 +345,9 @@
 				CD25DE681A238B6F002A3BEE /* DraggableViewController.swift */,
 				CD25DE6A1A238F1A002A3BEE /* DraggableInspectorViewController.swift */,
 				CDC3BDC51A32441E0029D830 /* PsstViewController.swift */,
+				CDC3BE011A377E060029D830 /* DrawingCanvasViewController.swift */,
+				CDC3BE0A1A37C38A0029D830 /* CanvasViewController.swift */,
+				CDC3BE0C1A37F3160029D830 /* DrawingGestureRecognizer.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -359,6 +375,16 @@
 				CDDD96591A07D4F400401931 /* EntityValueRange.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CDC3BE031A37B1730029D830 /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				CDC3BE041A37B1A30029D830 /* Drawing.swift */,
+				CDC3BE061A37B51F0029D830 /* DrawingCanvasView.swift */,
+				CDC3BE081A37B5E00029D830 /* Drawing+Paths.swift */,
+			);
+			path = Drawing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,11 +479,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDC3BE021A377E060029D830 /* DrawingCanvasViewController.swift in Sources */,
 				CD958BA519FFF11A00907A7D /* EntityViewControllerParent.swift in Sources */,
 				CD958B9D19FF431300907A7D /* CGPoint+Operators.swift in Sources */,
 				CDD18D811A0418310031E06B /* BlockViewController.swift in Sources */,
 				CD11A3311A0139370053916B /* EntityController.swift in Sources */,
+				CDC3BE091A37B5E00029D830 /* Drawing+Paths.swift in Sources */,
 				CD12E96A1A02D9A400EE5569 /* EntityView.swift in Sources */,
+				CDC3BE051A37B1A30029D830 /* Drawing.swift in Sources */,
 				CD958B9919FEDBDF00907A7D /* UIGestureRecognizer+Shortcuts.swift in Sources */,
 				CD25DE691A238B6F002A3BEE /* DraggableViewController.swift in Sources */,
 				CD958B9719FEC40D00907A7D /* UIView+Geometry.swift in Sources */,
@@ -470,6 +499,7 @@
 				CD12E9621A029BB700EE5569 /* EntityInspectorActionTableViewCell.swift in Sources */,
 				CD12E96C1A02E81300EE5569 /* EntityInspectorCellActionView.swift in Sources */,
 				CD12E9561A01C83F00EE5569 /* EntityInspectorCellScrubbableValueView.swift in Sources */,
+				CDC3BE0D1A37F3160029D830 /* DrawingGestureRecognizer.swift in Sources */,
 				CD12E95E1A02969C00EE5569 /* EntityActionInput.swift in Sources */,
 				CD12E9581A01D6E700EE5569 /* EntityProperty.swift in Sources */,
 				CD12E9251A019E7900EE5569 /* UILabel+Styles.swift in Sources */,
@@ -487,6 +517,7 @@
 				CD11A3361A0170020053916B /* EntityInspectorCellDraggableTitleView.swift in Sources */,
 				CD958BAA1A00046100907A7D /* Entity.swift in Sources */,
 				CDC3BDC41A315EEF0029D830 /* SpeechBubbleView.swift in Sources */,
+				CDC3BE0B1A37C38A0029D830 /* CanvasViewController.swift in Sources */,
 				CDD18D751A034AE60031E06B /* Double+Conversions.swift in Sources */,
 				CD958BB41A00210500907A7D /* NSObject+Identifier.swift in Sources */,
 				CD12E9601A029B8D00EE5569 /* EntityInspectorDataTableViewCell.swift in Sources */,
@@ -507,6 +538,7 @@
 				CD958B9519FEC27C00907A7D /* UIView+Layout.swift in Sources */,
 				CDD18D791A03E4210031E06B /* ScriptHeaderView.swift in Sources */,
 				CD958BA219FFEDA000907A7D /* EntityViewController.swift in Sources */,
+				CDC3BE071A37B51F0029D830 /* DrawingCanvasView.swift in Sources */,
 				CD12E96E1A02EA3200EE5569 /* Button.swift in Sources */,
 				CDC3BDC61A32441E0029D830 /* PsstViewController.swift in Sources */,
 			);

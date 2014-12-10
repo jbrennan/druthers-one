@@ -59,6 +59,7 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 		UITapGestureRecognizer(target: self, action: "tapDidRecognize", view: self.view).delegate = self // TODO: Definitely ought to have a better interaction for this :)
 		
 		self.psstViewController = PsstViewController()
+		self.psstViewController?.delegate = self
 		self.beginShowingChildViewController(self.psstViewController!)
 	}
 	
@@ -179,7 +180,11 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 	
 	
 	func showDrawingCanvas() {
-		// TODO:
+		let drawingCanvas = DrawingCanvasViewController()
+		self.beginShowingChildViewController(drawingCanvas, setupBlock: { () -> () in
+			self.view.addSubview(drawingCanvas.view)
+			drawingCanvas.view.frame = self.view.bounds
+		})
 	}
 	
 
