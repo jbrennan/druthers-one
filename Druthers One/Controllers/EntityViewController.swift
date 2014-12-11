@@ -34,20 +34,13 @@ class EntityViewController: UIViewController, GestureControllerDelegate {
 	var viewSize: CGSize = {
 		return CGSize(width: 100, height: 100)
 	}()
-	
-	var entityView: EntityView {
-		return self.view as EntityView
-	}
 
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		self.gestureController = GestureController(gestureView: self.entityView, canvasView: self.parentController!.view)
+		self.gestureController = GestureController(gestureView: self.view, canvasView: self.parentController!.view)
 		self.gestureController?.gestureControllerDelegate = self
-		self.view.backgroundColor = UIColor.purpleColor()
-		
-		self.view.frameSize = self.viewSize
     }
 	
 	

@@ -13,6 +13,7 @@ import UIKit
 class DrawingCanvasViewController: UIViewController {
 	
 	var canvasViewController: CanvasViewController?
+	weak var delegate: DrawingCanvasViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,8 @@ class DrawingCanvasViewController: UIViewController {
 		
 		self.canvasViewController = CanvasViewController(nibName: nil, bundle: nil)
 		self.beginShowingChildViewController(self.canvasViewController!)
+		
+		UITapGestureRecognizer(target: self, action: "didTap", view: self.view) // hack for now
 	}
 	
 	
@@ -30,5 +33,15 @@ class DrawingCanvasViewController: UIViewController {
 		canvasView?.frameSize = CGSize(width: 400, height: 400)
 		canvasView?.moveToCenterOfSuperview()
 	}
+	
+	
+	func didTap() {
+		self.delegate?.didFinishDrawing(self.canvasViewController!.drawing)
+	}
 
+}
+
+
+protocol DrawingCanvasViewControllerDelegate: NSObjectProtocol {
+	func didFinishDrawing(drawing: Drawing)
 }

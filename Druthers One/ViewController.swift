@@ -9,7 +9,7 @@
 import UIKit
 
 /** Main view controller for the app. Desperately needs to be broken up. */
-class ViewController: UIViewController, EntityViewControllerParent, UIGestureRecognizerDelegate, PsstViewControllerDelegate {
+class ViewController: UIViewController, EntityViewControllerParent, UIGestureRecognizerDelegate, PsstViewControllerDelegate, DrawingCanvasViewControllerDelegate {
 	
 	var entityControllers = [EntityController]()
 	var currentInspector: DraggableInspectorViewController?
@@ -17,6 +17,8 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 	var scriptViewControllers = [ScriptViewController]()
 	
 	var psstViewController: PsstViewController?
+	
+	var drawingCanvasViewController: DrawingCanvasViewController?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -139,6 +141,10 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 			view.sizeToFit()
 		}
 		
+		for controller in self.entityControllers {
+			controller.entityViewController.view.sizeToFit()
+		}
+		
 		self.psstViewController?.view.sizeToFit()
 		self.psstViewController?.view.moveToCenterOfSuperview()
 	}
@@ -180,11 +186,34 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 	
 	
 	func showDrawingCanvas() {
-		let drawingCanvas = DrawingCanvasViewController()
-		self.beginShowingChildViewController(drawingCanvas, setupBlock: { () -> () in
-			self.view.addSubview(drawingCanvas.view)
-			drawingCanvas.view.frame = self.view.bounds
+		self.drawingCanvasViewController = DrawingCanvasViewController()
+		self.drawingCanvasViewController?.delegate = self
+		
+		self.beginShowingChildViewController(self.drawingCanvasViewController!, setupBlock: { () -> () in
+			self.view.addSubview(self.drawingCanvasViewController!.view)
+			self.drawingCanvasViewController?.view.frame = self.view.bounds
 		})
+	}
+	
+	
+	func didFinishDrawing(drawing: Drawing) {
+		
+		let entity = Entity()
+		entity.title = "Drawing"
+		
+		let entityViewController = DrawnEntityViewController(entity: entity, costume: drawing)
+		entityViewController.parentController = self
+		
+		let entityController = EntityController(entity: entity, entityViewController: entityViewController)
+		entityViewController.entityController = entityController
+		
+		self.entityControllers.append(entityController)
+		
+		self.beginShowingChildViewController(entityViewController)
+		
+		if let drawingCanvas = self.drawingCanvasViewController {
+			self.endShowingChildViewController(drawingCanvas)
+		}
 	}
 	
 

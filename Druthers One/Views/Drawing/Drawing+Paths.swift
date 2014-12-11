@@ -31,6 +31,26 @@ extension Drawing {
 		return paths
 		
 	}
+	
+	
+	/** Returns the bounds enclosing the entire drawing. */
+	var drawingBounds: CGRect? {
+		if let paths = self.strokePaths {
+			var bounds = CGRect()
+			
+			for (index, path) in enumerate(paths) {
+				if index == 0 {
+					bounds = path.bounds
+				} else {
+					bounds = CGRectUnion(bounds, path.bounds)
+				}
+			}
+			
+			return bounds
+		}
+		
+		return nil
+	}
 }
 
 

@@ -36,6 +36,11 @@ class EntityView: UIView, NSCopying {
 	}
 	
 	
+	override func sizeThatFits(size: CGSize) -> CGSize {
+		return CGSize(width: 100, height: 100)
+	}
+	
+	
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
