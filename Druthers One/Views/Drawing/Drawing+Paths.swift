@@ -51,6 +51,15 @@ extension Drawing {
 		
 		return nil
 	}
+	
+	
+	var combinedPath: UIBezierPath? {
+		if let paths = self.strokePaths {
+			
+		}
+		
+		return nil
+	}
 }
 
 

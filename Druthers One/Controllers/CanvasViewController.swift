@@ -11,7 +11,7 @@ import UIKit
 class CanvasViewController: UIViewController {
 
 	
-	let panGestureRecognizer: DrawingGestureRecognizer
+	let panGestureRecognizer: DrawingGestureRecognizer?
 	var drawing = Drawing(strokes: [], currentStroke: nil)
 	var currentStroke: DrawingStroke?
 	
@@ -21,13 +21,11 @@ class CanvasViewController: UIViewController {
 	
 	
 	required override init(nibName: String?, bundle: NSBundle?) {
-		self.panGestureRecognizer = DrawingGestureRecognizer()
 		super.init(nibName: nibName, bundle: bundle)
 		
-		self.panGestureRecognizer.addTarget(self, action: "panDidRecognize:")
-		self.panGestureRecognizer.maximumNumberOfTouches = 1
+		self.panGestureRecognizer = DrawingGestureRecognizer(target: self, action: "panDidRecognize:")
 		
-		self.view.addGestureRecognizer(self.panGestureRecognizer)
+		self.view.addGestureRecognizer(self.panGestureRecognizer!)
 	}
 	
 	required init(coder aDecoder: NSCoder) {
