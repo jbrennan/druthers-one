@@ -41,16 +41,21 @@ class DrawnEntityView: UIView {
 	override func drawRect(rect: CGRect) {
 		
 		// Redrawing these every time is obviously wasteful.
-		if let paths = self.drawing.strokePaths {
+		let bounds = self.drawing.drawingBounds
+		let transform = CGAffineTransformMakeTranslation(-bounds!.minX + 10, -bounds!.minY + 10)
+		if let strokes = self.drawing.renderableStrokes {
 			
-			let bounds = self.drawing.drawingBounds
-			let transform = CGAffineTransformMakeTranslation(-bounds!.minX + 10, -bounds!.minY + 10)
 			
-			for path in paths {
-				path.applyTransform(transform)
-				path.lineWidth = 10
-				path.lineJoinStyle = kCGLineJoinRound
-				path.stroke()
+			for stroke in strokes {
+				
+				let path = stroke.strokePath
+				path?.applyTransform(transform)
+				path?.lineWidth = 10
+				path?.lineJoinStyle = kCGLineJoinRound
+				
+				let color = stroke.strokeColor
+				color.setStroke()
+				path?.stroke()
 			}
 		}
 	}

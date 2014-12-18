@@ -54,4 +54,47 @@ extension UIColor {
 	class func KhanPsstBackgroundColor() -> UIColor {
 		return UIColor(hue: 15, saturation: 65, brightness: 90)
 	}
+	
+	// MARK: - Swatches
+	
+	class func KhanSwatches() -> [UIColor] {
+		return [
+			KhanYellowSwatchColor(),
+			KhanOrangeSwatchColor(),
+			KhanRedSwatchColor(),
+			KhanPurpleSwatchColor(),
+			KhanBlueSwatchColor(),
+			KhanGreenSwatchColor()
+		]
+	}
+	
+	class func KhanYellowSwatchColor() -> UIColor {
+		return UIColor(hue: 48, saturation: 100, brightness:99)
+	}
+	
+	
+	class func KhanOrangeSwatchColor() -> UIColor {
+		return UIColor(hue: 20, saturation: 100, brightness:91)
+	}
+	
+	
+	class func KhanRedSwatchColor() -> UIColor {
+		return UIColor(hue: 358, saturation: 100, brightness:84)
+	}
+	
+	
+	class func KhanPurpleSwatchColor() -> UIColor {
+		return UIColor(hue: 258, saturation: 32, brightness:73)
+	}
+	
+	
+	class func KhanBlueSwatchColor() -> UIColor {
+		return UIColor(hue: 206, saturation: 100, brightness:66)
+	}
+	
+	
+	class func KhanGreenSwatchColor() -> UIColor {
+		return UIColor(hue: 86, saturation: 85, brightness:70)
+	}
+	
 }

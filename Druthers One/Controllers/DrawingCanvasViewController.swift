@@ -26,8 +26,8 @@ class DrawingCanvasViewController: UIViewController {
 		
 		UITapGestureRecognizer(target: self, action: "didTap", view: self.view) // hack for now
 		
-		for index in 0...5 {
-			let swatch = SwatchView(swatchColor: UIColor.purpleColor())
+		for color in UIColor.KhanSwatches() {
+			let swatch = SwatchView(swatchColor: color)
 			self.view.addSubview(swatch)
 			self.swatches.append(swatch)
 			
