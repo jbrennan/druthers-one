@@ -26,7 +26,7 @@ class DrawingCanvasView: UIView {
 			for stroke in strokes {
 				
 				let path = stroke.strokePath
-				path?.lineWidth = 10
+				path?.lineWidth = DrawingStroke.strokeWidth
 				path?.lineJoinStyle = kCGLineJoinRound
 				
 				let color = stroke.strokeColor

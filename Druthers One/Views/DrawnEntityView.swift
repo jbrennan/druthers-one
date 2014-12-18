@@ -50,7 +50,7 @@ class DrawnEntityView: UIView {
 				
 				let path = stroke.strokePath
 				path?.applyTransform(transform)
-				path?.lineWidth = 10
+				path?.lineWidth = DrawingStroke.strokeWidth
 				path?.lineJoinStyle = kCGLineJoinRound
 				
 				let color = stroke.strokeColor

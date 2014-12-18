@@ -28,6 +28,8 @@ struct DrawingStroke {
 	let touchSamples: [DrawingTouchSample]
 	let strokeColor: UIColor
 	
+	static let strokeWidth = CGFloat(30)
+	
 	func strokeByAddingTouchSample(touchSample: DrawingTouchSample) -> DrawingStroke {
 		return DrawingStroke(touchSamples: self.touchSamples + [touchSample], strokeColor: self.strokeColor)
 	}
