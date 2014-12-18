@@ -25,34 +25,34 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 		
 		self.view.backgroundColor = UIColor.KhanCanvasBackgroundColor()
 		
-		let entity = Entity()
-		entity.title = "Purple"
-		
-		let entityViewController = EntityViewController(entity: entity)
-		entityViewController.parentController = self
-		
-		let entityController = EntityController(entity: entity, entityViewController: entityViewController)
-		entityViewController.entityController = entityController
-		
-		self.entityControllers.append(entityController)
-		
-		self.beginShowingChildViewController(entityViewController)
-		
-		
-		// entity 2
-		let entity2 = Entity()
-		entity2.title = "Orange"
-		
-		let entityViewController2 = EntityViewController(entity: entity2)
-		entityViewController2.parentController = self
-		
-		let entityController2 = EntityController(entity: entity2, entityViewController: entityViewController2)
-		entityViewController2.entityController = entityController2
-		entityViewController2.view.backgroundColor = UIColor.orangeColor()
-		
-		self.entityControllers.append(entityController2)
-		
-		self.beginShowingChildViewController(entityViewController2)
+//		let entity = Entity()
+//		entity.title = "Purple"
+//		
+//		let entityViewController = EntityViewController(entity: entity)
+//		entityViewController.parentController = self
+//		
+//		let entityController = EntityController(entity: entity, entityViewController: entityViewController)
+//		entityViewController.entityController = entityController
+//		
+//		self.entityControllers.append(entityController)
+//		
+//		self.beginShowingChildViewController(entityViewController)
+//		
+//		
+//		// entity 2
+//		let entity2 = Entity()
+//		entity2.title = "Orange"
+//		
+//		let entityViewController2 = EntityViewController(entity: entity2)
+//		entityViewController2.parentController = self
+//		
+//		let entityController2 = EntityController(entity: entity2, entityViewController: entityViewController2)
+//		entityViewController2.entityController = entityController2
+//		entityViewController2.view.backgroundColor = UIColor.orangeColor()
+//		
+//		self.entityControllers.append(entityController2)
+//		
+//		self.beginShowingChildViewController(entityViewController2)
 		
 		
 		NSNotificationCenter.addObserver(self, notificationName: "ActionBlockDropped", selector: "actionBlockWasDropped:")
@@ -60,9 +60,9 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 		
 		UITapGestureRecognizer(target: self, action: "tapDidRecognize", view: self.view).delegate = self // TODO: Definitely ought to have a better interaction for this :)
 		
-		self.psstViewController = PsstViewController()
-		self.psstViewController?.delegate = self
-		self.beginShowingChildViewController(self.psstViewController!)
+//		self.psstViewController = PsstViewController()
+//		self.psstViewController?.delegate = self
+//		self.beginShowingChildViewController(self.psstViewController!)
 	}
 	
 	
@@ -171,15 +171,16 @@ class ViewController: UIViewController, EntityViewControllerParent, UIGestureRec
 	
 	
 	func tapDidRecognize() {
-		self.psstViewController?.screenWasTapped()
-		self.view.setNeedsLayout()
+//		self.psstViewController?.screenWasTapped()
+//		self.view.setNeedsLayout()
+		self.showDrawingCanvas()
 	}
 	
 	
 	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-		if self.psstViewController!.shouldReceiveTouch(touch) {
-			return false
-		}
+//		if self.psstViewController!.shouldReceiveTouch(touch) {
+//			return false
+//		}
 		
 		return true
 	}
