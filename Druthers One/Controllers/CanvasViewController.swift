@@ -15,6 +15,8 @@ class CanvasViewController: UIViewController {
 	var drawing = Drawing(strokes: [], currentStroke: nil)
 	var currentStroke: DrawingStroke?
 	
+	var strokeColor = UIColor.blackColor()
+	
 	var canvasView: DrawingCanvasView {
 		return self.view as DrawingCanvasView
 	}
@@ -54,7 +56,7 @@ class CanvasViewController: UIViewController {
 		switch recognizer.state {
 		case .Began:
 			let touchSample = DrawingTouchSample(location: location!, timestamp: timestamp!)
-			self.currentStroke = DrawingStroke(touchSamples: [touchSample])
+			self.currentStroke = DrawingStroke(touchSamples: [touchSample], strokeColor: self.strokeColor)
 			self.drawing = self.drawing.drawingByUpdatingCurrentStroke(self.currentStroke!)
 			
 		case .Changed:

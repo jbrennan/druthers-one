@@ -20,11 +20,18 @@ class DrawingCanvasView: UIView {
     override func drawRect(rect: CGRect) {
 		
 		// Redrawing these every time is obviously wasteful.
-		if let paths = self.drawing.strokePaths {
-			for path in paths {
-				path.lineWidth = 10
-				path.lineJoinStyle = kCGLineJoinRound
-				path.stroke()
+		if let strokes = self.drawing.renderableStrokes {
+			
+			
+			for stroke in strokes {
+				
+				let path = stroke.strokePath
+				path?.lineWidth = 10
+				path?.lineJoinStyle = kCGLineJoinRound
+				
+				let color = stroke.strokeColor
+				color.setStroke()
+				path?.stroke()
 			}
 		}
     }

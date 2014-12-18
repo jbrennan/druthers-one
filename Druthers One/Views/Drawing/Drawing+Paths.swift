@@ -11,25 +11,27 @@ import UIKit
 extension Drawing {
 	
 	var strokePaths: [UIBezierPath]? {
-		if self.strokes.count < 1 && self.currentStroke == nil {
-			return nil
+		return self.renderableStrokes?.map {
+			(stroke: DrawingStroke) -> UIBezierPath in
+			
+			return stroke.strokePath!
 		}
-		
-		var paths = [UIBezierPath]()
-		for drawingStroke in self.strokes {
-			if let strokePath = drawingStroke.strokePath {
-				paths.append(strokePath)
-			}
-		}
+	}
+	
+	
+	/** An array of strokes for rendering. */
+	var renderableStrokes: [DrawingStroke]? {
+		var strokes = self.strokes
 		
 		if let currentStroke = self.currentStroke {
-			if let strokePath = currentStroke.strokePath {
-				paths.append(strokePath)
-			}
+			strokes.append(currentStroke)
 		}
 		
-		return paths
+		if strokes.count > 0 {
+			return strokes
+		}
 		
+		return nil
 	}
 	
 	
@@ -53,6 +55,7 @@ extension Drawing {
 	}
 	
 	
+	// TODO: try to return a combined path of all the strokes so we can make a better shadow.
 	var combinedPath: UIBezierPath? {
 		if let paths = self.strokePaths {
 			

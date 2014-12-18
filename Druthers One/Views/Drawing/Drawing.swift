@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Khan Academy. All rights reserved.
 //
 
-import Foundation
-import CoreGraphics
+import UIKit
 
 
 struct Drawing {
@@ -27,10 +26,10 @@ struct Drawing {
 
 struct DrawingStroke {
 	let touchSamples: [DrawingTouchSample]
-	
+	let strokeColor: UIColor
 	
 	func strokeByAddingTouchSample(touchSample: DrawingTouchSample) -> DrawingStroke {
-		return DrawingStroke(touchSamples: self.touchSamples + [touchSample])
+		return DrawingStroke(touchSamples: self.touchSamples + [touchSample], strokeColor: self.strokeColor)
 	}
 }
 

@@ -14,6 +14,8 @@ class DrawingCanvasViewController: UIViewController {
 	
 	var canvasViewController: CanvasViewController?
 	weak var delegate: DrawingCanvasViewControllerDelegate?
+	
+	var swatches = [SwatchView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,20 @@ class DrawingCanvasViewController: UIViewController {
 		self.beginShowingChildViewController(self.canvasViewController!)
 		
 		UITapGestureRecognizer(target: self, action: "didTap", view: self.view) // hack for now
+		
+		for index in 0...5 {
+			let swatch = SwatchView(swatchColor: UIColor.purpleColor())
+			self.view.addSubview(swatch)
+			self.swatches.append(swatch)
+			
+			swatch.tappedAction = {
+				[weak self] in
+				
+				if let canvasViewController = self?.canvasViewController {
+					canvasViewController.strokeColor = swatch.swatchColor
+				}
+			}
+		}
 	}
 	
 	
@@ -32,6 +48,14 @@ class DrawingCanvasViewController: UIViewController {
 		let canvasView = self.canvasViewController?.view
 		canvasView?.frameSize = CGSize(width: 400, height: 400)
 		canvasView?.moveToCenterOfSuperview()
+		
+		var y = CGFloat(70)
+		for swatchView in self.swatches {
+			swatchView.sizeToFit()
+			swatchView.x = 40
+			swatchView.y = y
+			y = swatchView.maxY + 30
+		}
 	}
 	
 	
