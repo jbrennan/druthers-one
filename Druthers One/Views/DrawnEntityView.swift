@@ -31,7 +31,8 @@ class DrawnEntityView: UIView {
 	override func sizeThatFits(size: CGSize) -> CGSize {
 		
 		if let bounds = self.drawing.drawingBounds {
-			return CGRectInset(bounds, -10, -10).size
+			let widthOffset = -DrawingStroke.strokeWidth / 2.0
+			return CGRectInset(bounds, widthOffset, widthOffset).size
 		}
 		
 		return size
@@ -42,7 +43,8 @@ class DrawnEntityView: UIView {
 		
 		// Redrawing these every time is obviously wasteful.
 		let bounds = self.drawing.drawingBounds
-		let transform = CGAffineTransformMakeTranslation(-bounds!.minX + 10, -bounds!.minY + 10)
+		let widthOffset = DrawingStroke.strokeWidth / 2.0
+		let transform = CGAffineTransformMakeTranslation(-bounds!.minX + widthOffset, -bounds!.minY + widthOffset)
 		if let strokes = self.drawing.renderableStrokes {
 			
 			
