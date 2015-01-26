@@ -17,6 +17,7 @@ class DrawingCanvasViewController: UIViewController {
 	
 	var swatches = [SwatchView]()
 	var selectedSwatch: SwatchView? = nil
+	let doneButton = Button(imageName: "done-button")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class DrawingCanvasViewController: UIViewController {
 		self.canvasViewController = CanvasViewController(nibName: nil, bundle: nil)
 		self.beginShowingChildViewController(self.canvasViewController!)
 		
-		UITapGestureRecognizer(target: self, action: "didTap", view: self.view) // hack for now
+		UITapGestureRecognizer(target: self, action: "didTap", view: self.doneButton) // hack for now
 		
 		for color in UIColor.KhanSwatches() {
 			let swatch = SwatchView(swatchColor: color)
@@ -41,6 +42,8 @@ class DrawingCanvasViewController: UIViewController {
 		}
 		
 		self.selectSwatchView(self.swatches.first!)
+		
+		self.view.addSubview(self.doneButton)
 	}
 	
 	
@@ -57,6 +60,13 @@ class DrawingCanvasViewController: UIViewController {
 			swatchView.x = 40
 			swatchView.y = y
 			y = swatchView.maxY + 30
+		}
+		
+		self.doneButton.sizeToFit()
+		
+		if let canvasView = canvasView {
+			self.doneButton.moveAboveSiblingView(canvasView, margin: 10)
+			self.doneButton.x = canvasView.x
 		}
 	}
 	

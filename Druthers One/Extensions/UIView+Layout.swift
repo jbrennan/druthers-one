@@ -23,6 +23,11 @@ extension UIView {
 	}
 	
 	
+	func moveAboveSiblingView(siblingView: UIView, margin: CGFloat = 0.0) {
+		self.y = siblingView.y - (self.height + margin)
+	}
+	
+	
 	/** Moves the receiver so that its right side is aligned with the right side of its superview. */
 	func moveToRightSideOfSuperview(margin: CGFloat = 0.0) {
 		if let superview = self.superview {
