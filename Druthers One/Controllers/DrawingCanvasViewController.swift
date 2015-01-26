@@ -9,13 +9,14 @@
 import UIKit
 
 
-/** Where you're limited only by your imagination and my computer graphics skills. */
+/** Where you're limited only by your imagination. and my computer graphics skills. */
 class DrawingCanvasViewController: UIViewController {
 	
 	var canvasViewController: CanvasViewController?
 	weak var delegate: DrawingCanvasViewControllerDelegate?
 	
 	var swatches = [SwatchView]()
+	var selectedSwatch: SwatchView? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +34,13 @@ class DrawingCanvasViewController: UIViewController {
 			
 			swatch.tappedAction = {
 				[weak self] in
-				
-				if let canvasViewController = self?.canvasViewController {
-					canvasViewController.strokeColor = swatch.swatchColor
+				if let strongSelf = self {
+					strongSelf.selectSwatchView(swatch)
 				}
 			}
 		}
+		
+		self.selectSwatchView(self.swatches.first!)
 	}
 	
 	
@@ -61,6 +63,22 @@ class DrawingCanvasViewController: UIViewController {
 	
 	func didTap() {
 		self.delegate?.didFinishDrawing(self.canvasViewController!.drawing)
+	}
+	
+	
+	func selectSwatchView(swatchView: SwatchView) {
+		if let canvasViewController = self.canvasViewController {
+			canvasViewController.strokeColor = swatchView.swatchColor
+		}
+		self.selectedSwatch = swatchView
+		self.updateSwatchViews()
+		
+	}
+	
+	func updateSwatchViews() {
+		for swatchView in self.swatches {
+			swatchView.selected = swatchView == self.selectedSwatch
+		}
 	}
 
 }

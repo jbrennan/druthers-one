@@ -9,7 +9,7 @@
 import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
-/** A pan gesture recognizer used for drawing. */
+/** A gesture recognizer used for drawing. */
 class DrawingGestureRecognizer: UILongPressGestureRecognizer {
 	
 	var activeTouch: UITouch?

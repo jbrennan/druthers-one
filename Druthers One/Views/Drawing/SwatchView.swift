@@ -13,6 +13,15 @@ class SwatchView: UIView {
 	
 	let swatchColor: UIColor
 	let circle: UIView // eventually we want different sizes
+	var selected: Bool = false {
+		didSet {
+			if self.selected {
+				self.backgroundColor = UIColor.KhanCanvasBackgroundColor()
+			} else {
+				self.backgroundColor = UIColor.clearColor()
+			}
+		}
+	}
 	
 	var tappedAction: ActionBlock?
 	
@@ -42,6 +51,8 @@ class SwatchView: UIView {
 		
 		self.circle.frame = self.bounds
 		self.circle.roundCorners()
+		
+		self.cornerRadius = 4
 	}
 	
 	
